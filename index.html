@@ -13,6 +13,17 @@
 #player-lyrics{grid-column:1/-1;width:100%;margin:0}
 #player-lyrics .lyric-text{max-height:min(25vh,16rem);scrollbar-gutter:stable}
 .tracks:has(.song-lyrics[open]){align-items:start}
+
+/* Keep the original hero untouched; clarify the options next to the song list. */
+.library-nav{margin-top:.65rem;padding:.7rem .75rem .6rem;border:1px solid #c8b99f;border-left:3px solid #93452f;border-radius:.35rem;background:#fffaf0}
+.browse-label{margin:0 0 .38rem;color:#40362a;font-size:.84rem;font-weight:750}
+.library-nav .mode-switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(100%,22rem);gap:.45rem}
+.library-nav .mode-switch button{background:#fffaf0;color:#713a26;border:1.5px solid #966c57;padding:.46rem .45rem;text-align:center;line-height:1.35}
+.library-nav .mode-switch button[aria-pressed="true"]{background:#29392e;color:white;border-color:#29392e}
+.library-nav .mode-switch button:hover{text-decoration:underline;text-underline-offset:.15em}
+.library-nav .mode-switch [data-view="themes"] span{margin-left:.07rem;font-size:.8em}
+.library-nav .mode-switch [data-view="themes"][aria-pressed="true"] span{display:inline-block;transform:rotate(180deg)}
+@media(max-width:385px){.library-nav .mode-switch button{font-size:.82rem;padding-inline:.1rem}}
 </style><link rel="stylesheet" href="style.css"></head><body><main><div class="top"><span>IMAJO SONGS</span><a href="#my-list">マイリスト ↓</a></div><header class="hero"><svg viewBox="0 0 640 255" fill="none" aria-hidden="true"><path d="M0 210 115 124 195 177 311 80 388 133 475 50 640 208" stroke="#647761" stroke-width="4"/><path d="M243 250 402 169m-99 81 100-81m-107 56h36m-15-12h34m-12-11h27m-10-9h25m-8-8h18" stroke="#a7412a" stroke-width="3"/></svg><div class="kicker">福井県 南越前町</div><h1>今庄ソング</h1><p><strong>峠を越えて、歌が残る。</strong></p><p>宿場の記憶、鉄道の風景、今の暮らし。<br>今庄を題材にしたオリジナル曲を公開しています。</p><p>さまざまなジャンルの曲をそろえています。<br>お好みに合う曲が見つかれば幸いです。</p><a class="cta" href="#songs">曲を見る ↓</a></header><section id="player" class="player" aria-labelledby="player-title" hidden>
  <div class="player-heading"><div class="player-cover" aria-hidden="true"><span>♪</span><img id="player-image" alt="" hidden width="48" height="48"></div><div class="player-labels"><p id="player-mode"></p><h2 id="player-title">再生プレーヤー</h2></div></div>
  <audio id="audio" controls preload="none" aria-label="再生プレーヤー"></audio>
@@ -27,7 +38,7 @@
  <button id="start-list" class="start-list" type="button" disabled>▶ マイリストを最初から再生</button>
 </section>
 <noscript><p>サイトでの再生やマイリストを使うには、JavaScriptを有効にしてください。MP3は曲一覧から直接ダウンロードできます。</p></noscript><section id="songs" aria-labelledby="tracks-heading"><div class="head"><h2 id="tracks-heading">収録曲</h2><small>全曲再生・MP3無料ダウンロード</small></div><div class="library-nav" hidden>
-<div class="mode-switch" role="group" aria-label="収録曲の表示方法"><button type="button" data-view="all" aria-pressed="true">全58曲を見る</button><button type="button" data-view="themes" aria-pressed="false" aria-controls="theme-picker">テーマから探す</button></div>
+<p class="browse-label" id="browse-label">曲の探し方を選ぶ</p><div class="mode-switch" role="group" aria-labelledby="browse-label"><button type="button" data-view="all" aria-pressed="true">全58曲を見る</button><button type="button" data-view="themes" aria-pressed="false" aria-controls="theme-picker">テーマから探す <span aria-hidden="true">▾</span></button></div>
 <div id="theme-picker" class="theme-picker" aria-label="テーマを選ぶ" role="group" hidden><button type="button" data-theme="rail" aria-pressed="false">鉄道とトンネル <span>7曲</span></button><button type="button" data-theme="roads" aria-pressed="false">峠・街道・宿場 <span>16曲</span></button><button type="button" data-theme="legends" aria-pressed="false">伝説と昔ばなし <span>6曲</span></button><button type="button" data-theme="festivals" aria-pressed="false">祭りと踊り <span>5曲</span></button><button type="button" data-theme="home" aria-pressed="false">ふるさとと懐かしい日々 <span>21曲</span></button><button type="button" data-theme="local" aria-pressed="false">今庄弁と地元あるある <span>12曲</span></button><button type="button" data-theme="seasons" aria-pressed="false">季節の風景 <span>12曲</span></button><button type="button" data-theme="christmas" aria-pressed="false">今庄のクリスマス <span>8曲</span></button><button type="button" data-theme="tomorrow" aria-pressed="false">今庄のこれから <span>16曲</span></button></div>
 <p id="results-status" class="results-status" role="status" aria-live="polite">全58曲を表示</p>
 </div><div class="tracks" id="track-list"><article data-track="1" data-themes="rail"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/01.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>てつどうの唄</h3><p>二両の機関車で越える山中峠と、今庄駅のそば売りの声に、敦賀と今庄を結んだ鉄道の記憶を重ねます。</p><small>4:45</small><div class="buttons"><button type="button" data-play aria-label="てつどうの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/01.mp3" download="てつどうの唄.mp3" aria-label="てつどうの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="てつどうの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="てつどうの唄の歌詞">汽笛が響く
