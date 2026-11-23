@@ -2,9 +2,21 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5eee0;color:#202a22;font:16px/1.7 system-ui,sans-serif}main,footer{width:min(100% - 2.5rem,1024px);margin:auto}.top,footer{padding:1rem 0;font-size:.77rem;letter-spacing:.12em}.top{display:flex;justify-content:space-between;border-bottom:1px solid #cfc1a9;font-weight:750}.hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(2.6rem,8vw,5.7rem) 0}.hero svg{position:absolute;z-index:-1;bottom:0;right:0;width:68%;opacity:.24}.kicker{color:#993b27;letter-spacing:.18em;font-weight:bold;font-size:.84rem}h1{font:900 clamp(2.8rem,9vw,6.8rem)/1.08 "Yu Mincho",serif;letter-spacing:.06em;margin:.2em 0}.hero p{margin:.4rem 0}.cta{display:inline-block;margin-top:.8rem;border-radius:.2rem;background:#29392e;color:white;padding:.5rem 1rem;text-decoration:none}.head{display:flex;align-items:center;justify-content:space-between;gap:1em;border-block:1px solid #cfc1a9;padding:.75rem 0}.head h2{margin:0;font-size:1.15rem}.head small{color:#62594c}.tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;padding:1rem 0 2rem}.tracks article{border:1px solid #cfc1a9;border-radius:.3rem;overflow:hidden;background:#fffaf0;display:flex;flex-direction:column}.cover{background:#3e594b;color:#fff;display:grid;place-items:center;min-height:7.3rem;font-family:serif;font-size:1.55rem;padding:.65rem}.cover span{border:1px solid #ffffff85;width:100%;align-self:stretch;display:grid;place-items:center}.tracks article:nth-child(2) .cover{background:#9a4633}.tracks article:nth-child(3) .cover{background:#3a556a}.info{padding:.9rem;flex:1;display:flex;flex-direction:column}.info h3{margin:0;overflow-wrap:anywhere}.draft-note{font-size:.85rem;color:#62594c}.cover span{font-size:.9rem;letter-spacing:.14em}.info p{margin:.35rem 0 .85rem;font-size:.88rem}.info small{margin-top:auto;color:#675f52}.buttons{display:flex;gap:.45rem;margin-top:.4rem}button{font:inherit;font-size:.79rem;color:#5a5347;background:#efe7d8;border:1px solid #b8aa94;border-radius:.2rem;padding:.35rem .5rem}footer{border-top:1px solid #cfc1a9;color:#62594c}@media(max-width:720px){.tracks{grid-template-columns:1fr 1fr}}@media(max-width:490px){.tracks{grid-template-columns:1fr}.hero svg{width:94%}.cover{min-height:5.4rem}}
 
 [hidden]{display:none!important}.library-nav{padding:1rem 0 0}.mode-switch,.theme-picker{display:flex;gap:.55rem;flex-wrap:wrap}.library-nav button{cursor:pointer;min-height:44px;padding:.55rem .8rem;font-size:.91rem}.library-nav button:focus-visible{outline:3px solid #a7412a;outline-offset:2px}.mode-switch button{font-weight:720}.library-nav button[aria-pressed="true"]{background:#29392e;color:#fff;border-color:#29392e}.theme-picker{padding-top:.85rem}.theme-picker span{margin-left:.2rem;font-size:.72em}.results-status{font-size:.85rem;color:#62594c;margin:.8rem 0 0}.language-badge{width:fit-content;font-size:.73rem;font-weight:650;color:#34463a;border:1px solid #b3b8a1;padding:.08rem .35rem;margin-top:.25rem;border-radius:.25rem}
-</style><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head><body><main><div class="top"><span>IMAJO SONGS</span><a href="#my-list">マイリスト ↓</a></div><header class="hero"><svg viewBox="0 0 640 255" fill="none" aria-hidden="true"><path d="M0 210 115 124 195 177 311 80 388 133 475 50 640 208" stroke="#647761" stroke-width="4"/><path d="M243 250 402 169m-99 81 100-81m-107 56h36m-15-12h34m-12-11h27m-10-9h25m-8-8h18" stroke="#a7412a" stroke-width="3"/></svg><div class="kicker">福井県 南越前町</div><h1>今庄ソング</h1><p><strong>峠を越えて、歌が残る。</strong></p><p>宿場の記憶、鉄道の風景、今の暮らし。<br>今庄を題材にしたオリジナル曲を公開しています。</p><p>さまざまなジャンルの曲をそろえています。<br>お好みに合う曲が見つかれば幸いです。</p><a class="cta" href="#songs">曲を見る ↓</a></header><section id="player" class="player" aria-labelledby="player-title" hidden>
+
+.song-lyrics{border-top:1px solid #cfc1a9;margin:.6rem 0 0;color:#29392e;min-width:0}
+.song-lyrics summary{cursor:pointer;min-height:44px;padding:.55rem .35rem;font-size:.87rem;font-weight:690;border-radius:.25rem}
+.song-lyrics summary:hover{background:#efe7d8}
+.song-lyrics summary:focus-visible,.lyric-text:focus-visible{outline:2px solid #973c28;outline-offset:2px}
+.song-lyrics .lyric-hide,.song-lyrics[open] .lyric-show{display:none}
+.song-lyrics[open] .lyric-hide{display:inline}
+.lyric-text{white-space:pre-wrap;overflow-wrap:anywhere;overflow:auto;overscroll-behavior:contain;max-height:20rem;padding:.7rem .8rem;background:#fbf4e7;border-radius:.25rem;font-size:.91rem;line-height:1.75}
+#player-lyrics{grid-column:1/-1;width:100%;margin:0}
+#player-lyrics .lyric-text{max-height:min(25vh,16rem);scrollbar-gutter:stable}
+.tracks:has(.song-lyrics[open]){align-items:start}
+</style><link rel="stylesheet" href="style.css"></head><body><main><div class="top"><span>IMAJO SONGS</span><a href="#my-list">マイリスト ↓</a></div><header class="hero"><svg viewBox="0 0 640 255" fill="none" aria-hidden="true"><path d="M0 210 115 124 195 177 311 80 388 133 475 50 640 208" stroke="#647761" stroke-width="4"/><path d="M243 250 402 169m-99 81 100-81m-107 56h36m-15-12h34m-12-11h27m-10-9h25m-8-8h18" stroke="#a7412a" stroke-width="3"/></svg><div class="kicker">福井県 南越前町</div><h1>今庄ソング</h1><p><strong>峠を越えて、歌が残る。</strong></p><p>宿場の記憶、鉄道の風景、今の暮らし。<br>今庄を題材にしたオリジナル曲を公開しています。</p><p>さまざまなジャンルの曲をそろえています。<br>お好みに合う曲が見つかれば幸いです。</p><a class="cta" href="#songs">曲を見る ↓</a></header><section id="player" class="player" aria-labelledby="player-title" hidden>
  <div class="player-heading"><div class="player-cover" aria-hidden="true"><span>♪</span><img id="player-image" alt="" hidden width="48" height="48"></div><div class="player-labels"><p id="player-mode"></p><h2 id="player-title">再生プレーヤー</h2></div></div>
  <audio id="audio" controls preload="none" aria-label="再生プレーヤー"></audio>
+ <details id="player-lyrics" class="song-lyrics" hidden><summary><span class="lyric-show">歌詞を表示</span><span class="lyric-hide">歌詞を非表示</span></summary><div id="player-lyric-text" class="lyric-text" tabindex="0" role="region" aria-label="再生中の曲の歌詞"></div></details>
  <p id="player-feedback" class="player-feedback" role="status" hidden></p>
 </section>
 <section id="my-list" class="my-list" aria-labelledby="my-heading" hidden>
@@ -18,6 +30,5646 @@
 <div class="mode-switch" role="group" aria-label="収録曲の表示方法"><button type="button" data-view="all" aria-pressed="true">全58曲を見る</button><button type="button" data-view="themes" aria-pressed="false" aria-controls="theme-picker">テーマから探す</button></div>
 <div id="theme-picker" class="theme-picker" aria-label="テーマを選ぶ" role="group" hidden><button type="button" data-theme="rail" aria-pressed="false">鉄道とトンネル <span>7曲</span></button><button type="button" data-theme="roads" aria-pressed="false">峠・街道・宿場 <span>16曲</span></button><button type="button" data-theme="legends" aria-pressed="false">伝説と昔ばなし <span>6曲</span></button><button type="button" data-theme="festivals" aria-pressed="false">祭りと踊り <span>5曲</span></button><button type="button" data-theme="home" aria-pressed="false">ふるさとと懐かしい日々 <span>21曲</span></button><button type="button" data-theme="local" aria-pressed="false">今庄弁と地元あるある <span>12曲</span></button><button type="button" data-theme="seasons" aria-pressed="false">季節の風景 <span>12曲</span></button><button type="button" data-theme="christmas" aria-pressed="false">今庄のクリスマス <span>8曲</span></button><button type="button" data-theme="tomorrow" aria-pressed="false">今庄のこれから <span>16曲</span></button></div>
 <p id="results-status" class="results-status" role="status" aria-live="polite">全58曲を表示</p>
-</div><div class="tracks" id="track-list"><article data-track="1" data-themes="rail"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/01.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>てつどうの唄</h3><p>二両の機関車で越える山中峠と、今庄駅のそば売りの声に、敦賀と今庄を結んだ鉄道の記憶を重ねます。</p><small>4:45</small><div class="buttons"><button type="button" data-play aria-label="てつどうの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/01.mp3" download="てつどうの唄.mp3" aria-label="てつどうの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="てつどうの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="2" data-themes="legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/02.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>夜叉姫の唄</h3><p>雨を願う村のため龍の眠る池へ向かった夜叉姫の、伝説の陰に残る恋と孤独を本人の目線で描きます。</p><small>3:59</small><div class="buttons"><button type="button" data-play aria-label="夜叉姫の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/02.mp3" download="夜叉姫の唄.mp3" aria-label="夜叉姫の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="夜叉姫の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="3" data-themes="seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/03.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>アカタンの唄</h3><p>荒れる川に立ち向かい、アカタンの谷に石を積んだ名もない人々の願いを、移ろう四季に重ねます。</p><small>3:40</small><div class="buttons"><button type="button" data-play aria-label="アカタンの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/03.mp3" download="アカタンの唄.mp3" aria-label="アカタンの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="アカタンの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="4" data-themes="roads home seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/04.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうのうた</h3><p>小さな駅から歩き出し、宿場のうだつや路地、四季の風景をたどりながら、また訪れたくなる今庄を描きます。</p><small>4:49</small><div class="buttons"><button type="button" data-play aria-label="いまじょうのうたを再生" hidden>▶ 再生</button><a class="download" href="audio/04.mp3" download="いまじょうのうた.mp3" aria-label="いまじょうのうたのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうのうたをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="5" data-themes="home seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/05.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>たくらそんぐ</h3><p>朝の軽トラに橋のたもとの立ち話、帰り際に手渡される畑の野菜から、宅良川沿いの日常が浮かびます。</p><small>4:19</small><div class="buttons"><button type="button" data-play aria-label="たくらそんぐを再生" hidden>▶ 再生</button><a class="download" href="audio/05.mp3" download="たくらそんぐ.mp3" aria-label="たくらそんぐのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="たくらそんぐをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="6" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/06.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>こんなはずじゃなかった</h3><p>結婚を機に引っ越した先で、車頼みの買い物や雪かきにぼやきながら、いつしか町になじんでいく歌です。</p><small>3:16</small><div class="buttons"><button type="button" data-play aria-label="こんなはずじゃなかったを再生" hidden>▶ 再生</button><a class="download" href="audio/06.mp3" download="こんなはずじゃなかった.mp3" aria-label="こんなはずじゃなかったのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="こんなはずじゃなかったをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="7" data-themes="legends festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/07.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>二十三夜の唄</h3><p>火事の記憶を抱く瀬戸で、白山神社の森に集まり、月明かりの下で踊りながら村の願いをつなぎます。</p><small>3:18</small><div class="buttons"><button type="button" data-play aria-label="二十三夜の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/07.mp3" download="二十三夜の唄.mp3" aria-label="二十三夜の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="二十三夜の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="8" data-themes="local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/08.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうヒーロー</h3><p>大根パワーのおろしそばくんと太陽パワーのつるし柿くんが、雪にも虫にも負けじと今庄で奮闘します。</p><small>2:52</small><div class="buttons"><button type="button" data-play aria-label="いまじょうヒーローを再生" hidden>▶ 再生</button><a class="download" href="audio/08.mp3" download="いまじょうヒーロー.mp3" aria-label="いまじょうヒーローのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうヒーローをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="9" data-themes="home local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/09.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>IMJ</h3><p>都会のネオンより星空、通知音よりカエルの声を選び、地図では小さな今庄を自分の世界の中心と歌います。</p><small>2:17</small><div class="buttons"><button type="button" data-play aria-label="IMJを再生" hidden>▶ 再生</button><a class="download" href="audio/09.mp3" download="IMJ.mp3" aria-label="IMJのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="IMJをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="10" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/10.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄の民</h3><p>今庄へ誘った相手が山道で引き返す場面を交え、地元の人ならではのぼやきと町への愛着を描きます。</p><small>2:42</small><div class="buttons"><button type="button" data-play aria-label="今庄の民を再生" hidden>▶ 再生</button><a class="download" href="audio/10.mp3" download="今庄の民.mp3" aria-label="今庄の民のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄の民をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="11" data-themes="home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/11.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いつも</h3><p>夢を追って町を出た人が、久しぶりに降りた駅のホームで、旅立った日の自分と今庄での日々を思い返します。</p><small>4:14</small><div class="buttons"><button type="button" data-play aria-label="いつもを再生" hidden>▶ 再生</button><a class="download" href="audio/11.mp3" download="いつも.mp3" aria-label="いつものMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いつもをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="12" data-themes="roads seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/12.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>木ノ芽峠</h3><p>雪に埋もれた石畳や茶屋の明かりを手がかりに、木ノ芽峠を行き交った旅人の出会いと別れを想います。</p><small>4:24</small><div class="buttons"><button type="button" data-play aria-label="木ノ芽峠を再生" hidden>▶ 再生</button><a class="download" href="audio/12.mp3" download="木ノ芽峠.mp3" aria-label="木ノ芽峠のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="木ノ芽峠をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="13" data-themes="roads home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/13.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>A Song for Imajo（いまじょうのうた）</h3><span class="language-badge">英語版</span><p>朝もやの木ノ芽峠から夕暮れの宿場までを英語で描き、ふるさとでなくても帰りたくなる今庄を歌います。</p><small>4:27</small><div class="buttons"><button type="button" data-play aria-label="A Song for Imajo（いまじょうのうた）を再生" hidden>▶ 再生</button><a class="download" href="audio/13.mp3" download="A Song for Imajo（いまじょうのうた）.mp3" aria-label="A Song for Imajo（いまじょうのうた）のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="A Song for Imajo（いまじょうのうた）をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="14" data-themes="festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/14.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうおどりうた</h3><p>北国街道やおろしそば、つるし柿を歌い込み、今庄の宿場でみんなが輪になって踊る夜を描きます。</p><small>3:53</small><div class="buttons"><button type="button" data-play aria-label="いまじょうおどりうたを再生" hidden>▶ 再生</button><a class="download" href="audio/14.mp3" download="いまじょうおどりうた.mp3" aria-label="いまじょうおどりうたのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうおどりうたをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="15" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/15.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>Roads of Imajo（いまじょうのみち）</h3><span class="language-badge">英語版</span><p>山中、木ノ芽、栃ノ木、湯尾の峠をたどり、徒歩の道から鉄道、高速道路へ続く今庄の往来を英語で歌います。</p><small>4:12</small><div class="buttons"><button type="button" data-play aria-label="Roads of Imajo（いまじょうのみち）を再生" hidden>▶ 再生</button><a class="download" href="audio/15.mp3" download="Roads of Imajo（いまじょうのみち）.mp3" aria-label="Roads of Imajo（いまじょうのみち）のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="Roads of Imajo（いまじょうのみち）をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="16" data-themes="local seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/16.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ヘクサンボの唄</h3><p>車にも洗濯物にも現れるヘクサンボに振り回され、においの話まで飛び出す今庄の秋の騒動を描きます。</p><small>3:30</small><div class="buttons"><button type="button" data-play aria-label="ヘクサンボの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/16.mp3" download="ヘクサンボの唄.mp3" aria-label="ヘクサンボの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ヘクサンボの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="17" data-themes="seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/17.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>夏</h3><p>昭和会館のベンチの木漏れ日や夕立あとの水たまりを眺めながら、今庄の夏をゆっくり歩く歌です。</p><small>3:43</small><div class="buttons"><button type="button" data-play aria-label="夏を再生" hidden>▶ 再生</button><a class="download" href="audio/17.mp3" download="夏.mp3" aria-label="夏のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="夏をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="18" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/18.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄下克上.IbN</h3><p>雪深い小さな町が、宿場や鉄路の記憶を武器に、町内一から県内一、そして日本一まで狙います。</p><small>3:50</small><div class="buttons"><button type="button" data-play aria-label="今庄下克上.IbNを再生" hidden>▶ 再生</button><a class="download" href="audio/18.mp3" download="今庄下克上.IbN.mp3" aria-label="今庄下克上.IbNのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄下克上.IbNをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="19" data-themes="rail roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/19.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうのみち</h3><p>四つの峠から宿場、旧北陸線の隧道へとたどり、形を変えながら人の行き先を結んできた今庄の道を歌います。</p><small>4:36</small><div class="buttons"><button type="button" data-play aria-label="いまじょうのみちを再生" hidden>▶ 再生</button><a class="download" href="audio/19.mp3" download="いまじょうのみち.mp3" aria-label="いまじょうのみちのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうのみちをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="20" data-themes="home local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/20.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうことば-Upbeat Country Ver.</h3><p>ばあちゃんの呼び声や泥だらけで遊んだ日を、今庄ならではの言葉と子どもたちの笑い声で描きます。</p><small>2:40</small><div class="buttons"><button type="button" data-play aria-label="いまじょうことば-Upbeat Country Ver.を再生" hidden>▶ 再生</button><a class="download" href="audio/20.mp3" download="いまじょうことば-Upbeat Country Ver..mp3" aria-label="いまじょうことば-Upbeat Country Ver.のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうことば-Upbeat Country Ver.をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="21" data-themes="festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/21.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>はねそおどり2026</h3><p>今庄に伝わる伝統、はねそ踊りを2026年らしくアレンジしました。</p><small>4:19</small><div class="buttons"><button type="button" data-play aria-label="はねそおどり2026を再生" hidden>▶ 再生</button><a class="download" href="audio/21.mp3" download="はねそおどり2026.mp3" aria-label="はねそおどり2026のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="はねそおどり2026をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="22" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/22.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>町の音</h3><p>路地の笑い声や夕方五時のチャイムを思い出し、静かになった今庄に暮らしの音を残したいと歌う。</p><small>4:14</small><div class="buttons"><button type="button" data-play aria-label="町の音を再生" hidden>▶ 再生</button><a class="download" href="audio/22.mp3" download="町の音.mp3" aria-label="町の音のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="町の音をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="23" data-themes="home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/23.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>あのころ.IbN</h3><p>自転車で登った坂や蛇踊りの練習、初恋の帰り道を、閉校した今中の校舎に重ねて振り返る。</p><small>4:17</small><div class="buttons"><button type="button" data-play aria-label="あのころ.IbNを再生" hidden>▶ 再生</button><a class="download" href="audio/23.mp3" download="あのころ.IbN.mp3" aria-label="あのころ.IbNのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="あのころ.IbNをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="24" data-themes="home local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/24.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうことば-Folk Pop Ver.</h3><p>ばあちゃんが「はよしねま」と呼ぶ台所や泥だらけの帰り道を、耳に残る今庄のことばでたどる。</p><small>4:19</small><div class="buttons"><button type="button" data-play aria-label="いまじょうことば-Folk Pop Ver.を再生" hidden>▶ 再生</button><a class="download" href="audio/24.mp3" download="いまじょうことば-Folk Pop Ver..mp3" aria-label="いまじょうことば-Folk Pop Ver.のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうことば-Folk Pop Ver.をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="25" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/25.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>堺東の唄</h3><p>岩谷、大河内、広野二ツ屋、桝谷の暮らしと堺東小学校の思い出を、村の名とともに語り継ぐ唄。</p><small>4:45</small><div class="buttons"><button type="button" data-play aria-label="堺東の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/25.mp3" download="堺東の唄.mp3" aria-label="堺東の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="堺東の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="26" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/26.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いってらっしゃい</h3><p>駅の小さな窓口から、道を尋ねる旅人やお惣菜を選ぶご近所さんを笑顔で迎え、送り出す一日を描く。</p><small>4:34</small><div class="buttons"><button type="button" data-play aria-label="いってらっしゃいを再生" hidden>▶ 再生</button><a class="download" href="audio/26.mp3" download="いってらっしゃい.mp3" aria-label="いってらっしゃいのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いってらっしゃいをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="27" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/27.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうれきしうた</h3><p>峠道を人が行き交った時代から、宿場のにぎわい、鉄道と車の時代へと、今庄の歩みをたどる。</p><small>5:01</small><div class="buttons"><button type="button" data-play aria-label="いまじょうれきしうたを再生" hidden>▶ 再生</button><a class="download" href="audio/27.mp3" download="いまじょうれきしうた.mp3" aria-label="いまじょうれきしうたのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうれきしうたをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="28" data-themes="rail"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/28.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>Railway Song（てつどうの唄）</h3><span class="language-badge">英語版</span><p>山中峠に挑む機関車と今庄駅のそば売りを描いた「てつどうの唄」を、英語の歌詞で届ける。</p><small>3:37</small><div class="buttons"><button type="button" data-play aria-label="Railway Song（てつどうの唄）を再生" hidden>▶ 再生</button><a class="download" href="audio/28.mp3" download="Railway Song（てつどうの唄）.mp3" aria-label="Railway Song（てつどうの唄）のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="Railway Song（てつどうの唄）をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="29" data-themes="rail home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/29.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>鹿蒜の唄</h3><p>馬の鈴が汽笛に変わり、やがて人通りが減った鹿蒜の谷を、また帰りたくなる場所にしようと歌う。</p><small>5:39</small><div class="buttons"><button type="button" data-play aria-label="鹿蒜の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/29.mp3" download="鹿蒜の唄.mp3" aria-label="鹿蒜の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="鹿蒜の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="30" data-themes="rail home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/30.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ぽっぽ広場で</h3><p>汽車のすべり台で遊ぶ子どもたちと、かつて峠を越えた機関車の記憶が、ぽっぽ広場で出会う。</p><small>4:39</small><div class="buttons"><button type="button" data-play aria-label="ぽっぽ広場でを再生" hidden>▶ 再生</button><a class="download" href="audio/30.mp3" download="ぽっぽ広場で.mp3" aria-label="ぽっぽ広場でのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ぽっぽ広場でをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="31" data-themes="roads legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/31.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>湯尾峠のいもの神</h3><p>茶屋が消え、山の下を汽車が走るようになっても、湯尾峠に残るいもの神が旅人を見送る。</p><small>4:47</small><div class="buttons"><button type="button" data-play aria-label="湯尾峠のいもの神を再生" hidden>▶ 再生</button><a class="download" href="audio/31.mp3" download="湯尾峠のいもの神.mp3" aria-label="湯尾峠のいもの神のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="湯尾峠のいもの神をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="32" data-themes="legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/32.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>八十八</h3><p>四国を三度歩いた又市が、故郷の八ヶ所山に一体ずつ石仏を置き、八十八まで数える物語。</p><small>5:10</small><div class="buttons"><button type="button" data-play aria-label="八十八を再生" hidden>▶ 再生</button><a class="download" href="audio/32.mp3" download="八十八.mp3" aria-label="八十八のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="八十八をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="33" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/33.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ここから</h3><p>静かになった町に、帰ってきた仲間も初めて来た人も声を重ね、もう一度みんなの歌を響かせる。</p><small>4:38</small><div class="buttons"><button type="button" data-play aria-label="ここからを再生" hidden>▶ 再生</button><a class="download" href="audio/33.mp3" download="ここから.mp3" aria-label="ここからのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ここからをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="34" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/34.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>峠の刃</h3><p>火打・木ノ芽・鉢伏をめぐる戦と雪の中を進む天狗党を描き、旗が消えても残る峠道を歌う。</p><small>5:05</small><div class="buttons"><button type="button" data-play aria-label="峠の刃を再生" hidden>▶ 再生</button><a class="download" href="audio/34.mp3" download="峠の刃.mp3" aria-label="峠の刃のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="峠の刃をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="35" data-themes="roads festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/35.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄宿フィーバー</h3><p>文政の道しるべを出発点に、提灯の揺れる今庄宿の街道を丸ごとダンスフロアに変える夜の歌。</p><small>5:06</small><div class="buttons"><button type="button" data-play aria-label="今庄宿フィーバーを再生" hidden>▶ 再生</button><a class="download" href="audio/35.mp3" download="今庄宿フィーバー.mp3" aria-label="今庄宿フィーバーのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄宿フィーバーをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="36" data-themes="legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/36.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>言奈</h3><p>峠で言奈地蔵のいわれを知った男が、誰にも話せなかった過去と向き合う物語。</p><small>4:33</small><div class="buttons"><button type="button" data-play aria-label="言奈を再生" hidden>▶ 再生</button><a class="download" href="audio/36.mp3" download="言奈.mp3" aria-label="言奈のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="言奈をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="37" data-themes="roads local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/37.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄宿へいらっしゃい！</h3><p>おろしそばや地酒、細い路地と屋号のやり取りまで、今庄宿の楽しみ方を地元目線で案内する。</p><small>4:39</small><div class="buttons"><button type="button" data-play aria-label="今庄宿へいらっしゃい！を再生" hidden>▶ 再生</button><a class="download" href="audio/37.mp3" download="今庄宿へいらっしゃい！.mp3" aria-label="今庄宿へいらっしゃい！のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄宿へいらっしゃい！をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="38" data-themes="seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/38.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>スノーハンター</h3><p>誰かが朝に車で走れるよう、雪の降る今庄で朝まで道を開く除雪オペレーターの本音を歌う。</p><small>5:20</small><div class="buttons"><button type="button" data-play aria-label="スノーハンターを再生" hidden>▶ 再生</button><a class="download" href="audio/38.mp3" download="スノーハンター.mp3" aria-label="スノーハンターのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="スノーハンターをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="39" data-themes="roads festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/39.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>街道浪漫今庄宿のテーマ</h3><p>焼鯖やそばの香りが漂い、蛇踊りが進む街道で、旅人も町の人も羽根曽踊りの輪に加わる。</p><small>4:37</small><div class="buttons"><button type="button" data-play aria-label="街道浪漫今庄宿のテーマを再生" hidden>▶ 再生</button><a class="download" href="audio/39.mp3" download="街道浪漫今庄宿のテーマ.mp3" aria-label="街道浪漫今庄宿のテーマのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="街道浪漫今庄宿のテーマをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="40" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/40.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ここで暮らそう</h3><p>閉まった店先や懐かしい駅の顔を描きながら、今庄の何気ない日々を次の季節へ手渡したいと歌う一曲。</p><small>3:35</small><div class="buttons"><button type="button" data-play aria-label="ここで暮らそうを再生" hidden>▶ 再生</button><a class="download" href="audio/40.mp3" download="ここで暮らそう.mp3" aria-label="ここで暮らそうのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ここで暮らそうをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="41" data-themes="rail roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/41.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>とんねるの唄</h3><p>山を掘って石を積んだ人と、石炭をくべて峠を越えた人の仕事を、今も残るトンネルに重ねた一曲。</p><small>3:44</small><div class="buttons"><button type="button" data-play aria-label="とんねるの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/41.mp3" download="とんねるの唄.mp3" aria-label="とんねるの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="とんねるの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="42" data-themes="roads home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/42.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>旅の途中</h3><p>草鞋で峠を越えた旅人も、車で立ち寄った旅人も、今庄で荷を下ろし、道中の話を分け合います。</p><small>3:36</small><div class="buttons"><button type="button" data-play aria-label="旅の途中を再生" hidden>▶ 再生</button><a class="download" href="audio/42.mp3" download="旅の途中.mp3" aria-label="旅の途中のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="旅の途中をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="43" data-themes="local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/43.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>なななななな</h3><p>屋号で通じる会話や、本人に最後に届くうわさ話から、ひと言では説明しきれない今庄の日常を描きます。</p><small>4:08</small><div class="buttons"><button type="button" data-play aria-label="ななななななを再生" hidden>▶ 再生</button><a class="download" href="audio/43.mp3" download="なななななな.mp3" aria-label="ななななななのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ななななななをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="44" data-themes="rail"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/44.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>Helper locomotive</h3><p>列車を後ろから押して峠を越えさせた補助機関車が、役目を終えても続いていく町の暮らしを見つめます。</p><small>4:51</small><div class="buttons"><button type="button" data-play aria-label="Helper locomotiveを再生" hidden>▶ 再生</button><a class="download" href="audio/44.mp3" download="Helper locomotive.mp3" aria-label="Helper locomotiveのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="Helper locomotiveをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="45" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/45.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>千年の音</h3><p>木ノ芽峠の石畳を登りながら、草鞋を履いた昔の旅人の足音に、今日の自分の靴音を重ねます。</p><small>3:54</small><div class="buttons"><button type="button" data-play aria-label="千年の音を再生" hidden>▶ 再生</button><a class="download" href="audio/45.mp3" download="千年の音.mp3" aria-label="千年の音のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="千年の音をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="46" data-themes="roads legends seasons christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/46.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>湯尾峠のクリスマス</h3><p>雪の湯尾峠で、旅人の足音が恋しいいもの神さまが、山の下にともるクリスマスの灯りを見守ります。</p><small>3:20</small><div class="buttons"><button type="button" data-play aria-label="湯尾峠のクリスマスを再生" hidden>▶ 再生</button><a class="download" href="audio/46.mp3" download="湯尾峠のクリスマス.mp3" aria-label="湯尾峠のクリスマスのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="湯尾峠のクリスマスをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="47" data-themes="home seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/47.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>遊</h3><p>日野川の石投げや藤倉山の木陰を通して、子どもと遊んだ今庄の自然を、次の世代へ手渡す気持ちを歌います。</p><small>2:58</small><div class="buttons"><button type="button" data-play aria-label="遊を再生" hidden>▶ 再生</button><a class="download" href="audio/47.mp3" download="遊.mp3" aria-label="遊のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="遊をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="48" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/48.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>誰かの今日</h3><p>白黒写真の見知らぬ人を見つめながら、その人が過ごした一日と、今の今庄を歩く自分の日々を重ねます。</p><small>3:30</small><div class="buttons"><button type="button" data-play aria-label="誰かの今日を再生" hidden>▶ 再生</button><a class="download" href="audio/48.mp3" download="誰かの今日.mp3" aria-label="誰かの今日のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="誰かの今日をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="49" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/49.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>曲がり角の向こう側</h3><p>今庄の細い路地で道に迷うたび、昭和会館やうだつのある町並みが、いつもとは違って見えてきます。</p><small>3:30</small><div class="buttons"><button type="button" data-play aria-label="曲がり角の向こう側を再生" hidden>▶ 再生</button><a class="download" href="audio/49.mp3" download="曲がり角の向こう側.mp3" aria-label="曲がり角の向こう側のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="曲がり角の向こう側をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="50" data-themes="local christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/50.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>サンタは今庄に迷い込む</h3><p>吹雪で今庄に迷い込んだサンタが、おろしそばに驚き、田んぼにはまったソリを軽トラで引いてもらう大騒ぎ。</p><small>3:51</small><div class="buttons"><button type="button" data-play aria-label="サンタは今庄に迷い込むを再生" hidden>▶ 再生</button><a class="download" href="audio/50.mp3" download="サンタは今庄に迷い込む.mp3" aria-label="サンタは今庄に迷い込むのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="サンタは今庄に迷い込むをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="51" data-themes="seasons christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/51.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄 WHITE BEAT</h3><p>ケーキを手に出かけたイブの夜、雪かきに付き合ううちにシャベルの音まで今庄のクリスマスのリズムになります。</p><small>4:07</small><div class="buttons"><button type="button" data-play aria-label="今庄 WHITE BEATを再生" hidden>▶ 再生</button><a class="download" href="audio/51.mp3" download="今庄 WHITE BEAT.mp3" aria-label="今庄 WHITE BEATのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄 WHITE BEATをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="52" data-themes="christmas tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/52.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>へらないおもちゃ</h3><p>久しぶりの今庄に贈り物を山ほど積んできたサンタが、配達を終えても減らない袋から、町の変化に気づきます。</p><small>4:15</small><div class="buttons"><button type="button" data-play aria-label="へらないおもちゃを再生" hidden>▶ 再生</button><a class="download" href="audio/52.mp3" download="へらないおもちゃ.mp3" aria-label="へらないおもちゃのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="へらないおもちゃをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="53" data-themes="christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/53.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>最終列車のサンタクロース</h3><p>最終列車で今庄駅に着いたサンタは、プレゼントを忘れて大慌てですが、待合室で出会った子に手を引かれます。</p><small>3:14</small><div class="buttons"><button type="button" data-play aria-label="最終列車のサンタクロースを再生" hidden>▶ 再生</button><a class="download" href="audio/53.mp3" download="最終列車のサンタクロース.mp3" aria-label="最終列車のサンタクロースのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="最終列車のサンタクロースをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="54" data-themes="home christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/54.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>最後のクリスマス</h3><p>かつてケーキが並んだ店に明かりが灯らないクリスマスの夜、今庄を離れる人が、雪の町を列車の窓から見送ります。</p><small>4:43</small><div class="buttons"><button type="button" data-play aria-label="最後のクリスマスを再生" hidden>▶ 再生</button><a class="download" href="audio/54.mp3" download="最後のクリスマス.mp3" aria-label="最後のクリスマスのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="最後のクリスマスをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="55" data-themes="seasons christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/55.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>なんで今日なの！？</h3><p>大雪と帰りの電車を気にしながら、去年の大雪の日に今庄駅で出会った君に、今年のイブも会いたいと願う歌。</p><small>3:34</small><div class="buttons"><button type="button" data-play aria-label="なんで今日なの！？を再生" hidden>▶ 再生</button><a class="download" href="audio/55.mp3" download="なんで今日なの！？.mp3" aria-label="なんで今日なの！？のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="なんで今日なの！？をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="56" data-themes="home seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/56.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>昨日の続き</h3><p>雪が足跡を隠す今庄で、柿を燻した匂いや消えていく家の灯りを思いながら、明日の新しい足跡を待ちます。</p><small>4:05</small><div class="buttons"><button type="button" data-play aria-label="昨日の続きを再生" hidden>▶ 再生</button><a class="download" href="audio/56.mp3" download="昨日の続き.mp3" aria-label="昨日の続きのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="昨日の続きをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="57" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/57.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄インフラ撤退戦</h3><p>古い水道管や橋の修繕が重なる一方、予算も担い手も足りない町で、暮らしをどう守るかをユーモアまじりに問います。</p><small>3:50</small><div class="buttons"><button type="button" data-play aria-label="今庄インフラ撤退戦を再生" hidden>▶ 再生</button><a class="download" href="audio/57.mp3" download="今庄インフラ撤退戦.mp3" aria-label="今庄インフラ撤退戦のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄インフラ撤退戦をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article><article data-track="58" data-themes="home christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/58.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>二人だけのクリスマス</h3><p>雪の今庄で、離れて暮らす子を思いケーキの苺を端に寄せながら、夫婦が静かなクリスマスを過ごします。</p><small>3:40</small><div class="buttons"><button type="button" data-play aria-label="二人だけのクリスマスを再生" hidden>▶ 再生</button><a class="download" href="audio/58.mp3" download="二人だけのクリスマス.mp3" aria-label="二人だけのクリスマスのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="二人だけのクリスマスをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div></div></article></div></section></main><footer>今庄ソング ／ 福井県 南越前町</footer>
+</div><div class="tracks" id="track-list"><article data-track="1" data-themes="rail"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/01.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>てつどうの唄</h3><p>二両の機関車で越える山中峠と、今庄駅のそば売りの声に、敦賀と今庄を結んだ鉄道の記憶を重ねます。</p><small>4:45</small><div class="buttons"><button type="button" data-play aria-label="てつどうの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/01.mp3" download="てつどうの唄.mp3" aria-label="てつどうの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="てつどうの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="てつどうの唄の歌詞">汽笛が響く
+山が応える
+レンガのトンネルの　その向こうへ
+
+敦賀を出れば　海風残る
+窓の向こうには　山が迫る
+煙を上げた　汽車の後ろに
+もう一台の　機関車つなぐ
+
+山中峠を　越えるために
+みんなの力を　ひとつにした
+レールは続く　暗闇の中
+光を目指して　のぼってゆく
+
+轟音響かせ　レンガを抜けて
+いくつもの夢を　運んでいく
+
+山中峠を　越えてゆけ
+レンガのトンネル　駆け抜けろ
+汽笛は山に　響き合い
+敦賀と今庄　つないでく
+暗闇の先に　光がある
+その真実を　知っている
+てつどうのうたは　今もなお
+この山の中で　響いてる
+
+今庄駅で　連結待ち
+人が集まり　声がする
+「そばはいかが」と　売り子の声が
+列車の窓には　笑顔が並ぶ
+
+大根おろしの　香り漂い
+旅人はみんな　箸を取る
+短い時間も　大事な旅の
+忘れられない　ひとこまになる
+
+やがて汽笛が　高く響いて
+汽車は再び　山へ向かう
+
+山中峠を　越えてゆけ
+レンガのトンネル　駆け抜けろ
+汽笛は山に　響き合い
+今庄と敦賀　つないでく
+雨の日もあり　雪の日もあり
+それでもレールは　続いてる
+てつどうのうたは　今もなお
+この山の中で　響いてる
+
+山中信号所
+行ったり来たり　スイッチバック
+急な坂道　のぼるため
+人の知恵が　そこにある
+列車はもう　走らないけど
+
+山中峠を　越えてゆけ
+歴史の記憶を　乗せながら
+レンガのトンネル　駆け抜けた
+あの日の汽車は　いないけど
+そばの呼び込み　汽笛の声
+町の記憶に　生きている
+てつどうのうたは　これからも
+人の心を　つないでく
+てつどうのうたは　これからも
+今庄の山に　響いてる</div></details></div></article><article data-track="2" data-themes="legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/02.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>夜叉姫の唄</h3><p>雨を願う村のため龍の眠る池へ向かった夜叉姫の、伝説の陰に残る恋と孤独を本人の目線で描きます。</p><small>3:59</small><div class="buttons"><button type="button" data-play aria-label="夜叉姫の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/02.mp3" download="夜叉姫の唄.mp3" aria-label="夜叉姫の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="夜叉姫の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="夜叉姫の唄の歌詞">ひび割れた土に　触れるたび
+誰かのためだと　繰り返す
+
+雨を願った　村人の
+声が夜ごと　まとわりつく
+
+龍の眠る　水の底
+選ばれたのは　私だった
+
+本当はまだ
+死にたくなかった
+
+夜叉姫だって　人でした
+恋も夢も　あったのです
+
+誰かを好きに　なったことも
+ちゃんとあったのです
+
+それでも私は　水へゆく
+波ひとつない　闇へゆく
+
+震える心を　飲み込んで
+空へ雨を　願いながら
+
+あなたは何も　知らないまま
+あの日の向こうへ　消えていく
+
+待ってと言えたら　よかったと
+今も何度も　思ってる
+
+霧の立ち込む　山奥で
+ひとりきりでも　忘れない
+
+夜叉姫だって　人でした
+涙だって　流しました
+
+守るためだと　わかっていても
+悲しいものは　悲しい
+
+龍の眠る　この池で
+何度季節を　見送った
+
+雨が降るたび　思い出す
+あなたのことを
+
+村は緑を　取り戻し
+人は笑って　暮らしてる
+
+それが望んだ　未来でも
+心はまだ　取り残されたまま
+
+夜叉姫だって　人でした
+だけど今では　伝説です
+
+水面に映る　空の色を
+ひとり見上げてる
+
+雨よ降れよと　祈りながら
+人の幸せ　守りながら
+
+それでも今も　ただひとり
+あなたを待ってる</div></details></div></article><article data-track="3" data-themes="seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/03.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>アカタンの唄</h3><p>荒れる川に立ち向かい、アカタンの谷に石を積んだ名もない人々の願いを、移ろう四季に重ねます。</p><small>3:40</small><div class="buttons"><button type="button" data-play aria-label="アカタンの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/03.mp3" download="アカタンの唄.mp3" aria-label="アカタンの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="アカタンの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="アカタンの唄の歌詞">山を守る　石のうた
+川を守る　石のうた
+
+百年先へ　続くように
+願いを積んで　築いたもの
+
+春の若葉も　夏のせせらぎも
+秋のこうようも　冬の雪も
+
+静かに見つめてきた
+石のものがたり
+
+激しい雨が　谷をくだれば
+荒ぶる川は　牙をむく
+
+流れる土と　流れる木々に
+人は何度も　立ち向かった
+
+一つひとつの　石を運んで
+想いを重ねて　積み上げた
+
+名もない人の　その手の跡が
+今もこの場所に　息づいてる
+
+
+遠い昔の　願いが今も
+このたにあいに　生きている
+
+
+アカタンの谷に　響くうた
+人が残した　石のうた
+
+百年先へ　続くように
+願いを積んで　築いたもの
+
+春の若葉も　夏のせせらぎも
+秋のこうようも　冬の雪も
+
+静かに見つめてきた
+石のものがたり
+
+流れる水は　時を運び
+変わる景色を　映してく
+
+だけど変わらず　ここに立って
+人の暮らしを　見守ってる
+
+山を守る　石のうた
+川を守る　石のうた
+
+百年先へ　続くように
+願いを積んで　築いたもの
+
+流れる季節を　越えながら
+流れる時代を　越えながら
+
+アカタンの石は語る
+未来へ続く　ものがたり
+
+春の若葉も　夏のせせらぎも
+秋のこうようも　冬の雪も
+
+静かに見つめてきた
+石のものがたり
+
+アカタンの石が語る
+人のものがたり</div></details></div></article><article data-track="4" data-themes="roads home seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/04.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうのうた</h3><p>小さな駅から歩き出し、宿場のうだつや路地、四季の風景をたどりながら、また訪れたくなる今庄を描きます。</p><small>4:49</small><div class="buttons"><button type="button" data-play aria-label="いまじょうのうたを再生" hidden>▶ 再生</button><a class="download" href="audio/04.mp3" download="いまじょうのうた.mp3" aria-label="いまじょうのうたのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうのうたをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いまじょうのうたの歌詞">朝もや揺れる　きのめのとうげに
+静かな光が　降りてくる
+
+小さな駅から　歩き出せば
+どこか懐かしい　風が吹く
+
+うだつの並ぶ　しゅくばの町は
+今も旅人を　迎えてる
+
+遠い昔の　足音たちが
+かいどうの上に　残ってる
+
+
+急ぐことなど　忘れたままで
+好きな景色を　探しに行こう
+
+
+いまじょう　いまじょう
+季節を映す町
+
+いまじょう　いまじょう
+山に抱かれた町
+
+春はさくらが　かわべを染めて
+夏はほたるが　夜を灯す
+
+秋はこうようが　とうげを彩り
+冬は雪が　町を包む
+
+いまじょう　いまじょう
+心ほどける町
+
+
+トンネル抜ければ　ひんやり風が
+遠い時代を　連れてくる
+
+てつろを横目に　立ち止まれば
+空の青さが　広がってく
+
+そばの香りに　心がゆれて
+ろじうら歩けば　心が弾む
+
+小さなさかぐら　のれんをくぐり
+今日の思い出を　語り合おう
+
+
+地図にないもの　探してみれば
+きっと大切な　何かがある
+
+いまじょう　いまじょう
+時の流れを感じ
+
+いまじょう　いまじょう
+さきの時代を想う
+
+山のめぐみと　水のめぐみが
+暮らしの中に　いきづいて
+
+変わらぬ景色を　守りながら
+新しい夢も　育ててる
+
+いまじょう　いまじょう
+心つながる町
+
+
+ゆうぐれ染まる　屋根の向こうに
+明かりが一つ　また一つ
+
+旅の終わりに　振り返れば
+今日の景色が　むねに残る
+
+
+いまじょう　いまじょう
+帰る場所じゃなくても
+
+いまじょう　いまじょう
+帰りたくなる町
+
+笑う人々　流れる時間
+優しい風と　山の色
+
+また会う日まで　手を振りながら
+思い出だけを　連れて行く
+
+いまじょう　いまじょう
+いつでもここにある
+
+いまじょう　いまじょう
+れきしをつむぐ町</div></details></div></article><article data-track="5" data-themes="home seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/05.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>たくらそんぐ</h3><p>朝の軽トラに橋のたもとの立ち話、帰り際に手渡される畑の野菜から、宅良川沿いの日常が浮かびます。</p><small>4:19</small><div class="buttons"><button type="button" data-play aria-label="たくらそんぐを再生" hidden>▶ 再生</button><a class="download" href="audio/05.mp3" download="たくらそんぐ.mp3" aria-label="たくらそんぐのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="たくらそんぐをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="たくらそんぐの歌詞">朝の五時に　軽トラが行く
+窓を開けたら　もう走ってる
+
+田んぼの水を　見に行く人と
+犬の散歩を　してる人
+
+橋のたもとで　立ち話して
+いつもの顔が　また笑う
+
+大きなニュースは　ないけれど
+そんな日ばかり　続いてる
+
+たくら川は　今日も流れて
+山の影を　映してる
+
+草刈り機の　音が響けば
+夏が来たなと　思うだけ
+
+特別じゃない　景色だけど
+なくなるなんて　考えられない
+
+
+畑のきゅうりを　持たされたり
+じゃがいもまでが　増えてたり
+
+返しに行けば　また何かを
+持たされるから　困ってる
+
+古い校舎の　窓の向こう
+子どもの声は　消えたけど
+
+集まる人の　笑い声なら
+今もどこかで　聞こえてる
+
+
+夕焼け空に　煙がのぼり
+カラスが山へ　帰ってく
+
+用水路には　冷たい水が
+何事もなく　流れてる
+
+派手さなんかは　ないけれど
+それでいいよと　風が吹く
+
+
+雪が降る夜は　音も消えて
+朝には町が　白くなる
+
+屋根から落ちる　雪をよけて
+今年も冬を　越えてゆく
+
+春になったら　水を張って
+夏の盆踊りも　さみしくなったけど
+
+秋には稲を　刈り取りながら
+今年も早いと　笑ってる
+
+遠くの町で　暮らしてても
+ふと思い出す　景色がある
+
+橋の向こうの　あの山並みと
+変わらない川の　流れを</div></details></div></article><article data-track="6" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/06.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>こんなはずじゃなかった</h3><p>結婚を機に引っ越した先で、車頼みの買い物や雪かきにぼやきながら、いつしか町になじんでいく歌です。</p><small>3:16</small><div class="buttons"><button type="button" data-play aria-label="こんなはずじゃなかったを再生" hidden>▶ 再生</button><a class="download" href="audio/06.mp3" download="こんなはずじゃなかった.mp3" aria-label="こんなはずじゃなかったのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="こんなはずじゃなかったをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="こんなはずじゃなかったの歌詞">結婚決まって引っ越した
+地図じゃ近そうに見えた町
+
+緑がいっぱい　空も広い
+それだけ聞いてやって来た
+
+だけど着いて三日目で
+なんとなく察し始めた
+
+ここで言う「近いよ」は
+私の知ってる近くじゃない
+
+スーパーまで車で十五分
+薬局行くにもエンジンかける
+
+町まで出れば三十分
+帰る頃には日が暮れる
+
+こんなはずじゃなかった
+聞いてない　聞いてない
+
+徒歩圏内ってどこですか
+その概念が見当たらない
+
+こんなはずじゃなかった
+だけど今日も走ってる
+
+ガソリンだけは減るくせに
+体重だけは減らないの
+
+夏になったら暑すぎて
+玄関出ただけ汗だくで
+
+冬になったら雪すぎて
+車がどこかへ消えている
+
+朝から雪かき一時間
+腕だけ妙にたくましい
+
+天気予報より先に知る
+じょせつしゃの音で目が覚める
+
+洗濯物を取り込めば
+今日も誰かが乗っている
+
+カメムシ　へくさんぼ
+なんでそんなにいるんです
+
+こんなはずじゃなかった
+臭いのだけは反則よ
+
+そっと捕まえたのに
+においまで置いていく
+
+こんなはずじゃなかった
+ムカデまで出るなんて
+
+お着替えする時
+洗濯物はキッチリチェックがマストです
+
+夜道を走れば鹿がいる
+しかも向こうから突っ込んでくる
+
+熊の目撃情報流れたら
+散歩コースは即変更
+
+自然が豊かでいいですね
+みんな笑顔でそう言うけど
+
+豊かすぎると時々ね
+命の危険を感じます
+
+こんなはずじゃなかった
+何度もそう思ったけど
+
+しんごうき少ないから
+スイスイ走ってお買い物
+
+こんなはずじゃなかった
+だけど少し悪くない
+
+都会じゃ見えない星空が
+今夜も屋根まで降ってくる
+
+こんなはずじゃなかった
+そんな歌を歌いながら
+
+明日も車で買い物へ
+片道三十分走ります
+
+だけどたぶんもう私は
+この町の人になってる</div></details></div></article><article data-track="7" data-themes="legends festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/07.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>二十三夜の唄</h3><p>火事の記憶を抱く瀬戸で、白山神社の森に集まり、月明かりの下で踊りながら村の願いをつなぎます。</p><small>3:18</small><div class="buttons"><button type="button" data-play aria-label="二十三夜の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/07.mp3" download="二十三夜の唄.mp3" aria-label="二十三夜の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="二十三夜の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="二十三夜の唄の歌詞">山の向こうへ　続く道
+朝露ぬらす　旅の空
+
+日野山目指し　手を合わせ
+村の人たち　歩いてく
+
+静かな瀬戸の　谷あいに
+残されたのは　風の声
+
+その日の炎は　風に乗り
+家も蔵も　包み込んだ
+
+帰ってきた人が　見上げた空
+黒い煙の　跡ばかり
+
+それでも　人は
+立ち止まらずに
+
+白山神社の　森の下
+明かりを掲げ　集まった
+
+踊れ　踊れ
+二十三夜
+
+月明かりまで
+届くように
+
+踊れ　踊れ
+夜が明けるまで
+
+瀬戸の願いを
+つなぐように
+
+太鼓の音が　響いてる
+笑い声まで　響いてる
+
+子どものころに　聞いた唄
+今も変わらず　流れてる
+
+夏の夜空に　丸い月
+昔と同じ　二十三夜
+
+人の心は　弱いけど
+人の絆は　強いから
+
+踊れ　踊れ
+二十三夜
+
+星に届くほど
+声合わせ
+
+踊れ　踊れ
+朝が来るまで
+
+守り続けた
+この村で
+
+イザナミ様が　見ているよ
+瀬戸の明かりが　消えぬよう
+
+今年もみんな　集まって
+手をたたき合う　二十三夜
+
+踊れ　踊れ
+二十三夜
+
+月に祈りを
+乗せながら
+
+踊れ　踊れ
+明日へ続け
+
+瀬戸の夜には
+唄がある</div></details></div></article><article data-track="8" data-themes="local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/08.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうヒーロー</h3><p>大根パワーのおろしそばくんと太陽パワーのつるし柿くんが、雪にも虫にも負けじと今庄で奮闘します。</p><small>2:52</small><div class="buttons"><button type="button" data-play aria-label="いまじょうヒーローを再生" hidden>▶ 再生</button><a class="download" href="audio/08.mp3" download="いまじょうヒーロー.mp3" aria-label="いまじょうヒーローのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうヒーローをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いまじょうヒーローの歌詞">いくぞ！
+
+おろし！おろし！
+つるし！つるし！
+
+すたれた田舎の
+今庄で
+
+今日もあがいてる！
+
+おろしそばくん！
+つるし柿くん！
+
+人が減ったと
+誰か言う
+
+列車も昔より
+少ないが
+
+それでもここには
+暮らしがある
+
+今日も元気に
+やっていこう
+
+おろしそばには
+大根パワー
+
+甘いつるし柿
+太陽パワー
+
+二人の力は
+小さいけれど
+
+やらなきゃ誰が
+やるんだよ！
+
+観光客は
+どこですか
+
+町民だって
+減りました
+
+だけど諦め
+悪いから
+
+今日も戦うぜ！
+
+ゴー！ゴー！
+おろしそばくん！
+
+ずるずるすすって
+元気出せ！
+
+ゴー！ゴー！
+つるし柿くん！
+
+もぐもぐ食べて
+元気出せ！
+
+二人合わせて
+今庄ヒーロー！
+
+将来なんて
+知らないぜ！
+
+雪が積もれば
+埋もれる
+
+夏は虫にも
+食われがち
+
+それでもなんとか
+生きている
+
+それが自慢だ
+今庄だ
+
+ゴー！ゴー！
+おろしそばくん！
+
+ゴー！ゴー！
+つるし柿くん！
+
+すたれた田舎の
+今庄で
+
+今日もあがいてる！
+
+今日もおろされてます！
+（おろされてる！）
+
+今日もつるされてます！
+（つるされてる！）
+
+今日もおろされてます！
+（おろされてる！）
+
+今日もつるされてます！
+（つるされてる！）
+
+それでも負けるな
+今庄ヒーロー！
+
+明日もたぶん
+頑張ります！！</div></details></div></article><article data-track="9" data-themes="home local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/09.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>IMJ</h3><p>都会のネオンより星空、通知音よりカエルの声を選び、地図では小さな今庄を自分の世界の中心と歌います。</p><small>2:17</small><div class="buttons"><button type="button" data-play aria-label="IMJを再生" hidden>▶ 再生</button><a class="download" href="audio/09.mp3" download="IMJ.mp3" aria-label="IMJのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="IMJをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="IMJの歌詞">都会じゃネオンが空を塗りつぶす
+こっちは星が勝手に光り出す
+
+人より鹿に会う確率高いし
+そんな町でも案外悪くないし
+
+圏外表示　それすらご褒美
+通知音よりゲコゲコの方が興味
+
+流行り廃りじゃ測れない価値
+だから焦らず俺らのかたち
+
+きのめのとうげ　吹き抜ける風
+昔の旅人も見た同じ風景
+
+トンネル抜けりゃひんやりする空気
+ひゃくねんまえのたびびととリンクする空気
+
+何もないって　誰かは言う
+その言葉ごと笑い飛ばす
+
+欲しいもんなら　ここにある
+きれいな空気とおいしい水がな
+
+SNSじゃ映らないサイズ感
+スワイプじゃ届かないライブ感
+
+おろしそばすすって見上げる夕焼け
+高級ディナーより記憶に残るだけ
+
+猿が歩く　俺も歩く
+誰ともあわず今日も歩く
+
+風の匂い　土の匂い
+それだけで十分うまい空気
+
+「どこ住み？」って聞かれりゃ胸張る
+
+いまじょう
+
+たぶん地図じゃ小さい文字
+
+いまじょう
+
+だけど俺には世界の中心
+
+派手じゃないし
+便利でもない
+
+だけど消えてほしくもない
+
+誰かが守った川や森
+その続きを今遊ばせてもらう
+
+何もない町だけど
+何もない町じゃない
+
+帰る場所を聞かれたら
+迷わず答える
+
+いまじょう
+
+山は今日もそこにある
+
+川は今日も流れてる
+
+人々はガンガン減ってる
+
+だけどまた歩き出そう
+
+次の景色へ</div></details></div></article><article data-track="10" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/10.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄の民</h3><p>今庄へ誘った相手が山道で引き返す場面を交え、地元の人ならではのぼやきと町への愛着を描きます。</p><small>2:42</small><div class="buttons"><button type="button" data-play aria-label="今庄の民を再生" hidden>▶ 再生</button><a class="download" href="audio/10.mp3" download="今庄の民.mp3" aria-label="今庄の民のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄の民をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="今庄の民の歌詞">今庄ってどこですか？
+説明だけで五分かかる
+
+敦賀と南条の間です
+それだけ言ってもぴんとこない
+
+コンビニひとつ行くために
+なぜか車の鍵を持つ
+
+徒歩圏ですって言われても
+都会の人は顔が引く
+
+雪が降るたびニュースになる
+住んでる方は通常運転
+
+
+なんにもない　なんにもない
+みんなそう言う　たしかにそう
+
+だけど何もないと言うには
+妙に語ることが多すぎる
+
+トンネルだとか　宿場だとか
+アカタンだとか　夜叉が池
+
+知らない人には伝わらない
+そこが今庄の困るとこ
+
+今庄おいでと誘ったら
+乗り気じゃないけどやって来る
+
+だけど南条を過ぎたあたりで
+「この先ほんとに町あるの？」
+
+窓の外には山ばかり
+たまに流れる日野川と
+
+気がつきゃ車はUターンで
+「また今度ね」と帰ってく
+
+あと少しだと説明しても
+その少しが長すぎる
+
+なんにもない　なんにもない
+来る前からそう思われる
+
+南条を過ぎたら人がいない
+そんな扱いをされている
+
+駅もあるし　家もあるし
+ちゃんと暮らしも続いてる
+
+だけど初見のドライバーは
+秘境に向かう顔をする
+
+都会みたいに便利じゃない
+観光地ほど派手でもない
+
+だけど消えたら困るよな
+それだけはみんな知っている
+
+なんにもない　なんにもない
+それを自分で歌う民
+
+他所の人には言わせない
+それだけは譲れない民
+
+今日も誰かがディスりながら
+結局ここで暮らしてる
+
+愛か執着か分からない
+それが今庄の民</div></details></div></article><article data-track="11" data-themes="home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/11.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いつも</h3><p>夢を追って町を出た人が、久しぶりに降りた駅のホームで、旅立った日の自分と今庄での日々を思い返します。</p><small>4:14</small><div class="buttons"><button type="button" data-play aria-label="いつもを再生" hidden>▶ 再生</button><a class="download" href="audio/11.mp3" download="いつも.mp3" aria-label="いつものMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いつもをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いつもの歌詞">いつもの駅の　階段を上る
+昨日までなら　学校へ行くため
+
+見慣れたホームに　立っているのに
+今日は少しだけ　景色が違う
+
+鞄ひとつと　言い切れないほどの
+期待と不安を　抱えていた
+
+発車ベルが　鳴り響くたび
+戻れない気がして　空を見上げた
+
+叶えたい夢があった
+ただそれだけだった
+
+この町を出たことを
+後悔した日はないけれど
+
+帰りたい夜は何度もあった
+
+うまくいかない日ほど
+思い出す景色がある
+
+名前を呼ばれなくても
+居場所だった町
+
+知らない駅で　降りるたびに
+少しずつ大人になった
+
+思い描いてた未来とは
+違う道も歩いてきた
+
+悔しいことも　情けないことも
+誰にも言えない夜もあった
+
+それでも諦めなかったのは
+送り出してくれた人がいたから
+
+何者かになりたくて
+何者にもなれなくて
+
+それでも今日まで歩いてきた
+
+この町を出たことが
+今の自分を作ったから
+
+あの日の一歩は間違いじゃない
+
+どこで暮らしていても
+胸の奥に残っている
+
+何気なく見ていた
+あの日の景色
+
+帰ってこいなんて
+言わなくていい
+
+頑張れなんて
+言わなくていい
+
+変わらずそこにあるだけで
+救われる場所がある
+
+いつもの駅の　階段を上る
+久しぶりに降りたホームで
+
+少し伸びた影を見ながら
+あの日の自分を思い出す
+
+遠回りしても
+迷ったとしても
+
+ここから始まった
+物語だから
+
+名前を呼ぶ声も
+変わらないままで
+
+胸の奥には
+いつも今庄</div></details></div></article><article data-track="12" data-themes="roads seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/12.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>木ノ芽峠</h3><p>雪に埋もれた石畳や茶屋の明かりを手がかりに、木ノ芽峠を行き交った旅人の出会いと別れを想います。</p><small>4:24</small><div class="buttons"><button type="button" data-play aria-label="木ノ芽峠を再生" hidden>▶ 再生</button><a class="download" href="audio/12.mp3" download="木ノ芽峠.mp3" aria-label="木ノ芽峠のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="木ノ芽峠をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="木ノ芽峠の歌詞">今日も古い道をゆく
+旅の姿が　見えてくる
+
+雪に埋もれた　石畳
+昔の足跡　残したまま
+
+道元様も　芭蕉さえ
+この道越えて　ゆかれたか
+
+ああ　木ノ芽峠
+風が鳴く
+
+ああ　木ノ芽峠
+時を泣く
+
+信長秀吉　戦人
+勝ちどきを上げ　越えた道
+
+涙も夢も　担いながら
+国へと帰る　人もいた
+
+茶屋の明かりが　見えるたび
+心の雪も　解けてゆく
+
+ああ　木ノ芽峠
+人を見る
+
+ああ　木ノ芽峠
+歴を見る
+
+
+春も夏も　秋も冬も
+
+行く人　帰る人
+
+別れも出会いも　抱きしめて
+
+千年続く　道がある
+
+ああ　木ノ芽峠
+
+越前の空の下
+
+今日も黙って　そこにいる</div></details></div></article><article data-track="13" data-themes="roads home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/13.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>A Song for Imajo（いまじょうのうた）</h3><span class="language-badge">英語版</span><p>朝もやの木ノ芽峠から夕暮れの宿場までを英語で描き、ふるさとでなくても帰りたくなる今庄を歌います。</p><small>4:27</small><div class="buttons"><button type="button" data-play aria-label="A Song for Imajo（いまじょうのうた）を再生" hidden>▶ 再生</button><a class="download" href="audio/13.mp3" download="A Song for Imajo（いまじょうのうた）.mp3" aria-label="A Song for Imajo（いまじょうのうた）のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="A Song for Imajo（いまじょうのうた）をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="A Song for Imajo（いまじょうのうた）の歌詞" lang="en">Morning mist is swaying on Kinome Pass
+Quiet rays of sunlight fall from above
+
+From a little station I begin to walk
+A familiar breeze is calling me along
+
+In this old post town lined with wooden eaves
+Travelers are welcomed just as long ago
+
+Footsteps from the distant days still linger here
+On the road where history gently flows
+
+Leave behind the rush and noise of everyday
+Let&#x27;s go find the views we&#x27;ve never seen before
+
+Imajo, Imajo
+A town reflecting every season
+
+Imajo, Imajo
+A town embraced by mountain ranges
+
+Cherry blossoms paint the riverside in spring
+Summer fireflies light the evening sky
+
+Autumn colors paint the mountain passes bright
+Winter snow wraps all the town in white
+
+Imajo, Imajo
+A place that sets your spirit free
+
+Through the tunnel blows a cool and gentle wind
+Bringing echoes from another time
+
+Standing by the old abandoned railway tracks
+Endless shades of blue spread through the sky
+
+The scent of soba stirs my wandering heart
+Walking down the alleys full of charm
+
+Passing through the curtain of a little brewery
+Sharing all the memories of today
+
+If you search for things that never show on maps
+You may find a treasure waiting there
+
+Imajo, Imajo
+Feel the passage of the ages
+
+Imajo, Imajo
+Dreaming of the days to come
+
+Mountain gifts and crystal waters all around
+Living gently in our everyday
+
+Holding on to scenery that never fades
+Growing new dreams for another day
+
+Imajo, Imajo
+A town that brings our hearts together
+
+Beyond the rooftops glowing in the evening light
+One by one the lamps begin to shine
+
+When I turn around at the end of my journey
+Today&#x27;s memories stay within my heart
+
+Imajo, Imajo
+Even if it&#x27;s not your hometown
+
+Imajo, Imajo
+It&#x27;s a place you&#x27;ll want to return to
+
+Smiling faces, slowly passing time
+Gentle winds and colors of the hills
+
+Waving goodbye until we meet again someday
+Taking only memories along
+
+Imajo, Imajo
+Always waiting here for you
+
+Imajo, Imajo
+A town where history lives on</div></details></div></article><article data-track="14" data-themes="festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/14.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうおどりうた</h3><p>北国街道やおろしそば、つるし柿を歌い込み、今庄の宿場でみんなが輪になって踊る夜を描きます。</p><small>3:53</small><div class="buttons"><button type="button" data-play aria-label="いまじょうおどりうたを再生" hidden>▶ 再生</button><a class="download" href="audio/14.mp3" download="いまじょうおどりうた.mp3" aria-label="いまじょうおどりうたのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうおどりうたをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いまじょうおどりうたの歌詞">サア　ヨーヨイヨイ
+
+ハァー
+
+今日はみんなで　輪になって
+歌えや踊れや　夜が来る
+
+
+木ノ芽の風が　吹き抜けりゃ
+宿場の明かりが　ともり出す
+
+昔も今も　変わらずに
+人の輪つなぐ　踊り唄
+
+ハァー
+
+よいよい　今庄
+
+踊れや　踊れや
+輪になれ　今庄
+
+昔　旅人　行き交った
+北国街道　道しるべ
+
+今も列車の　音響き
+町はやさしく　人を待つ
+
+ハァー
+
+よいよい　今庄
+
+踊れや　踊れや
+輪になれ　今庄
+
+おろしそばには　福があり
+つるし柿には　実りあり
+
+みんな笑顔で　語り合い
+夜明けまで響く　踊り唄
+
+ハァー
+
+よいよい　今庄
+
+踊れや　踊れや
+輪になれ　今庄
+
+
+トンネル向こうに　日が沈み
+駅の明かりが　ともり出す
+
+今日も変わらぬ　この町で
+みんなそろって　輪になろう
+
+ハァー
+
+よいよい　今庄
+
+踊れや　踊れや
+輪になれ　今庄
+
+踊れば心も　丸くなる
+踊ればみんなが　友になる
+
+明日も変わらぬ
+この宿場
+
+ハァー
+
+よいよい　今庄
+
+いつまでも　いつまでも
+輪になれ　今庄</div></details></div></article><article data-track="15" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/15.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>Roads of Imajo（いまじょうのみち）</h3><span class="language-badge">英語版</span><p>山中、木ノ芽、栃ノ木、湯尾の峠をたどり、徒歩の道から鉄道、高速道路へ続く今庄の往来を英語で歌います。</p><small>4:12</small><div class="buttons"><button type="button" data-play aria-label="Roads of Imajo（いまじょうのみち）を再生" hidden>▶ 再生</button><a class="download" href="audio/15.mp3" download="Roads of Imajo（いまじょうのみち）.mp3" aria-label="Roads of Imajo（いまじょうのみち）のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="Roads of Imajo（いまじょうのみち）をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="Roads of Imajo（いまじょうのみち）の歌詞" lang="en">Long before nations had their names
+
+The only road was through the mountains
+
+Between the capital and the northern lands
+
+People walked to keep them connected
+
+Crossing Yamanaka Pass
+
+Climbing over Kinome Pass
+
+On the windy road of Tochinoki Pass
+
+Beneath the moon at Yunoo Pass
+
+Those carrying their burdens
+
+Those chasing their dreams
+
+Even those marching into war
+
+All passed through this town
+
+ 
+
+Countless footsteps
+
+Layered through the years
+
+And before anyone knew it
+
+Imajo stood at the center of the road
+
+ ]
+
+As the ages keep flowing by
+
+Some things change, some remain
+
+People meet and roads converge
+
+Here in Imajo
+
+The crossroads of Hokuriku
+
+A town that has watched
+
+A thousand years of journeys pass
+
+ 
+
+The lights of the post town
+
+Guided travelers through the night
+
+They rested for a while
+
+Then set out again at dawn
+
+The Hokkoku Highway
+
+The Hokuriku Road
+
+So many routes came together here
+
+Sake, culture, even language
+
+Mixed together
+
+And continued onward
+
+Spring and summer
+
+Autumn and winter
+
+The flow of people never ceased
+
+And helped this town grow
+
+ 
+
+Since distant times
+
+These roads have been handed down
+
+Quietly watching
+
+From the heart of history
+
+ As the ages keep flowing by
+
+Some things change, some remain
+
+People meet and roads converge
+
+Here in Imajo
+
+The crossroads of Hokuriku
+
+A town that has watched
+
+A thousand years of journeys pass 
+
+Then the railway carved through the mountains
+
+Steam rose into the sky
+
+The Old Hokuriku Line
+
+Twelve great tunnels
+
+The breath of locomotives
+
+Echoed beyond the passes
+
+And time moved forward still
+
+The Hokuriku Tunnel
+
+The expressway beyond
+
+The speed of travel changed
+
+But the purpose stayed the same
+
+Connecting people to where they wished to go
+
+ From walking roads
+
+To rails of steel
+
+From rails of steel
+
+To the expressway
+
+Though their forms may change
+
+The journey goes on
+
+Toward another thousand years
+
+Yamanaka, Kinome
+
+Tochinoki, Yunoo
+
+Every road tells the story
+
+This is Imajo
+
+A town connecting the ages
+
+The beating heart of Hokuriku
+
+The Roads of Imajo</div></details></div></article><article data-track="16" data-themes="local seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/16.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ヘクサンボの唄</h3><p>車にも洗濯物にも現れるヘクサンボに振り回され、においの話まで飛び出す今庄の秋の騒動を描きます。</p><small>3:30</small><div class="buttons"><button type="button" data-play aria-label="ヘクサンボの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/16.mp3" download="ヘクサンボの唄.mp3" aria-label="ヘクサンボの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ヘクサンボの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="ヘクサンボの唄の歌詞">朝起きゃ　窓にいる
+
+昼には　車にいる
+
+夕方　洗濯物
+
+なぜかそこで　くつろいでる
+
+そっとつまんで　外へ出す
+
+ただそれだけの　はずなのに
+
+小さな体で　威嚇する
+
+お前は何を　守ってる
+
+触るな　危険だ
+
+みんながそう言う
+
+だけどいられちゃ　困るから
+
+ガムテープで　回収だ
+
+へくさんぼ　へくさんぼ
+
+どこから来たんだ　へくさんぼ
+
+山から降りたか　田んぼから
+
+今日も部屋まで　こんにちは
+
+へくさんぼ　へくさんぼ
+
+窓辺の緊張　へくさんぼ
+
+飛ばないでくれよ　頼むから
+
+そこでじっとしていてくれ
+
+カメムシの分泌液は
+
+主に複数の　揮発性有機化合物
+
+アルデヒド類　および　エステル類で
+
+構成されています
+
+トランス-2-ヘキセナール
+
+青臭いにおいの　主因となる成分です
+
+トランス-2-オクテナール
+
+油が酸化したような
+
+不快臭を持つ成分です
+
+酢酸デシル
+
+独特の甘みを帯びた
+
+油臭さを　付加します
+
+なお　密閉容器に　入れると
+
+自分のにおいで　気絶することがあります
+
+藤倉山が　色づけば
+
+今年もやつらが　降りてくる
+
+今庄中の　窓という窓
+
+なぜか目指して　飛んでくる
+
+サッシの隙間を　見つけ出す
+
+その才能は　天才級
+
+泥棒だって　迷いそう
+
+なのに毎年　入ってくる
+
+パクチーみたいな　においだと
+
+言う人もいる　本当かよ
+
+敵を脅す　その武器で
+
+自分もしんどく　なるらしい
+
+瓶に詰めれば　慌て出し
+
+においを出して　大騒動
+
+最後は自分で　くらってる
+
+何をしたいのか　わからない
+
+どんな世界の　設定だ
+
+どんな世界の　バグなんだ
+
+強いのか　弱いのか
+
+いまだによく　わからない
+
+へくさんぼ　へくさんぼ
+
+今庄の秋の　風物詩
+
+稲が実って　ほっとしたら
+
+お前の季節が　やってくる
+
+へくさんぼ　へくさんぼ
+
+今年も来たか　へくさんぼ
+
+雪が降るころ　大集合
+
+ホームパーティー？　勘弁してくれ
+
+へくさんぼ　へくさんぼ
+
+サッシの隙間から　侵入だ
+
+まるで我が家の　住人だ
+
+へくさんぼ！
+
+へくさんぼ！
+
+もはや　今庄の　名産品！
+
+へくさんぼ！
+
+へくさんぼ！
+
+頼むから
+
+そこで　におうな！</div></details></div></article><article data-track="17" data-themes="seasons"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/17.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>夏</h3><p>昭和会館のベンチの木漏れ日や夕立あとの水たまりを眺めながら、今庄の夏をゆっくり歩く歌です。</p><small>3:43</small><div class="buttons"><button type="button" data-play aria-label="夏を再生" hidden>▶ 再生</button><a class="download" href="audio/17.mp3" download="夏.mp3" aria-label="夏のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="夏をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="夏の歌詞">昭和会館　ベンチには
+木漏れ日　揺れてる　午後の風
+
+ページをめくる　そよ風に
+時計の針も　ひと休み
+
+公徳園の　木陰では
+蝉しぐれだけ　降り注ぐ
+
+何もしないが　心地よく
+空を眺めて　深呼吸
+
+冷たいおろしそば　ひと口
+氷が　からんと　音を立てる
+
+夏は　そっと
+風に任せて
+
+雲は　ゆっくり
+空を流れる
+
+今日という日を
+胸にしまって
+
+夏の今庄
+歩いてゆこう
+
+夕立あとの　濡れた道
+水たまりには　青い空
+
+ぽっぽ広場の　笑い声
+風に揺られて　届いてる
+
+木陰のベンチ　目を閉じて
+風鈴ひとつ　耳を澄ます
+
+夕日に染まる　帰り道
+また明日ねと　手を振った
+
+急ぐ日々では　見えなくて
+立ち止まるたび　見えてくる
+
+この町だけの　夏の色
+心の奥に　残してく
+
+夏は　そっと
+風に任せて
+
+今日も　ゆっくり
+暮れてゆく
+
+帰る場所なら
+ここにあるから
+
+夏の今庄
+また会おう</div></details></div></article><article data-track="18" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/18.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄下克上.IbN</h3><p>雪深い小さな町が、宿場や鉄路の記憶を武器に、町内一から県内一、そして日本一まで狙います。</p><small>3:50</small><div class="buttons"><button type="button" data-play aria-label="今庄下克上.IbNを再生" hidden>▶ 再生</button><a class="download" href="audio/18.mp3" download="今庄下克上.IbN.mp3" aria-label="今庄下克上.IbNのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄下克上.IbNをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="今庄下克上.IbNの歌詞">[Intro / Rap]
+
+ちずのはしっこ　ゆきのまんなか
+なまえをいったら　だいたい「どこなん？」だ
+
+しらない　みえない　それならこうつごう
+ここからはじめる　いまじょうげこくじょう
+
+---
+
+[Verse 1 / Rap]
+
+みなみえちぜん　ちょうないせん
+しずかなかおして　もうかいせん
+
+なん今庄下剋上
+
+地図のはしっこ　雪の真ん中
+名前を言ったら　だいたい「どこなん？」だ
+
+知らない　見えない　それなら好都合
+ここから始める　今庄下剋上
+
+---
+
+南越前　町内戦
+静かな顔して　もう開戦
+
+南条　河野に　挟まれたって
+端から端まで　かっさらう番です
+
+目立たぬ山間　見慣れた看板
+過疎化に寒波に　積もった難関
+
+だけども簡単に　白旗なんか
+上げる気ないから　磨いた一発
+
+宿場の通りに　残った誇り
+峠を越えてきた　旅人のストーリー
+
+古びたものほど　深みが増して
+昨日の弱みが　今日には武器です
+
+なんにもないって　言うのは勝手
+なんにも見てない　お前の判定
+
+埋もれた原石　掘り出す段階
+町内一位へ　ひっくり返す番だ
+
+---
+
+静かな町ほど　腹では燃えてる
+遅れてきた分　力をためてる
+
+雪解け待たずに　幕開け宣言
+今庄　南越前の最前線
+
+---
+
+下剋上　下剋上
+南越前を駆け上がれ
+
+昨日までの脇役が
+明日の主役を奪い取れ
+
+下剋上　下剋上
+今庄の旗を掲げろ
+
+小さな町の大逆転
+ここから全部　塗り替えろ
+
+---
+
+次なる相手は　福井県内
+名所のスターが　ずらり全開
+
+恐竜　東尋坊　永平寺
+誰もが知ってる　強豪選手
+
+派手さじゃ勝てない　だからなんだ
+同じ土俵なら　こっちが不利だ
+
+ならば土俵ごと　作ればいいさ
+今庄にしかない　ルールでリードだ
+
+トンネル　レンガに　鉄路の残像
+百年越しで　鳴り出す汽笛音
+
+木ノ芽の峠に　吹き抜ける風
+観光パンフじゃ　収まらぬスケール
+
+おろしそばなら　辛みで覚醒
+つるし柿なら　甘みで逆転
+
+雪国育ちの　粘りと執念
+知名度最下位？　伸びしろ満点
+
+無名と無価値を　一緒にすんな
+知られてないなら　知らせりゃ済むんだ
+
+福井の隠し玉　今から登場
+県内制覇へ　今庄下剋上
+
+---
+
+人気も数字も　後からついてくる
+まずこの名前を　耳に焼き付ける
+
+越前若狭を　まとめて追い越す
+今庄　福井県の台風の目
+
+---
+
+下剋上　下剋上
+福井の頂へ駆け上がれ
+
+有名じゃない　それがどうした
+これから有名になればいい
+
+下剋上　下剋上
+今庄の名を響かせろ
+
+山も歴史も　雪さえも
+残らず全部　武器にしろ
+
+---
+
+町内　県内　勝ち抜いたなら
+次に狙うのは　日本の真ん中
+
+東京　大阪　京都に札幌
+でかい看板が　そびえる街角
+
+人口　予算も　勝負にならない
+その物差しなら　最初から圏外
+
+だけど日本一　名乗れるものは
+でかさじゃなくても　作れるはずだ
+
+日本一また　帰りたくなる
+日本一なぜか　話したくなる
+
+日本一ちょっと　不便なくせに
+日本一深く　記憶に残る
+
+便利と速さが　正義の時代
+逆から攻めれば　こっちの土台
+
+なんにもないから　余白がでかい
+余白があるから　未来を描ける
+
+田舎の限界　決めつけんな
+小さい町ほど　伸びれば天下
+
+笑ってたやつらも　最後は拍手
+無謀な夢ほど　叶えばニュース
+
+宿場の町から　全国制覇
+今庄の名を　日本のセンター
+
+---
+
+最初は町内
+次には県内
+
+気づけば全国
+視界は圏外
+
+負け犬上等
+遠吠え結構
+
+声が届くまで
+何度も絶叫
+
+「今庄ってどこ？」
+
+その問いこそ好機
+
+一度来たなら
+忘れられない土地
+
+逆境　絶景
+連結　前進
+
+小さな町から
+でかい歴史
+
+---
+
+下剋上　下剋上
+日本の頂へ駆け上がれ
+
+都会のまねじゃ意味がない
+今庄のままで勝ちに行け
+
+下剋上　下剋上
+この国中へ響かせろ
+
+誰も見てない場所からの
+誰も見たことない大逆転
+
+下剋上　下剋上
+今庄の時代を始めよう
+
+町内一から　県内一
+最後に目指すは
+
+日本一
+
+地図のはしっこ　雪の真ん中
+今では誰もが　知ってる名前だ
+
+夢物語と　笑われた過去も
+全部ひっくり返す
+
+今庄下剋上</div></details></div></article><article data-track="19" data-themes="rail roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/19.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうのみち</h3><p>四つの峠から宿場、旧北陸線の隧道へとたどり、形を変えながら人の行き先を結んできた今庄の道を歌います。</p><small>4:36</small><div class="buttons"><button type="button" data-play aria-label="いまじょうのみちを再生" hidden>▶ 再生</button><a class="download" href="audio/19.mp3" download="いまじょうのみち.mp3" aria-label="いまじょうのみちのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうのみちをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いまじょうのみちの歌詞">まだ国の名も　定まらぬころ
+
+山を越えるしか　道はなかった
+
+やまとの都と　北の国とを
+
+結ぶために　人は歩いた
+
+やまなかとうげを　踏みしめながら
+
+きのめとうげを　越えてゆく
+
+とちのきとうげの　風吹く道も
+
+ゆのおとうげの　月明かりも
+
+荷を背負う者
+
+夢を追う者
+
+戦へ向かう者まで
+
+みんなこの町を　通り過ぎた
+
+名もなき足あとが
+
+重なり続けて
+
+いつしか今庄は
+
+道のまんなかになった
+
+流れてゆく　時代の中で
+
+変わるものと　変わらぬもの
+
+人が行き交い　道が交わる
+
+ここは今庄
+
+北陸の結び目
+
+千年の旅を
+
+見送ってきた町
+
+宿場の灯りが　夜を照らして
+
+旅人たちは　羽を休める
+
+馬のひづめが　石畳打ち
+
+朝になれば　また旅立つ
+
+北国街道
+
+北陸道
+
+いくつもの道が　重なった
+
+酒も文化も　言葉さえも
+
+ここで混ざって　次へ向かった
+
+春も夏も
+
+秋も冬も
+
+人の流れは絶えず
+
+今庄の町を　育ててきた
+
+遠い昔から
+
+受け継がれた道
+
+歴史の真ん中を
+
+静かに見つめていた
+
+流れてゆく　時代の中で
+
+変わるものと　変わらぬもの
+
+人が行き交い　道が交わる
+
+ここは今庄
+
+北陸の結び目
+
+千年の旅を
+
+見送ってきた町
+
+やがて鉄路が　山を貫いた
+
+蒸気の煙が　空へ昇る
+
+きゅうほくりくせん
+
+十二の隧道
+
+機関車の息づかい
+
+峠を越えて響いてた
+
+そして時代は　さらに進み
+
+北陸トンネル　高速道路
+
+人の速さは　変わったけれど
+
+目指す場所を結ぶ役目は
+
+今も変わらない
+
+歩く道から
+
+鉄の道へ
+
+鉄の道から
+
+空の道へ
+
+形を変えても
+
+流れは続く
+
+千年先へと続いてゆく
+
+やまなか　きのめ
+
+とちのき　ゆのお
+
+すべての道が語ってる
+
+ここは今庄
+
+時代をつなぐ町
+
+北陸の結び目
+
+今庄の道</div></details></div></article><article data-track="20" data-themes="home local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/20.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうことば-Upbeat Country Ver.</h3><p>ばあちゃんの呼び声や泥だらけで遊んだ日を、今庄ならではの言葉と子どもたちの笑い声で描きます。</p><small>2:40</small><div class="buttons"><button type="button" data-play aria-label="いまじょうことば-Upbeat Country Ver.を再生" hidden>▶ 再生</button><a class="download" href="audio/20.mp3" download="いまじょうことば-Upbeat Country Ver..mp3" aria-label="いまじょうことば-Upbeat Country Ver.のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうことば-Upbeat Country Ver.をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いまじょうことば-Upbeat Country Ver.の歌詞">はよしねま！　ばあちゃんが
+ごっつぉできたと　呼んどるぞ
+
+こびりつまんで　笑ううらら
+ちょっぽの子まで　腹いっぱい
+
+いらちかずれて　笑われて
+こべんたま　こつんと　突つかれる
+
+おぼこいくせに　こっぺなで
+いもけなくせに　いきがっとる
+
+にんならん　にんならん
+失敗したって　だんねやざ
+
+けなるいほど　幸せな
+そんな毎日　思い出な
+
+ようけ　ようけ　笑おっさ
+ごっつお囲んで　こびり食べ
+
+えんと思たら　うらの山
+いつの間にやら　帰ってくる
+
+転べば　かやる
+川では　あばば
+
+おとろっしゃ！って　叫んでも
+うららおれば　だんねやざ
+
+がっぽの納屋で　遊んどる
+いしな拾って　投げ合っとる
+
+長いばい振り　走り出しゃ
+雪では　がぼる　また笑う
+
+へくさんぼまで　遊び来て
+みんな大騒ぎ　よさりまで
+
+うそうその　泥だらけ
+それでも今日は　ええ日やざ
+
+てなわんなやつも　おるけれど
+なんやかんやで　友達や
+
+おとろっしゃことも　あるけれど
+ようけ笑ろたら　だんねやざ
+
+ようけ　ようけ　笑おっさ
+ごっつぉ囲んで　こびり食べ
+
+ちょっぽの子から　大人まで
+みんなこの言葉で　育ってく
+
+はよしねま！の　あの声が
+今日もどこかで　響いとる
+
+この言葉ごと　抱きしめて
+うららの町は　ここにある</div></details></div></article><article data-track="21" data-themes="festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/21.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>はねそおどり2026</h3><p>今庄に伝わる伝統、はねそ踊りを2026年らしくアレンジしました。</p><small>4:19</small><div class="buttons"><button type="button" data-play aria-label="はねそおどり2026を再生" hidden>▶ 再生</button><a class="download" href="audio/21.mp3" download="はねそおどり2026.mp3" aria-label="はねそおどり2026のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="はねそおどり2026をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="はねそおどり2026の歌詞">サア ヨーヨーヨーヨー
+
+はねをかやしゃれの
+にどのかやしが わがとなる
+
+こはいまじょうの よもさのかどか
+おたつ おでやれ にをわたす
+
+おたつばかりに　にをわたさりょか 
+おていしゅおでやれ　そろばんで 
+
+さんだいなさらば　ふじくらやまへ 
+おちゃやばばを　みおろして 
+
+みずになりたや　にしたにがわの
+ながれこみたや　えちごやへ
+
+ながれこみたや　えちごやうちの
+のまれたいわいな　しゃくじょろうに
+
+いまじょうあさたち　きのもととまり 
+なかのかわちで　ひるべんとう 
+
+せきはこえたに　かなづがみえぬ 
+かなづがくれの　きりがふる 
+
+ここはやながせ　てんかのばんしょ
+かさをとらんせ　たびのきゃく
+
+おどるこどもしゅうにゃ　すずつけなされ
+すずはがらがら　おもしろい
+
+そろたそろたよ　おどりこがそろた
+かさがそろたら　なおよかろ
+
+ぼんがきたやら　おしょうりょうばなが
+さいてみだれて　かわばたに
+
+おんどとろまい　みがやつれるに
+けさもとのごに　しかられた
+
+ぼんのいざよいや　やみならよかろ
+おてをとりよて　おどろもの
+
+あまのたなばた　おいとしござる
+かわをへだてて　ねにござる
+
+せきのこがたな　みはほそけれど
+あややにしきを　たちくずす
+
+わたしゃいまじょうの　なかまちそだち 
+はねそおどりで　よがあけた
+
+めでたかろぞや　よはいつまでも
+つるがみかどに　すをかけた
+
+つるがみかどに　すをかけおいて
+としのくれには　ごまんごく
+
+うたはこれきり　かしくととめて 
+せんしゅうらくとは　おめでたい
+
+サヨ ヨヨヨ ヨーーー</div></details></div></article><article data-track="22" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/22.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>町の音</h3><p>路地の笑い声や夕方五時のチャイムを思い出し、静かになった今庄に暮らしの音を残したいと歌う。</p><small>4:14</small><div class="buttons"><button type="button" data-play aria-label="町の音を再生" hidden>▶ 再生</button><a class="download" href="audio/22.mp3" download="町の音.mp3" aria-label="町の音のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="町の音をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="町の音の歌詞">ガキのころ　町を歩けば
+名前も知らない　じいちゃんが呼ぶ
+
+「どこの子や？」って　笑いながら
+それだけなのに　なんかうれしくて
+
+路地を走る　誰かの足音
+どこかで響く　子どもの笑い声
+
+野良犬が　夕焼けに吠えて
+町じゅうが　今日を生きていた
+
+耳を澄ませば　どこかで誰かが
+笑って　怒って　また笑ってた
+
+そんな何気ない音が
+この町の景色だった
+
+今は歩いても　何も聞こえない
+風が電線を　揺らすだけ
+
+空き家が増えたと　思っていたけど
+気がつけば　空き地も増えていた
+
+誰も悪くない　わかってるけど
+静かすぎるんだ　この町は
+
+音が消えるってことはきっと
+人が消えるってことなんだ
+
+夕方五時の　チャイムが鳴れば
+どこからともなく　家へ帰る影
+
+物資部の前じゃ　立ち話
+カッパから聞こえる　おっさんの声
+
+祭りの日には　太鼓が鳴って
+子どもは夢中で　駆け回る
+
+あの日は当たり前だった景色が
+今では思い出になっていく
+
+思い出の中は　今もにぎやかなのに
+現実だけが　静かすぎる
+
+町は残ってる
+だけど音だけが　少しずつ消えていく
+
+今もこの町を　歩いてみる
+昔と同じ道なのに
+
+聞こえるのは　自分の靴音
+それだけが　やけに響く
+
+あのころ町に　あふれていたのは
+人じゃなくて　暮らしだった
+
+音が消えたんじゃない
+暮らしが　遠くへ行っただけ
+
+だけどまだ　終わりじゃない
+
+俺たちの世代で
+今庄の音を
+
+終わらせちゃいけない</div></details></div></article><article data-track="23" data-themes="home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/23.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>あのころ.IbN</h3><p>自転車で登った坂や蛇踊りの練習、初恋の帰り道を、閉校した今中の校舎に重ねて振り返る。</p><small>4:17</small><div class="buttons"><button type="button" data-play aria-label="あのころ.IbNを再生" hidden>▶ 再生</button><a class="download" href="audio/23.mp3" download="あのころ.IbN.mp3" aria-label="あのころ.IbNのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="あのころ.IbNをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="あのころ.IbNの歌詞">どこにでもあるような校舎の中で
+
+どこにもない自分だけの春を過ごした
+
+閉校になった校舎は今も
+
+大人になった僕を見守っていてくれる
+
+朝の空気を　切りながら
+
+チャリをこいで　坂をのぼる
+
+眠そうな顔の　友達と
+
+「今日テスト　やったっけ」なんて
+
+点数悪くて　怒られて
+
+帰ればまた　説教で
+
+それでもなぜか　毎日が
+
+やたら楽しかった
+
+部室のドアを　開けたら
+
+汗の匂いが　むせ返る
+
+部活の顧問を怒らせっちまって
+
+逃げ場なんて　なかったな
+
+
+放課後になると
+
+全部忘れて
+
+笑いながらまた
+
+明日を迎えてた
+
+どこにでもあるような校舎の中で
+
+どこにもない自分だけの春を過ごした
+
+好きな子を　目で追いながら
+
+言葉なんて　かけられず
+
+文化祭の日の　ミスドとか
+
+やたら特別だったな
+
+受験前の　給食には
+
+縁起かついだ　とんかつが出た
+
+広野ダムまで　チャリ飛ばし
+
+釣り竿かついで　向かったな
+
+釣れる釣れない　それよりも
+
+友達といるのが　楽しかった
+
+校庭に　響く太鼓の音
+
+蛇踊りの　練習で
+
+いやいや覚えた　振り付けは
+
+今でもちゃんと　覚えてる
+
+フォークダンス
+
+あの子の時だけ
+
+心臓の音が
+
+聞こえそうだった
+
+どこにでもあるような校舎の中で
+
+どこにもない自分だけの春を過ごした
+
+あの子と初めて手をつないだのは
+
+日野川沿いのあの駐輪場
+
+非常階段上った先　アイツらとだべってた
+
+大人の階段上った今　アイツらはなにしてる
+
+あの子探してでかけた祭り
+
+今は子供と笑って歩く
+
+どこにでもあるような校舎の中で
+
+どこにもない自分だけの春を過ごした
+
+あのころの今中　卒業写真の向こう側
+
+忘れたはずの景色が　今も胸に残ってる
+
+豊かなる土の香りに
+
+育まれたんだろうな
+
+もう戻れないけど
+
+消えない青春
+
+あのころの　今中</div></details></div></article><article data-track="24" data-themes="home local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/24.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうことば-Folk Pop Ver.</h3><p>ばあちゃんが「はよしねま」と呼ぶ台所や泥だらけの帰り道を、耳に残る今庄のことばでたどる。</p><small>4:19</small><div class="buttons"><button type="button" data-play aria-label="いまじょうことば-Folk Pop Ver.を再生" hidden>▶ 再生</button><a class="download" href="audio/24.mp3" download="いまじょうことば-Folk Pop Ver..mp3" aria-label="いまじょうことば-Folk Pop Ver.のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうことば-Folk Pop Ver.をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いまじょうことば-Folk Pop Ver.の歌詞">はよしねま！　ばあちゃんが
+ごっつぉできたと　呼んどるぞ
+「はよしねま」って　ばあちゃんの声で
+朝から台所　ごっつぉの匂い
+
+こびりつまんで　笑ううらら
+ちょっぽの子まで　腹いっぱい
+
+いらちかゆるいと　笑われて
+こべんたまこつんと　突つかれる
+
+おぼこい顔して　いもけなくせに
+こっぺなことだけ　一人前
+
+にんならん　そんなこと
+失敗したって　だんねやざ
+
+けなるいほど　幸せな
+あの日はずっと　思い出な
+
+夕暮れよさり　村の道
+ようけ笑って　ようけ遊ぶ
+
+えんと思えば　うらの山
+いつの間にやら　帰ってくる
+
+転べばかやる　川ではあばば
+怒られながら　また笑う
+
+今庄ことばは　あったけぇ
+帰る場所まで　連れてくる
+
+納屋はがっぽ　風が鳴る
+拾ったいしなで　遊んでた
+
+長いばい振り回し
+秘密基地まで　大冒険
+
+雪の日足が　がぼるけど
+それでも走れば　止まらない
+
+へくさんぼまで　部屋に来て
+みんな大騒ぎ　秋の夜
+
+服はうそうそ　泥だらけ
+でもそれさえも　宝物
+
+あいつは少し　てなわんで
+悪知恵ばかり　よく回る
+
+「おとろっしゃ！」って　叫びながら
+笑い転げる　帰り道
+
+今じゃ町を　離れても
+耳の奥では　まだ聞こえる
+
+「はよしねま」の　あの声が
+今日も背中を　押してくれる
+
+ごっつぉ囲んで　こびり食べ
+ようけ笑った　うららの日
+
+この言葉ごと　抱きしめて
+今庄で生きる　誇りにする</div></details></div></article><article data-track="25" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/25.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>堺東の唄</h3><p>岩谷、大河内、広野二ツ屋、桝谷の暮らしと堺東小学校の思い出を、村の名とともに語り継ぐ唄。</p><small>4:45</small><div class="buttons"><button type="button" data-play aria-label="堺東の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/25.mp3" download="堺東の唄.mp3" aria-label="堺東の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="堺東の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="堺東の唄の歌詞">朝焼け染まる　山の向こう
+谷には今日も　霧が立つ
+
+岩谷の沢に　山葵が育ち
+岩魚は清流　影を泳ぐ
+
+蕎麦を蒔いた　焼畑の丘
+木地師の轆轤が　山に響く
+
+炭焼く煙　空へ昇れば
+それが暮らしの　合図だった
+
+春も夏も　秋も冬も
+人は山と　生きてきた
+
+雪に耐えても　風に耐えても
+守り続けた　ふるさとを
+
+この山には　名前がある
+人の暮らしが　息づいていた
+
+笑い声も　囲炉裏の灯も
+確かにここに　あったんだ
+
+時は流れて　姿は消えても
+心の中では　今も生きている
+
+大水さらった　大河内
+畑も田んぼも　川へ消えた
+
+半分の人は　北の大地へ
+新しい夢を　探しに行った
+
+残った人も　時代に押され
+最後の灯りは　静かに消えた
+
+山は何も　語らないけど
+今もあの日を　覚えてる
+
+広野二ツ屋　桝谷の里
+湖の底で　眠る故郷
+
+水面揺れる　その向こうにも
+確かに暮らしは　続いていた
+
+この山には　物語がある
+名もない人が　刻んだ歴史
+
+石垣ひとつ　古い道にも
+生きた証が　残ってる
+
+忘れないでと　風が歌えば
+山が静かに　こたえてる
+
+子どもたちの　声が響いた
+堺東小学校
+
+春の遠足
+冬の雪遊び
+
+卒業写真を　胸に抱いて
+それぞれの道を　歩いていった
+
+校舎はやがて　姿を消しても
+思い出だけは　壊せない
+
+岩谷　大河内
+広野二ツ屋　桝谷
+
+消えた村にも　名前がある
+
+山に生きた　人がいた
+川を守った　人がいた
+
+語り継ぐのは　この時代を
+生きる私たちの　役目だから
+
+堺東よ　いつまでも
+この歌の中で　生き続けよう</div></details></div></article><article data-track="26" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/26.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いってらっしゃい</h3><p>駅の小さな窓口から、道を尋ねる旅人やお惣菜を選ぶご近所さんを笑顔で迎え、送り出す一日を描く。</p><small>4:34</small><div class="buttons"><button type="button" data-play aria-label="いってらっしゃいを再生" hidden>▶ 再生</button><a class="download" href="audio/26.mp3" download="いってらっしゃい.mp3" aria-label="いってらっしゃいのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いってらっしゃいをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いってらっしゃいの歌詞">朝一番に　カーテン上げて
+「おはようございます」が　今日の合図
+駅を降りた　初めての人
+迷った顔で　やってくる
+「おそば屋さんは　どこですか？」
+笑顔で道を　指さして
+「いってらっしゃい」の　その一言で
+足取りまで　軽くなる
+
+地図じゃわからない　町のこと
+笑顔ひとつで　伝えてる
+
+いってらっしゃい　気をつけて
+笑って手を振る　カウンター
+また来てねって　その一言が
+町の入り口に　なっている
+
+朝一番に　掃除を済ませ
+今日も誰かを　迎える準備
+ご近所さんが　ふらっと寄って
+今日のお惣菜　吟味して
+ついでのはずが　おしゃべりばかり
+コーヒー買いに　立ち寄る人
+朝どれ野菜を　並べる人
+「いってきます」と　手を振る人
+
+列車を待つ人　旅の人
+暮らす人も　すれ違う
+小さな窓口　ひとつから
+町の今日が　動き出す
+
+いってらっしゃい　気をつけて
+またおいでって　手を振れば
+誰かの旅も　誰かの暮らしも
+ここでやさしく　混じり合う
+今日も変わらぬ　その笑顔
+町はそこから　温まる
+
+列車が来れば　にぎやかで
+見送るたびに　静かになる
+そんな繰り返しの　毎日が
+この町らしく　流れてく
+
+いってらっしゃい　気をつけて
+おかえりなさいも　忘れずに
+旅人も　町の人も
+ここで笑顔を　交わし合う
+また来るねって　振り返る
+その一言が　うれしくて
+今日もカウンターの　その向こう
+明日もここで　待っている</div></details></div></article><article data-track="27" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/27.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>いまじょうれきしうた</h3><p>峠道を人が行き交った時代から、宿場のにぎわい、鉄道と車の時代へと、今庄の歩みをたどる。</p><small>5:01</small><div class="buttons"><button type="button" data-play aria-label="いまじょうれきしうたを再生" hidden>▶ 再生</button><a class="download" href="audio/27.mp3" download="いまじょうれきしうた.mp3" aria-label="いまじょうれきしうたのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="いまじょうれきしうたをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="いまじょうれきしうたの歌詞">さあ　いっしょに　あるこう
+いまじょう　れきしの　たびへ
+
+---
+
+ろっぴゃく　よんじゅうごねん
+かひるごうが　できました
+
+ろっぴゃく　はちじゅうごねん
+ほくりくどうが　できました
+
+やまなかとうげを　こえていく
+ひととぶんかが　ゆきかった
+
+はっぴゃく　さんじゅうねん
+きのめとうげが　ひらかれて
+
+きょうとと　ほくりく
+もっとちかくに　つながった
+
+---
+
+みちは　まちを　つくるんだ
+ひとは　みちを　あるくんだ
+
+むかしも　いまも　かわらない
+いまじょう　れきしの　ものがたり
+
+---
+
+せん　ひゃく　はちじゅうさんねん
+ひうちがじょうの　たたかいで
+
+きそぐん　やぶれて
+れきしが　うごきだす
+
+せんさんびゃく　さんじゅうろくねん
+たいへいきに　いまじょうが
+
+はじめて　なまえを
+のこしました
+
+なんぼくちょうの　そのころは
+いまじょうにゅうどう　じょうけいが
+
+れきしの　なかで
+かつやくを　しました
+
+---
+
+みちは　まちを　つくるんだ
+ひとは　みちを　あるくんだ
+
+むかしも　いまも　かわらない
+いまじょう　れきしの　ものがたり
+
+---
+
+せんごひゃく　ななじゅうはちねん
+とちのきとうげが　ひらかれて
+
+いたどりじゅくが
+できました
+
+せんろっぴゃく　にねんに
+いまじょう　ゆのおの
+
+しゅくえき　さだまり
+しゅくばまち
+
+えどじだいには　にぎわって
+たびびと　だいみょう　ゆきかった
+
+ぶんせい　がんねん　おおかじで
+いまの　まちなみ　うまれます
+
+---
+
+めいじになると　しゅくはおわり
+
+せんはっぴゃく　きゅうじゅうろくねん
+ほくりくせんと　いまじょうえき
+
+てつどうの　まちへと
+あゆみだす
+
+しょうわには
+ほききかんしゃ　つながれて
+
+てつどうのまちと
+よばれます
+
+---
+
+しょうわ　にじゅうろくねん
+いまじょうむらと　かひるむら
+
+ひとつになって
+あたらしい　いまじょうむら
+
+しょうわ　さんじゅうねん
+ゆのお　たくら　さかいむら
+
+みんな　あつまって
+いまじょうちょう
+
+しょうわ　さんじゅうななねん
+ほくりくトンネル　できあがり
+
+きゅうほくりくせんは
+やくめを　おえる
+
+ほくりくどうと
+いまじょうインター
+
+くるまの　じだいが
+はじまった
+
+---
+
+へいせい　じゅうななねん
+なんじょう　こうのと
+
+いまじょう　ひとつになって
+みなみえちぜんちょう
+
+れいわ　さんねん
+いまじょうじゅくは
+
+じゅうよう　でんとうてき
+けんぞうぶつぐん
+
+ほぞんちくに
+えらばれました
+
+---
+
+とうげも　しゅくばも
+てつどうも
+
+みんな　つながる
+いまじょうへ
+
+むかしを　しれば
+いまが　みえる
+
+みらいへ　つづく
+いまじょうの　れきし
+
+みちは　つづくよ
+これからも
+
+いまじょうの　れきしは
+つづいてく</div></details></div></article><article data-track="28" data-themes="rail"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/28.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>Railway Song（てつどうの唄）</h3><span class="language-badge">英語版</span><p>山中峠に挑む機関車と今庄駅のそば売りを描いた「てつどうの唄」を、英語の歌詞で届ける。</p><small>3:37</small><div class="buttons"><button type="button" data-play aria-label="Railway Song（てつどうの唄）を再生" hidden>▶ 再生</button><a class="download" href="audio/28.mp3" download="Railway Song（てつどうの唄）.mp3" aria-label="Railway Song（てつどうの唄）のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="Railway Song（てつどうの唄）をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="Railway Song（てつどうの唄）の歌詞" lang="en">The whistle echoes
+The mountains reply
+Beyond the old brick tunnels we go 
+
+Leaving Tsuruga, the sea breeze fades
+Mountains rise outside the train
+
+Behind the smoking locomotive
+Another engine joins the line
+
+To climb the pass of Yamanaka
+Every hand worked side by side
+
+Rails keep running through the darkness
+Always reaching for the light
+
+ 
+
+Hear the thunder
+Through the tunnels
+
+Carrying dreams
+Far away
+
+ 
+
+Over Yamanaka Pass we go
+
+Racing through the brick-lined tunnels
+
+Train whistles echo through the mountains
+
+Linking Imajo and Tsuruga
+
+Beyond the darkness waits the daylight
+
+The railway always knew the way
+
+This railway song keeps on ringing
+
+Deep inside these mountain valleys
+
+ 
+
+Waiting at Imajo Station
+
+People gather, voices calling
+
+&quot;Fresh soba! Come and try!&quot;
+
+Smiles appear beside the windows
+
+Daikon&#x27;s fresh aroma drifting
+
+Travelers reach for their chopsticks
+
+Even moments short as these
+
+Become memories that never fade
+
+ 
+
+Soon the whistle
+
+Calls again
+
+Once again
+
+The train climbs on
+
+ 
+
+Over Yamanaka Pass we go
+
+Racing through the brick-lined tunnels
+
+Train whistles echo through the mountains
+
+Linking Imajo and Tsuruga
+
+Rainy days and snowy winters
+
+Still the railway carried on
+
+This railway song keeps on ringing
+
+Deep inside these mountain valleys
+
+ Yamanaka Signal Station
+
+Back and forth on the switchback rails
+
+Built to conquer the steepest climb
+
+Human wisdom made the way
+
+Though the trains have long since vanished
+
+ 
+
+Over Yamanaka Pass we go
+
+Carrying stories through the years
+
+Racing through the brick-lined tunnels
+
+Though those trains are gone today
+
+Soba vendors, train whistles calling
+
+Live forever in this town
+
+This railway song will keep on living
+
+Binding every heart together
+
+This railway song will keep on ringing
+
+Through the mountains of Imajo</div></details></div></article><article data-track="29" data-themes="rail home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/29.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>鹿蒜の唄</h3><p>馬の鈴が汽笛に変わり、やがて人通りが減った鹿蒜の谷を、また帰りたくなる場所にしようと歌う。</p><small>5:39</small><div class="buttons"><button type="button" data-play aria-label="鹿蒜の唄を再生" hidden>▶ 再生</button><a class="download" href="audio/29.mp3" download="鹿蒜の唄.mp3" aria-label="鹿蒜の唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="鹿蒜の唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="鹿蒜の唄の歌詞">むかし　この場所は
+帰る村と　呼ばれてた
+
+峠を越えた　旅人が
+ほっと息つく　村だった
+
+南今庄　下新道
+上新道から　二ツ屋へ
+
+大桐までを　つなぐ道
+人の足音が　続いてた
+
+馬の鈴から　汽笛の音へ
+時代が変わっても
+
+この谷には　いつも誰かが
+行き交っていた
+
+帰る村と　呼ばれたのに
+今は帰る人が　少なくなった
+
+待っている家も
+灯りの数も
+
+少しずつ　減っていった
+
+帰る村と　呼ばれたのに
+道は村を　通らなくなった
+
+昔はここへ　人が来た
+今は遠くを　通り過ぎる
+
+木ノ芽峠へ　向かう人
+山中峠を　越える人
+
+新道という　その名前に
+新しい時代が　刻まれた
+
+やがて線路が　山を縫い
+大桐駅に　汽車が止まる
+
+迎える人と　見送る人
+小さなホームに　声がした
+
+けれど線路は　道を変え
+駅も静かに　消えていく
+
+残ったレールの　その先を
+今は草だけが　歩いてる
+
+帰る村と　呼ばれたのに
+今は帰る人が　少なくなった
+
+子どもの声も
+祭りの声も
+
+山に吸われて　小さくなる
+
+帰る村と　呼ばれたのに
+近くて遠い　村になった
+
+同じ鹿蒜の　谷にいても
+昔のようには　行き来しない
+
+高速道路は　山を抜け
+長いトンネル　風を切る
+
+たくさんの人が　通るのに
+鹿蒜の姿は　見えなくなった
+
+便利になったと　人は言う
+早くなったと　人は言う
+
+だけど失くした　ものの名前を
+誰も教えては　くれなかった
+
+帰る村と　呼ばれたから
+いつか帰ると　思っていた
+
+離れた人も
+残った人も
+
+同じふるさとを　見ていた
+
+帰る村と　呼ばれたなら
+もう一度　帰れる村にしよう
+
+南今庄　下新道
+上新道から　二ツ屋へ
+
+大桐までの　五つの灯り
+消さずに明日へ　つないでく
+
+人が行き交う　道がなくても
+心が通う　道はつくれる
+
+帰る村と　呼ばれた場所を
+帰りたくなる　村にしよう</div></details></div></article><article data-track="30" data-themes="rail home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/30.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ぽっぽ広場で</h3><p>汽車のすべり台で遊ぶ子どもたちと、かつて峠を越えた機関車の記憶が、ぽっぽ広場で出会う。</p><small>4:39</small><div class="buttons"><button type="button" data-play aria-label="ぽっぽ広場でを再生" hidden>▶ 再生</button><a class="download" href="audio/30.mp3" download="ぽっぽ広場で.mp3" aria-label="ぽっぽ広場でのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ぽっぽ広場でをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="ぽっぽ広場での歌詞">駅の向こうの　ぽっぽ広場
+今日も聞こえる　笑い声
+汽車のかたちの　すべり台
+トンネルくぐって　もう一回
+
+走って転んで　また走る
+じいちゃんゆっくり　歩いてる
+大きな汽車が　そのとなり
+黙ってみんなを　見ているよ
+
+君は知らない　その昔
+ここは汽車の町だった
+
+ぽっぽ　ぽっぽ　ぽっぽ広場
+小さな足音　響いてる
+汽笛はもう　聞こえないけど
+今日もこの町　人がゆく
+
+ぽっぽ　ぽっぽ　ぽっぽ広場
+昔と今が　こんにちは
+トンネル抜けた　その先に
+新しい今日が　待っている
+
+煙を上げて　汽車が来る
+今庄駅で　ひと休み
+峠を越える　そのために
+力を合わせた　機関車たち
+
+機関区　転車台　給水塔
+働く人の　声がする
+そんな時代を　知ってるように
+D51は　そこにいる
+
+町の景色は　変わっても
+残るものが　ここにある
+
+ぽっぽ　ぽっぽ　ぽっぽ広場
+小さな足音　響いてる
+山中峠を　越えた日々
+鉄路の記憶を　抱いている
+
+ぽっぽ　ぽっぽ　ぽっぽ広場
+昔と今が　こんにちは
+あの日の汽車が　見ているよ
+今日を駆けてく　子どもたち
+
+汽車を待ってた　人はいない
+機関車の音も　もうしない
+
+それでもここに　残ったものを
+誰かがちゃんと　つないでく
+
+昔を知らない　小さな手が
+今日も汽車へと　駆けてゆく
+
+ぽっぽ　ぽっぽ　ぽっぽ広場
+笑った声が　風に乗る
+昔の町と　これからの町
+ここで静かに　つながってる
+
+ぽっぽ　ぽっぽ　ぽっぽ広場
+一歩　一歩と　歩いてく
+トンネル抜けた　その先へ
+明日の今庄　走ってけ
+
+ぽっぽ　ぽっぽ　ぽっぽ広場
+今日もみんなが　やってくる
+大きな汽車の　そのとなり
+新しい町の　音がする</div></details></div></article><article data-track="31" data-themes="roads legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/31.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>湯尾峠のいもの神</h3><p>茶屋が消え、山の下を汽車が走るようになっても、湯尾峠に残るいもの神が旅人を見送る。</p><small>4:47</small><div class="buttons"><button type="button" data-play aria-label="湯尾峠のいもの神を再生" hidden>▶ 再生</button><a class="download" href="audio/31.mp3" download="湯尾峠のいもの神.mp3" aria-label="湯尾峠のいもの神のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="湯尾峠のいもの神をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="湯尾峠のいもの神の歌詞">わしは峠の　いもの神
+いつからここに　おったやら
+春には旅人　夏には旅人
+秋にも旅人　冬は来ん
+
+茶屋のおばちゃん　湯を沸かし
+草鞋を脱いだ　客が言う
+「この先まだまだ　ありますか」
+あるとも　山ほど　ありますよ
+
+札を一枚　懐へ
+道中無事なら　それでよし
+病も災いも　置いていけ
+持って帰るな　そんなもの
+
+登ってきたなら　下りてゆく
+来たと思えば　もう見えぬ
+
+人間いうのは　せわしない
+わしは今日も　ここにおる
+
+いもの神　いもの神
+湯尾の峠の　いもの神
+
+偉そうなことは　言わんけど
+見てきたものなら　ようけある
+
+泣いた旅人　笑う旅人
+喧嘩しながら　越えるやつ
+
+まあ気ぃつけて　行ってこい
+転ぶなよって　見送った
+
+ある晩ひとりの　旅の者
+月を見上げて　立ち止まる
+急いでいるのか　いないのか
+ぶつぶつ何かを　考える
+
+「月に名を――」
+
+……なんじゃそりゃ
+
+腹が減ったら　茶でも飲め
+暗うなる前に　越えていけ
+
+あとから聞いたら　芭蕉とか
+えらい俳人　だったとか
+そんなこととは　つゆ知らず
+わしはいつもの　札をやる
+
+殿様だろうが　俳人だろうが
+峠じゃみんな　旅の人
+
+登ってきたなら　下りてゆく
+それだけ見れば　みな同じ
+
+いもの神　いもの神
+湯尾の峠の　いもの神
+
+戦のころにも　おったけど
+詳しい話は　したくない
+
+刀を提げた　怖い顔
+逃げてく人も　見たけれど
+
+まあ生きてれば　それでよし
+早よ家帰れと　見送った
+
+ところがある日を　境にして
+峠が妙に　静かになる
+
+茶屋のおばちゃん　山を下り
+草鞋の音まで　聞こえない
+
+どうしたもんかと　耳すませば
+山の下から　汽笛が鳴った
+
+なんじゃあれはと　見ていたら
+人をいっぱい　乗せてゆく
+
+そりゃ便利だ
+そりゃ速かろう
+
+それから誰も　登ってこん
+
+
+いもの神　いもの神
+湯尾の峠の　いもの神
+
+茶屋がなくても　道が消えても
+別にどこにも　行きゃせんよ
+
+春には若葉　夏には蝉
+秋には月が　顔を出す
+
+冬になったら　雪かぶり
+誰も来んから　寝てしまう
+
+いもの神　いもの神
+湯尾の峠の　いもの神
+
+たまに誰かが　登ってきて
+古い祠を　のぞいてく
+
+昔ここには　茶屋があってな
+いろんな人が　通ったよ
+
+……なんて話は　せんけれど
+
+札はないけど　気ぃつけて
+下りの坂道　滑るなよ
+
+わしは峠の　いもの神
+
+今日も湯尾を
+見ておるぞ
+
+月に名を
+つゝミ兼てや
+いもの神</div></details></div></article><article data-track="32" data-themes="legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/32.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>八十八</h3><p>四国を三度歩いた又市が、故郷の八ヶ所山に一体ずつ石仏を置き、八十八まで数える物語。</p><small>5:10</small><div class="buttons"><button type="button" data-play aria-label="八十八を再生" hidden>▶ 再生</button><a class="download" href="audio/32.mp3" download="八十八.mp3" aria-label="八十八のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="八十八をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="八十八の歌詞">今庄生まれの　又市は
+仏を想って　道を行く
+
+一度じゃ足りず
+二度でも足りず
+
+三度　四国を
+歩いてきた
+
+草鞋を減らして
+山を越え
+
+それでも何かを
+探してた
+
+夕暮れ
+八ヶ所山
+
+鐘の音ひとつ
+谷へ落ちる
+
+乾いた喉に
+水をくれ
+
+冷たい流れに
+手を伸ばす
+
+「観道――」
+
+誰だ
+
+「観道――」
+
+誰なんだ
+
+誰もいない
+山の中
+
+水の底から
+呼んでいる
+
+手を入れ
+掴んで
+拾い上げ
+
+夕陽にかざした
+その姿
+
+掌の中に
+
+弘法大師
+
+家へ帰って
+壇に置く
+
+朝も夜も
+手を合わす
+
+だけどあの声
+消えはしない
+
+谷の冷たさ
+消えはしない
+
+俗世を離れ
+高野山
+
+三年　密の道を行く
+
+三度の四国
+三年の山
+
+そして男は
+今庄へ
+
+帰ってきた
+帰ってきた
+
+生まれた谷へ
+帰ってきた
+
+歩いた道を
+胸に抱き
+
+今度は山へ
+石を置く
+
+ひとつ
+
+ふたつ
+
+またひとつ
+
+曲がった先に
+またひとつ
+
+十
+二十
+まだ終わらない
+
+三十
+四十
+まだ終わらない
+
+雨に打たれて
+雪に埋もれ
+
+それでも山に
+置いてゆく
+
+八十七
+
+あとひとつ
+
+八十八
+
+何を見た
+
+何を聞いた
+
+なぜ三度も
+海を渡った
+
+なぜこの山に
+戻ってきた
+
+答えは石に
+刻まれない
+
+ただ
+
+道がある
+
+石仏がいる
+
+登れば次が
+待っている
+
+そのまた先にも
+
+待っている
+
+一番
+
+二番
+
+三番
+
+四番
+
+百年越えて
+まだそこにいる
+
+五十
+六十
+七十を越えて
+
+息を切らして
+まだ登る
+
+四国は遠く
+海の向こう
+
+ここは今庄
+八ヶ所山
+
+三度歩いた
+その男が
+
+故郷に残した
+八十八
+
+[Outro]
+
+夕暮れ
+鐘が鳴る
+
+谷川だけが
+流れてる
+
+「観道――」
+
+誰もいない
+
+八十八の
+石仏だけが
+
+山の道を
+
+見ている</div></details></div></article><article data-track="33" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/33.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ここから</h3><p>静かになった町に、帰ってきた仲間も初めて来た人も声を重ね、もう一度みんなの歌を響かせる。</p><small>4:38</small><div class="buttons"><button type="button" data-play aria-label="ここからを再生" hidden>▶ 再生</button><a class="download" href="audio/33.mp3" download="ここから.mp3" aria-label="ここからのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ここからをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="ここからの歌詞">Oh Oh Oh！
+声あげろ！
+ここから始めよう！
+
+朝からやけに　空が青い
+今日はなんかが　起こりそうだ
+窓を開ければ　風が飛び込む
+それだけでちょっと　うれしくなる
+
+自転車とばす　いつもの道
+知らない誰かも　手を振ってる
+理由なんてさ　なくてもいい
+楽しいほうへ　走っていこう
+
+山の向こうまで
+聞こえるくらい
+せーので声を　重ねたら
+
+この町で鳴らせ　僕らの歌
+青い空まで　突き抜けろ
+笑って　跳んで　手を上げて
+今日を思いっきり　遊ぼうぜ
+
+この町で鳴らせ　僕らの歌
+名前も知らない　君と歌おう
+遠く離れて　暮らしてたって
+帰ってきたなら　またここで
+
+Oh Oh Oh！
+声をあげろ！
+ここから！
+ここから！
+
+夕立あがり　光る道路
+水たまりには　逆さの空
+川から吹いた　少し冷たい
+風にＴシャツ　揺らされてる
+
+いつもの顔が　また増えてく
+久しぶりだなって　肩をたたく
+大人も子どもも　今日はいいだろ
+くだらないことで　笑っていよう
+
+山の向こうまで
+夕陽が落ちて
+それでも今日は　終わらない
+
+この町で鳴らせ　僕らの歌
+夕焼け全部　巻き込んで
+歌って　跳んで　手を上げて
+今日の続きを　作ろうぜ
+
+この町で鳴らせ　僕らの歌
+初めて来た君も　仲間だろ
+どこから来たって　関係ないさ
+ここにいるなら　声をくれ
+
+Oh Oh Oh！
+もっと聞かせて！
+ここから！
+ここから！
+
+気がつけば　手を振る人も
+いつもの顔も　見なくなった
+笑い声がした　あの場所も
+少し静かに　なったけど
+
+ずっと同じじゃ　いられないって
+そんなことくらい　わかってる
+それでも僕らが　ここにいるなら
+まだ終わりには　したくない
+
+ひとりの声じゃ　小さくたって
+ふたつ　みっつと　重なれば
+静かになった　この町を
+今日は僕らが――
+
+鳴らしてやろうぜ！
+
+この町で鳴らせ　僕らの歌
+青い空まで　突き抜けろ
+笑って　跳んで　手を上げて
+今日を思いっきり　遊ぼうぜ
+
+この町で鳴らせ　僕らの歌
+百人いたなら　百人の声
+うまく歌えなくたっていい
+声が枯れるまで　歌おうぜ
+
+遠く離れて　暮らしてたって
+初めてここへ　来た人だって
+今日この場所で　笑えたなら
+またいつの日か　会えるだろ
+
+この町で鳴らせ！
+僕らの歌！
+
+Oh Oh Oh！
+声をあげろ！
+
+ここから！
+ここから！
+
+またここで会おう！</div></details></div></article><article data-track="34" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/34.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>峠の刃</h3><p>火打・木ノ芽・鉢伏をめぐる戦と雪の中を進む天狗党を描き、旗が消えても残る峠道を歌う。</p><small>5:05</small><div class="buttons"><button type="button" data-play aria-label="峠の刃を再生" hidden>▶ 再生</button><a class="download" href="audio/34.mp3" download="峠の刃.mp3" aria-label="峠の刃のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="峠の刃をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="峠の刃の歌詞">山が割れる　蹄が鳴る
+南の空から　旗が来る
+寿永二年　火打の城
+川を堰き止め　敵を待つ
+
+水を張れ　道を断て
+ここを越えれば　越前だ
+六千の兵が　息を殺す
+鹿蒜の谷に　夜が来る
+
+裏切る者が　口を開く
+堰は破られ　水が引く
+平家の軍勢　なだれ込み
+火打の城が　炎に沈む
+
+勝った者など　もういない
+負けた者など　もういない
+ただこの山に　刻まれた
+刃の跡だけ　残ってる
+
+越えてみろ　越えてみろ
+この峠を　越えてみろ
+
+火打　木ノ芽　鉢伏
+幾千の足が　土を踏む
+
+守れ　奪え　押し返せ
+時代が変われば　旗も変わる
+
+血が乾いて　草が生え
+それでも道は　ここにある
+
+建武三年　雪が舞う
+南と北に　国が割れ
+金ヶ崎から　兵が来る
+今庄入道　城に立つ
+
+新田の旗が　風を切り
+足利の旗が　山を埋め
+誰が正義か　誰が逆賊か
+そんな答えを　山は知らない
+
+昨日の味方が　今日の敵
+今日の敵さえ　明日は消える
+残ったものは　石と土
+踏み固められた　古い道
+
+名を残す者　消える者
+名さえ残らぬ　兵もいる
+何百年も　その上を
+俺たちは今日も　歩いてる
+
+越えてみろ　越えてみろ
+この峠を　越えてみろ
+
+火打　木ノ芽　鉢伏
+幾千の声が　風になる
+
+守れ　奪え　押し返せ
+時代が変われば　旗も変わる
+
+城は崩れて　土になり
+それでも道は　ここにある
+
+天正二年　鐘が鳴る
+一揆の旗が　山に立つ
+木ノ芽を固め　鉢伏へ
+南の入口　塞ぎ切れ
+
+逃げるな　持ち場を離れるな
+賢会の檄が　山を飛ぶ
+そして天正三年　夏
+敦賀に織田の軍が来る
+
+八月十五　夜が明ける
+木ノ芽と杉津　二つの道
+鉄砲　槍　怒号の中
+防ぎの山が　食い破られる
+
+鉢伏落ちて　兵は散り
+越前平野へ　軍が行く
+勝鬨さえも　遠ざかり
+峠にまた　静けさが来る
+
+雪を蹴散らせ　泥を踏め
+息を切らして　山を越え
+
+旗が倒れりゃ　また立てろ
+城が落ちても　まだ終わらぬ
+
+鬨の声さえ　風に消え
+屍の上にも　朝は来る
+
+人が倒れて　旗が消え
+それでも峠は　そこにある
+
+また旗が来る
+また兵が来る
+
+また奪い合い
+また血が流れる
+
+時代が変わる
+旗が変わる
+
+それでも峠は
+ここにある
+
+元治元年　冬の道
+時代の終わりが　近づいて
+千人ほどの　天狗党
+宅良を抜けて　今庄へ
+
+刀を下げた　その一団
+宿場の夜を　埋め尽くす
+翌朝また　雪を踏み
+木ノ芽を越えて　敦賀へ行く
+
+戦はここでは　起きなかった
+それでも同じ　道だった
+源氏も平家も　新田も織田も
+名もなき兵も　通った道
+
+越えてゆけ　越えてゆけ
+この峠を　越えてゆけ
+
+火打　木ノ芽　鉢伏
+千年の声を　踏みしめて
+
+勝者も敗者も　土になり
+旗も名前も　消えてゆく
+
+それでも山は　そこに立ち
+それでも川は　流れてる
+
+越えてゆけ　越えてゆけ
+俺たちもまた　越えてゆけ
+
+戦の跡に　町ができ
+人が暮らして　道になる
+
+刃を捨てた　その先を
+今日も誰かが　歩いてる</div></details></div></article><article data-track="35" data-themes="roads festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/35.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄宿フィーバー</h3><p>文政の道しるべを出発点に、提灯の揺れる今庄宿の街道を丸ごとダンスフロアに変える夜の歌。</p><small>5:06</small><div class="buttons"><button type="button" data-play aria-label="今庄宿フィーバーを再生" hidden>▶ 再生</button><a class="download" href="audio/35.mp3" download="今庄宿フィーバー.mp3" aria-label="今庄宿フィーバーのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄宿フィーバーをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="今庄宿フィーバーの歌詞">文政の　道しるべ　今夜の　スタートライン
+右か　左かは　気分に　任せて
+街道沿いに　明かりが　灯れば
+今庄宿で　パーティーナイト！
+
+古い　街道　ステップ踏んで
+かねおり　抜ければ　風まで　踊る
+格子の　向こうに　ちらつく　明かり
+今夜は　誰にも　止められない
+高札場跡で　ターンを　決めて
+昔の　掟も　今夜は　お休み
+京藤甚五郎家　横目に　見ながら
+石畳まで　リズムを　刻む
+
+街道沿いに　明かりを　つないで
+一歩　二歩　三歩　夜は　これから
+山に　囲まれた　小さな　宿場
+だけど　今夜は――
+
+今庄宿で　パーティーナイト！
+街道　まるごと　ダンスフロア！
+今庄宿で　パーティーナイト！
+提灯　揺らして　オールナイトロング！
+右も　左も　エブリバディーダンス！
+昔も　今も　ごちゃまぜで
+今庄宿で　パーティーナイト！
+夜は　まだまだ　終わらない！
+
+酒蔵　あたりで　ちょっと　寄り道
+軒から　軒へと　ビートが　走る
+昭和会館　明かりが　つけば
+古い　時計も　踊り出す
+誰が　始めた　そんなの　知らない
+気づけば　みんなが　街道の　上
+宿場の　夜風を　ミラーボールに
+今庄中が　踊り出す
+
+古い　町並み　ネオンに　染めて
+一歩　二歩　三歩　まだまだ　行こう
+時代も　世代も　飛び越えて
+今夜　ここでは――
+
+今庄宿で　パーティーナイト！
+街道　まるごと　ダンスフロア！
+今庄宿で　パーティーナイト！
+提灯　揺らして　オールナイトロング！
+右も　左も　エブリバディーダンス！
+昔も　今も　ごちゃまぜで
+今庄宿で　パーティーナイト！
+夜は　まだまだ　終わらない！
+
+ヘイ！　ヘイ！
+イマジョー！
+ヘイ！　ヘイ！
+イマジョー！
+エブリバディーダンス！
+
+何百年も　人が　歩いた
+この道　今夜は　踊る道
+旅人　商人　宿場の　記憶
+全部　まとめて　連れてこい
+京も　江戸も　遠い　昔
+だけど　街道は　ここにある
+最後は　みんな　公徳園へ
+桜が　待ってる――
+
+今庄宿で　パーティーナイト！
+街道　まるごと　ダンスフロア！
+今庄宿で　パーティーナイト！
+山の　向こうまで　オールナイトロング！
+百年　二百年　飛び越えて
+今夜は　みんな　エブリバディーダンス！
+最後は　公徳園
+桜の　下で
+パーティー！　パーティー！
+パーティーナイト！
+イマジョー！
+パーティー！　パーティー！
+パーティーナイト！
+今庄宿で――
+パーティーナイト！</div></details></div></article><article data-track="36" data-themes="legends"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/36.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>言奈</h3><p>峠で言奈地蔵のいわれを知った男が、誰にも話せなかった過去と向き合う物語。</p><small>4:33</small><div class="buttons"><button type="button" data-play aria-label="言奈を再生" hidden>▶ 再生</button><a class="download" href="audio/36.mp3" download="言奈.mp3" aria-label="言奈のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="言奈をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="言奈の歌詞">休みを取った　理由なんてない  
+ただ遠くへ行きたかっただけ
+
+知らない町なら　知らない顔で  
+一日くらいは　いられる気がした
+
+峠へ続く　細い道  
+古びた看板　目に留まる
+
+「言奈地蔵」と　書いてある  
+妙な名前だと　通り過ぎた
+
+なのにどうして  
+引き返したんだろう
+
+どうして俺は  
+あれを読んだんだろう
+
+地蔵は言わぬが　己が言うな
+
+その一行が　離れない
+
+誰にも言ってない  
+誰にも知られてない
+
+だから終わった  
+はずだった
+
+峠を下りても　ついてくる
+
+地蔵は言わぬが  
+己が言うな
+
+宿に戻って　酒を飲み  
+眠れぬままに　謂れを調べた
+
+昔この峠で　人を殺め  
+地蔵に口止めした男
+
+地蔵は言った  
+「我は言わぬ」
+
+「されど己が  
+言うでないぞ」
+
+馬鹿な話だ  
+昔の話だ
+
+そう思ったのに  
+画面を閉じられない
+
+何年経てば  
+昔になるんだ
+
+何年黙れば  
+なかったことになる
+
+地蔵は言わぬが　己が言うな
+
+俺なら言わない  
+絶対言わない
+
+あいつも知らない  
+誰も知らない
+
+墓まで持って  
+行けばいい
+
+そう言い聞かせる  
+その声だけが
+
+夜の部屋には  
+やけに響いた
+
+続きを読んだ
+
+男は後に  
+同じ峠で
+
+自分の罪を  
+自分で語った
+
+聞いていたのは  
+殺した旅人
+
+その息子だったと  
+書いてあった
+
+そこで、初めて  
+指が止まった
+
+喉が渇いて  
+水を飲んだ
+
+俺は言わない
+
+俺は言わない
+
+俺は  
+あの男とは違う
+
+違う
+
+違うはずだ
+
+なのに
+
+どうして今
+
+あの日のことを  
+思い出している
+
+地蔵は言わぬが　己が言うな
+
+もうその言葉を  
+読みたくない
+
+閉じた画面に　映った顔が  
+知らない男に　見えてくる
+
+忘れたんじゃない  
+黙っていただけ
+
+消えたんじゃない  
+隠していただけ
+
+誰にも言わずに  
+生きてきたのに
+
+俺だけずっと  
+知っていた
+
+次の日の朝  
+宿を出て
+
+帰るはずだった  
+車を停めた
+
+昨日と同じ  
+峠の道を
+
+今度はひとりで  
+歩いていった
+
+木々の向こうに  
+地蔵が見える
+
+何も言わずに  
+立っている
+
+俺も何にも  
+言わなかった
+
+言えなかった
+
+地蔵は言わぬが  
+己が言うな
+
+違う
+
+そうじゃない
+
+言うなじゃない
+
+俺はずっと
+
+言えなかっただけ</div></details></div></article><article data-track="37" data-themes="roads local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/37.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄宿へいらっしゃい！</h3><p>おろしそばや地酒、細い路地と屋号のやり取りまで、今庄宿の楽しみ方を地元目線で案内する。</p><small>4:39</small><div class="buttons"><button type="button" data-play aria-label="今庄宿へいらっしゃい！を再生" hidden>▶ 再生</button><a class="download" href="audio/37.mp3" download="今庄宿へいらっしゃい！.mp3" aria-label="今庄宿へいらっしゃい！のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄宿へいらっしゃい！をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="今庄宿へいらっしゃい！の歌詞">今庄宿へいらっしゃい！
+
+さあさあ皆様　お立ち会い
+汽車を降りたら　こちらへどうぞ
+古い街道　今日も健在
+今庄宿へ　いらっしゃい！
+
+まずはおろしそば　つるっと一杯
+茶飯も付けたら　もう一杯
+焼き鯖ほお張り　お腹はパンパン
+団子もあるから　別腹どうぞ
+梅肉　厚揚げ　つるし柿
+地酒をきゅっと　もう一杯
+昔ながらも　いいけれど
+おしゃれなカフェまで　できました！
+
+食べて　飲んで　また食べて
+ちょいと歩けば　腹も減る
+予定なんかは　後回し！
+今庄宿へ――
+
+いらっしゃい！　いらっしゃい！
+今庄宿へ　いらっしゃい！
+ちょいと寄ったが　運の尽き
+気づけばすっかり　夕暮れだ
+いらっしゃい！　いらっしゃい！
+古い街道　歩きましょ
+右へ左へ　のぞいてみれば
+ほっそい路地が　こちょこちょある！
+
+「こちらの街道　その昔
+あの偉人様も　通りました！」
+へええ！　そいつはすごいじゃない！
+……まあこの辺を通るなら
+だいたいこの道　なんだけど♪
+歴史を語れば　話は尽きぬ
+イベント開けば　大にぎわい
+「あれ？　このネタ去年も見た？」
+細かいことは　気にしない！
+いいものなんです
+何度でも！
+
+いらっしゃい！　いらっしゃい！
+今庄宿へ　いらっしゃい！
+峠の手前か　峠の向こうか
+とにかくここで　ひと休み
+いらっしゃい！　いらっしゃい！
+知れば知るほど　妙な町
+百年昔の　話の途中で
+昨日の噂が　混ざります！
+
+「あの人今日は　いるかしら？」
+「いん！」
+町の外では　通じません！
+「それじゃ○○さん　知ってます？」
+「どこの？」
+「だから　どこの？」
+名字で呼んでも　わかりません
+屋号で言ったら　一発です
+だけど旅人　首かしげ
+「その屋号って……誰ですか？」
+そこから話が　長くなる！
+
+右の路地にも　こちょこちょ
+左の路地にも　こちょこちょ
+細い！　曲がる！　また細い！
+ちょいと迷って　戻ってみても
+……誰もいん！
+
+昔は駅前　パチンコ屋
+町の中には　映画館
+人が行ったり　来たりして
+あっちで呼ぶ声　こっちで笑う声
+今では街道　端から端まで
+誰にも会わずに　歩けたり
+静かな午後の　宿場町
+子どもの声も　聞こえない
+……
+だったら――
+あなたが来れば　いいじゃない！
+
+いらっしゃい！　いらっしゃい！
+今庄宿へ　いらっしゃい！
+そば食べ　酒飲み　路地で迷って
+誰かに会えたら　今日はツイてる！
+いらっしゃい！　いらっしゃい！
+何度来たって　いらっしゃい！
+同じ話も　同じ味も
+ここじゃ立派な　おもてなし！
+昔みたいじゃ　ないけれど
+昔のままでも　ないけれど
+今日も街道　ここにある
+だからあなたも　歩いてみてよ！
+いらっしゃい！　いらっしゃい！
+今庄宿へ　いらっしゃい！
+「……どっち？」
+「だから、いんって！」
+今庄宿へ――
+いらっしゃい！</div></details></div></article><article data-track="38" data-themes="seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/38.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>スノーハンター</h3><p>誰かが朝に車で走れるよう、雪の降る今庄で朝まで道を開く除雪オペレーターの本音を歌う。</p><small>5:20</small><div class="buttons"><button type="button" data-play aria-label="スノーハンターを再生" hidden>▶ 再生</button><a class="download" href="audio/38.mp3" download="スノーハンター.mp3" aria-label="スノーハンターのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="スノーハンターをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="スノーハンターの歌詞">夜中に来た　出動指示
+外を見なくても　だいたい分かる
+エンジンかけて　ライトを点けて
+今夜も今庄　雪の中
+
+家の前には　雪玉落とすな
+落としゃ怒られ　避けても怒られ
+「ちゃんと綺麗に取ってけや」
+いやいやそこは　後から降った雪
+
+取っても怒られ
+取らんでも怒られ
+それでも朝まで
+押して　削って　また押して
+
+どこまで取ったら　正解なんや
+俺は夜中の　除雪オペ
+綺麗にした道　振り向けば
+家の雪がまた　出されてる
+
+ああ　ブルーになるけど
+また雪が降ってくる
+誰かが朝に　走れるように
+今夜も今庄　雪を押す
+みんな正月　コタツを囲んで
+酒でも飲んで　テレビを見てる
+こっちは何時間　乗ったんやろ
+フラフラしながら　ハンドル握る
+
+マンホールの蓋　グレーチング
+頼む　そこだけ　爪に当たるな
+ガツンと来るたび　心臓止まり
+何もなかったと　祈って進む
+
+降りても身体が　まだふわふわ
+腰はとっくに　悲鳴を上げる
+続けば身体も　しんどくなって
+無言の圧には　心もやられる
+
+どこまで取ったら　正解なんや
+俺は夜中の　除雪オペ
+取ったそばから　雪は降る
+取ったところへ　雪を出される
+
+それでも朝は　やってくる
+新聞配達　車が走る
+その頃ようやく　エンジン止めて
+ふわふわしながら　地面に立つ
+
+雪が消えれば　春が来る
+これで終わったと　思った頃に
+「あそこ壊した」「ここも壊した」
+冬の答え合わせが　始まるぞ
+
+縁石　マンホール　グレーチング
+覚えちゃいないが　すみません
+雪の下には　見えんもんがある
+こっちも好きで　壊しちゃいない
+
+もう来年は　知らんぞと
+毎年だいたい　思ってる
+そんなところへ　じいちゃんが
+遠くの方から　手を上げる
+
+「ありがとなー」
+
+……それだけかい
+
+それだけなんやけど
+それでええんや
+
+しゃーないな
+やったるで
+
+正解なんかは　分からんけれど
+それでも走る　スノーハンター
+誰も起きてない　今庄を
+黄色いライトが　ゆっくり走る
+
+綺麗じゃなくても　怒られても
+雪は待っちゃ　くれんから
+「ありがとなー」が　一つありゃ
+しゃーない今夜も　やったるで
+
+押して　削って　また押して
+朝まで道を　つないでく
+
+今夜も今庄
+雪が降る</div></details></div></article><article data-track="39" data-themes="roads festivals"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/39.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>街道浪漫今庄宿のテーマ</h3><p>焼鯖やそばの香りが漂い、蛇踊りが進む街道で、旅人も町の人も羽根曽踊りの輪に加わる。</p><small>4:37</small><div class="buttons"><button type="button" data-play aria-label="街道浪漫今庄宿のテーマを再生" hidden>▶ 再生</button><a class="download" href="audio/39.mp3" download="街道浪漫今庄宿のテーマ.mp3" aria-label="街道浪漫今庄宿のテーマのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="街道浪漫今庄宿のテーマをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="街道浪漫今庄宿のテーマの歌詞">さあさあ　今日は　街道浪漫
+暖簾を出したら　始まりだ
+昔も今も　旅の途中
+ここは越前　今庄宿
+
+朝の今庄　駅を降りれば
+いつもの街道　今日は賑やか
+
+軒から軒へと　店が並んで
+そばの湯気まで　道へと誘う
+
+焼鯖　団子に　茶飯の香り
+ちょいと一杯　地酒もどうぞ
+
+知らない人まで　声かけ合えば
+いつの間にやら　宿場の仲間
+
+文政の道標
+見ていた道を
+
+今日も旅人
+行ったり来たり
+
+百年昔も　きっとこんなふうに
+笑っていたんじゃ　ないだろか
+
+街道浪漫　今庄宿
+さあ　歩いてきね　寄ってきね
+
+旅人　町人　みんな一緒に
+今日は街道　晴れ舞台
+
+街道浪漫　今庄宿
+そばに地酒に　笑い声
+
+昔と今が　すれ違う
+ここは越前　今庄宿
+
+街道揺らして　蛇踊り進む
+子どもが追いかけ　大人も笑う
+
+京藤甚五郎　古い家並み
+格子の向こうに　昔が覗く
+
+酒蔵覗いて　盃傾け
+ちょっと赤らむ　旅人の顔
+
+汽笛の記憶も　峠の話も
+この道全部が　覚えてる
+
+木ノ芽を越えたか
+栃ノ木を越えたか
+
+昔の旅なら
+ここで一休み
+
+車で来たって
+汽車で来たって
+
+今日のあなたも　旅人だ
+
+街道浪漫　今庄宿
+さあ　歩いてきね　寄ってきね
+
+旅人　町人　みんな一緒に
+今日は街道　晴れ舞台
+
+街道浪漫　今庄宿
+そばに地酒に　笑い声
+
+昔と今が　手をつなぐ
+ここは越前　今庄宿
+
+唄が聞こえる
+鈴が鳴る
+
+ひとつ　ふたつと
+輪が広がる
+
+武士も町人も
+旅の人も
+
+肩書きなんかは
+今日は置いとけ
+
+羽根曽　羽根曽
+輪になって
+
+知らない人とも
+輪になって
+
+昔　この道　歩いた人も
+どこかで一緒に　踊ってる
+
+街道浪漫　今庄宿
+さあ　もう一度　歩いてきね
+
+子どもも　じいちゃん　ばあちゃんも
+旅の途中の　あなたもおいで
+
+街道浪漫　今庄宿
+今日の景色も　歴史になるんだよ
+
+昔と今と　その先へ
+道はまだまだ　続いてく
+
+夕陽が街道　長くなり
+暖簾をひとつ　またひとつ
+
+いつもの町へと　戻るけど
+
+また会おうな
+この街道で
+
+また来年も
+今庄宿</div></details></div></article><article data-track="40" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/40.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>ここで暮らそう</h3><p>閉まった店先や懐かしい駅の顔を描きながら、今庄の何気ない日々を次の季節へ手渡したいと歌う一曲。</p><small>3:35</small><div class="buttons"><button type="button" data-play aria-label="ここで暮らそうを再生" hidden>▶ 再生</button><a class="download" href="audio/40.mp3" download="ここで暮らそう.mp3" aria-label="ここで暮らそうのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ここで暮らそうをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="ここで暮らそうの歌詞">朝の戸を開け　箒をかける
+向かいの人も　姿が消えた
+去年は開いた　小さな店の
+大きなガラス戸　今日も閉じたまま
+細い路地から　飛び出す影は
+首輪のない猫　いつもの顔で
+誰かが残した　錆びた看板
+古びた町に　よく似合ってる
+
+変わらないもの
+消えてゆくもの
+どちらもここで
+朝を迎える
+
+ここで暮らそう　ここで育てよう
+風の名前も　祭りの音も
+君と見つけた　小さな宝
+次の季節へ　手渡す町
+ここで会おうよ　何度でも
+
+夕方の駅に　列車が止まり
+降りた人影　ひとつふたつ
+改札を抜けた　懐かしい顔
+「久しぶりやな」と　誰かが笑う
+閉じた雨戸に　明かりが灯り
+知らない声が　路地までこぼれる
+昔と同じじゃ　なくてもいいと
+暮れてく空が　少しやわらぐ
+
+いなくなるもの
+生まれるもの
+どちらもここに
+跡を残して
+
+ここで暮らそう　ここで育てよう
+冬の静けさ　夏の夕立
+君と見つけた　なんでもない日を
+次の季節へ　手渡す町
+ここで会おうよ　何度でも
+
+遠くへ行った　あの人だって
+帰る理由など　なくてもいい
+たまには顔を　見せにおいでよ
+話の続きは　まだあるから
+
+ここで暮らそう　ここで育てよう
+風の名前も　祭りの音も
+君と見つけた　小さな宝
+次の季節へ　手渡す町
+ここで会おうよ　何度でも
+ここで始めよう
+何度でも</div></details></div></article><article data-track="41" data-themes="rail roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/41.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>とんねるの唄</h3><p>山を掘って石を積んだ人と、石炭をくべて峠を越えた人の仕事を、今も残るトンネルに重ねた一曲。</p><small>3:44</small><div class="buttons"><button type="button" data-play aria-label="とんねるの唄を再生" hidden>▶ 再生</button><a class="download" href="audio/41.mp3" download="とんねるの唄.mp3" aria-label="とんねるの唄のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="とんねるの唄をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="とんねるの唄の歌詞">向こうの町へ　荷を運ぶたび
+見上げた山に　足を止めた
+この山の中を　通れたならと
+硬い岩へと　人は向かった
+
+雨に崩れた　坂を上って
+石を背負って　また歩き出す
+ひとつ積んでは　またひとつ
+山の内側に　道をつくった
+
+闇の奥から　風が吹いた
+向こうの声が　こちらへ届く
+山に生まれた　小さな出口を
+やがて汽笛が　駆け抜けた
+
+とんねる抜けて　またとんねる
+山の向こう　その向こう
+ひとつの石を　積んだ手が
+誰かの遠くを　近くする
+
+とんねる抜けて　またとんねる
+暗がりの先で　空に会う
+人の手が開けた　山の道を
+汽笛が今日も　走ってゆく
+
+今庄を発つ　汽笛がひとつ
+山の奥へと　吸い込まれる
+窓の向こうの　空が消えて
+煙と熱が　胸まで迫る
+
+煤にまみれた　顔をぬぐって
+赤い火の前　石炭をくべる
+積んだ荷物も　乗せた人も
+無事に向こうへ　届けるために
+
+上りの先には　下りが待って
+ひと息つくには　まだ早い
+明かりと闇を　いくつも越えて
+待ってる町へと　走り続けた
+
+とんねる抜けて　またとんねる
+山の向こう　その向こう
+ひとつの石を　積んだ手が
+誰かの遠くを　近くする
+
+とんねる抜けて　またとんねる
+暗がりの先で　空に会う
+人の手が開けた　山の道を
+汽笛が今日も　走ってゆく
+
+町と町を　結んだ鉄路は
+港で海の　道に出会う
+山の向こうを　目指した仕事が
+海の向こうへも　つながっていた
+
+とんねる抜けて　またとんねる
+山の向こう　その向こう
+ひとつの石を　積んだ手が
+今も誰かの　道を支える
+
+とんねる抜けて　またとんねる
+今は足音　響かせて
+誰かが開けた　この道の先
+僕らは今日も　空に会う
+
+時代をいくつも　見送って
+とんねるは今日も　生きている</div></details></div></article><article data-track="42" data-themes="roads home"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/42.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>旅の途中</h3><p>草鞋で峠を越えた旅人も、車で立ち寄った旅人も、今庄で荷を下ろし、道中の話を分け合います。</p><small>3:36</small><div class="buttons"><button type="button" data-play aria-label="旅の途中を再生" hidden>▶ 再生</button><a class="download" href="audio/42.mp3" download="旅の途中.mp3" aria-label="旅の途中のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="旅の途中をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="旅の途中の歌詞">峠を下りた　草鞋の足に
+軒の灯りが　近づいてくる
+肩の荷物を　ひとまず下ろし
+今夜の宿を　この町に取る
+
+湯呑みを両手で　包んでいたら
+隣の人から　「どちらまで」
+聞いたことない　土地の話に
+疲れた顔が　ほころんだ
+
+行き先違う　旅人どうし
+今夜は同じ　屋根の下
+
+旅の途中　今庄で
+ちょっとひと息　ついていこう
+来た道の話を　聞かせておくれ
+明日の道も　話していこう
+
+旅の途中　今庄で
+肩の荷物を　下ろそうか
+どこまで行くかも　大事だけれど
+ここで過ごすのも　旅のうち
+
+高速下りて　ウインカー出して
+町へと続く　道を選んだ
+エンジンを止めて　背中を伸ばし
+ポケットに鍵を　放り込む
+
+車の窓から　見ていた軒を
+今度は歩いて　見上げてみる
+「今日はどこまで」と　声をかけられ
+決めてた予定が　ゆるんでくる
+
+時計を見れば　もうこんな時間
+それでも急ぐ　気になれない
+
+旅の途中　今庄で
+ちょっとひと息　ついていこう
+来た道の話を　聞かせておくれ
+明日の道も　話していこう
+
+旅の途中　今庄で
+肩の荷物を　下ろそうか
+どこまで行くかも　大事だけれど
+ここで過ごすのも　旅のうち
+
+歩く旅から　車の旅へ
+速くなっても　腹は減る
+「まあ座りなよ」と　すすめる椅子に
+昔の誰かも　笑うだろう
+
+旅の途中　今庄で
+ちょっとひと息　ついていこう
+知らない町だった　昨日の僕に
+話してやりたい　ことがある
+
+旅の途中　今庄で
+今度は誰かと　来てみよう
+今日まで走った　距離と一緒に
+ここで過ごした　時間を乗せて
+
+それじゃあそろそろ　出かけようか
+今庄で休んだ　旅のつづき</div></details></div></article><article data-track="43" data-themes="local"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/43.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>なななななな</h3><p>屋号で通じる会話や、本人に最後に届くうわさ話から、ひと言では説明しきれない今庄の日常を描きます。</p><small>4:08</small><div class="buttons"><button type="button" data-play aria-label="ななななななを再生" hidden>▶ 再生</button><a class="download" href="audio/43.mp3" download="なななななな.mp3" aria-label="ななななななのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="ななななななをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="ななななななの歌詞">な　な　な　な
+ない　ない　ななない
+
+な　な　な　な
+ない　ない　ななない
+
+何がない？
+
+知らん
+
+ほやけど――
+
+朝から静寂　平常運転　昨日と今日との変更点ゼロ
+玄関出た瞬間　見慣れんナンバー　誰やあれって　もう見てる
+
+知らん顔　知らん車　知らんナンバー　知らんけど
+目ぇ合う　会釈で　はい知り合い　一回会ったら　もう知り合い
+
+街道サイドを一本入れば　ワイドな道からタイトになる
+右か左か　ナビなら右でも　地元の勘ならそっちは無視
+
+細い　狭い　近い　怖い　対向来たならどうすんの
+来ん来ん来ん　たぶん来ん　来たときゃその時　なんとかする
+
+予定は未定で　目的未定　出かける理由もだいたい未定
+用事がないから外へ出たのに　外へ出たから用事ができる
+
+一人に会って　二人に会って　三人目には捕まって
+「まだおったんか」って　そっちのせいやろ　これで午前がほぼ終わる
+
+あるんか　ないんか　どっちなん
+行くんか　行かんか　どっちなん
+
+ほやって　ほやけど　ほやほやほや
+結局なんや？
+
+知らん！
+
+ほな――
+
+なななな　ないない　ななない
+なななな　ないない　ななない
+
+ないない言うほど　なくはない
+あるある言うほど　ありゃしない
+
+なななな　ないない　ななない
+なななな　なんなん　今庄
+
+なななな　ないない　ななない
+なんなん　なんなん　なんなんなん？
+
+まあ　ええわ
+
+今庄！
+
+苗字じゃ迷子で　屋号で解答　「あこの○○」で一発解答
+本人知らんが実家は知っとる　実家知らんが親父は知っとる
+
+親父を辿って　じいちゃん辿って　関係　親戚　どっかで連結
+血縁　地縁で　世間は狭ぇ　三軒四軒　辿れば接点
+
+「最近どうや」「まあまあや」　「仕事はどうや」「まあまあや」
+「身体はどうや」「まあまあや」　景気も天気も元気も　まあまあや
+
+まあまあ　まあまあ　まあまあまあ　便利で万能　まあまあや
+良くても悪くても　まあまあや　これだけ言っときゃ　まあまあや
+
+
+ニューなニュースが町内巡回　発信不明で高速展開
+口頭　速攻　情報流動　一報　二報で少々変貌
+
+誰から聞いた　どこから出たん　聞いた方さえもう覚えてない
+ぐるっと回って本人到着　一番最後に本人が知る
+
+「俺　そんなこと言うてへんぞ」
+
+……ほな　誰や
+
+ほんまか　嘘か　どっちなん
+知っとる　知らん　どっちなん
+
+ほやって　ほやけど　ほやほやほや
+誰が言うたん？
+
+知らん！
+
+ほなーーーー
+
+なななな　ないない　ななない
+なななな　ないない　ななない
+
+近いと思えば　まあ遠い
+遠いと思えば　そこら辺
+
+なななな　ないない　ななない
+なななな　なんなん　今庄
+
+なななな　ないない　ななない
+なんなん　なんなん　なんなんなん？
+
+説明しろって？
+
+むずいわ！
+
+久々　帰省で　再会　乾杯　「変わってないな」でだいたい開始
+変わってないって　いやいや待って　あれも無くなりゃ　これも無くなった
+
+「あそこ昔は店やった」「その前たしか家やった」
+「その横なんかあったやろ」「なんやったっけ」「まあ　あったんや」
+
+記憶と記録と昨日と昔が　ごちゃ混ぜ　混ざって　混線開始
+去年　一昨年　五年前　「この前やって」って平成や
+
+十年　二十年　誤差の範囲　昔の話はやたらと鮮明
+現在　限界　そんなんじゃない　頭の地図ではまだ全部現役
+
+あった店　あった家　あった顔　無くなったもんを数えりゃ早い
+増えた空白　減ってく灯り　そこまで全部　笑えん話
+
+けど悲壮感だけで語る気もない　「かわいそうな町」になる気もない
+少ない　小さい　それでも現在　勝手にこっちを終わらすな
+
+変えたい　変えたない
+出たい　帰りたい
+
+残したい　めんどくさい
+好きか　嫌いか　どっちでもない
+
+近すぎるから　説明できない
+便利　不便で　正解は出ない
+
+ないとか　あるとか　そんなんじゃない
+
+ここは　まだ
+
+人が住んでる
+
+な
+
+なな
+
+ななな
+
+なななな――
+
+なななな　ないない　ななない
+なななな　ないない　ななない
+
+ないない言うほど　なくはない
+あるある言うほど　ありゃしない
+
+なななな　ないない　ななない
+なななな　なんなん　今庄
+
+なななな　ないない　ななない
+なななな　なんなん　今庄
+
+出ても　戻って　戻って　出ても
+結局どっかで　気になってる
+
+なんなん　なんなん　なんなんなん？
+なんなん　なんなん　なんなんなん？
+
+まあ　ええわ！
+
+今庄！
+
+な　な　な　な
+ない　ない　ななない
+
+な　な　な　な
+ない　ない　ななない
+
+……ほやで
+
+あれ　誰や？
+
+知らん。</div></details></div></article><article data-track="44" data-themes="rail"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/44.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>Helper locomotive</h3><p>列車を後ろから押して峠を越えさせた補助機関車が、役目を終えても続いていく町の暮らしを見つめます。</p><small>4:51</small><div class="buttons"><button type="button" data-play aria-label="Helper locomotiveを再生" hidden>▶ 再生</button><a class="download" href="audio/44.mp3" download="Helper locomotive.mp3" aria-label="Helper locomotiveのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="Helper locomotiveをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="Helper locomotiveの歌詞">朝になるたび誰かが来た
+長い体を引きずって来た
+遠くへ行くのが仕事のくせに
+決まってここで足を止めた
+水を飲ませて火を起こして
+黒い腹までいっぱいにして
+それでも目の前見上げたままで
+煙ばかりを吐いていた
+だから僕は後ろへ回る
+名前なんかは聞かなくていい
+ガチャン
+「ひとりで行く気か」
+
+前のお前が力を込める
+後ろの僕も力を込める
+鉄の体がきしんで鳴いて
+長い荷物が動き始める
+暗い穴ならいくつも抜けた
+右へ左へ山を縫った
+お前が少し弱った時は
+言葉の代わりに強く押した
+やがて坂道ゆるくなったら
+僕の仕事はそこで終わり
+ガチャン
+「ここまでだ」
+お前は遠くへ
+僕は戻った
+
+あと一両
+たった一両
+それだけあれば越えていける
+重さはひとつも
+減らせなくても
+一緒に運べば
+越えていける
+あと一両
+たった一両
+僕は遠くへ行かないけれど
+見送った汽笛の
+数だけきっと
+知らない町まで
+つながっていた
+
+次の日もまた誰かが来た
+昨日と違う顔をしていた
+客を乗せたの
+荷物を積んだの
+急いでるのも
+くたびれたのも
+水を飲むやつ
+腹を満たすやつ
+その横人間も飯を食う
+売る声呼ぶ声
+茶を注ぐ音
+発車をせかした
+高い笛
+僕らがガチャンと
+つながるたびに
+この場所もずっと
+動いていた
+
+あと一両
+たった一両
+今日も誰かを押していく
+名前も行き先も
+知らないけれど
+坂の向こうへ
+送り出す
+あと一両
+たった一両
+帰れば次が待っている
+遠くへ行くのは
+みんなの仕事
+ここへ戻るのが
+僕の仕事
+
+ある日
+知らないやつがやってきた
+煙を吐かない
+水も飲まない
+黒い腹にも
+何も入れずに
+静かな顔で
+坂を越えた
+「あと一両は？」
+誰も呼ばない
+「押さなくていいのか？」
+誰も答えない
+昨日まで僕を待っていたやつが
+今日はそのまま走っていった
+ガチャンという音が
+しないまま
+汽笛だけが
+遠くなった
+
+それから少しずつ声が減った
+忙しかった場所が広くなった
+水を飲むやつも
+火を食うやつも
+僕を待つやつも
+いなくなった
+止まっていたやつが
+止まらなくなり
+走っていた僕が
+動かなくなった
+錆びた線路の
+向こうを見ながら
+ずいぶん静かに
+なったと思った
+
+だけど
+朝になったら戸が開いた
+誰かが誰かを呼んでいた
+子どもが走って
+犬が吠えて
+洗濯物が
+風に揺れていた
+昨日の続きを
+話す人
+明日の支度を
+始める人
+僕らが運ばなくなったあとも
+誰かが何かを
+運んでいた
+
+あと一両
+たった一両
+もう僕を呼ぶ声は聞こえない
+越えられなかった
+あの坂道も
+今では車が
+通る道
+あと一両
+たった一両
+僕の仕事は終わったけれど
+朝から夜へ
+昨日から今日へ
+ここで暮らしは
+つながっていく
+鉄の体を
+つないだ僕が
+最後になって
+気づいたこと
+人はガチャンと
+音を立てずに
+誰かと誰かを
+つないでる
+
+朝になる
+また戸が開く
+誰かが出ていく
+誰かが帰る
+僕はもう
+押さなくていい
+それでもここから
+今日が行く</div></details></div></article><article data-track="45" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/45.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>千年の音</h3><p>木ノ芽峠の石畳を登りながら、草鞋を履いた昔の旅人の足音に、今日の自分の靴音を重ねます。</p><small>3:54</small><div class="buttons"><button type="button" data-play aria-label="千年の音を再生" hidden>▶ 再生</button><a class="download" href="audio/45.mp3" download="千年の音.mp3" aria-label="千年の音のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="千年の音をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="千年の音の歌詞">坂がきつけりゃ　笑っちまえ  
+膝が笑えば　俺も笑う  
+草鞋の頃なら　どうだった  
+この靴だけでも　ありがてえ  
+
+帽子をさらった　峠風  
+拾いに戻って　また登る  
+おいおい　そんなに　慌てるな  
+誰かの声が　した気がした  
+
+
+急ぐ奴なら　下を行け  
+早い道なら　他にある  
+わざわざここまで　来たからにゃ  
+聞こえる音が　あるはずさ！  
+
+陸奥公が　拓いた道  
+千年の音が　聞こえるか  
+草鞋が鳴らした　石畳  
+今は俺の　靴が鳴る  
+
+都へ行く奴　帰る奴  
+泣いて笑って　日を重ね  
+俺の一歩も　混ぜてくれよ  
+
+**木ノ芽峠！**
+
+殿様　坊さん　商人も  
+名もない旅人　歩いたさ  
+偉いも低いも　関係ねえ  
+坂ではみんな　息が切れる  
+
+茶屋の軒下　ひと休み  
+見上げた空は　同じか  
+あの日の誰かが　振り向けば  
+俺と目が合う　気がするぜ  
+
+時代が変わって　道も変わって  
+急ぐ奴らは　姿を消した  
+それでもこうして　俺がいる  
+まだまだ終わっちゃ　いないだろ！  
+
+
+陸奥公が　拓いた道  
+千年の音が　聞こえるか  
+草鞋が鳴らした　石畳  
+今は俺の　靴が鳴る  
+
+都へ行く奴　帰る奴  
+泣いて笑って　日を重ね  
+俺の一歩も　混ぜてくれよ  
+
+**木ノ芽峠！**
+
+山の下では　列車が走る  
+車はトンネル　抜けてゆく  
+聞こえないはずの　足音が  
+今もこの道を　歩いてる  
+
+名前も知らねえ　あんたたち  
+俺もひとつ　鳴らしてくぜ！  
+
+陸奥公が　拓いた道  
+千年の音が　聞こえるか  
+草鞋が鳴らした　石畳  
+今は俺の　靴が鳴る  
+
+行ったきりの奴　帰った奴  
+誰もが明日を　探してた  
+次の誰かに　届けてくれよ  
+
+**木ノ芽峠！**
+
+もうひと坂　越えていこうぜ！
+
+**木ノ芽峠！**</div></details></div></article><article data-track="46" data-themes="roads legends seasons christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/46.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>湯尾峠のクリスマス</h3><p>雪の湯尾峠で、旅人の足音が恋しいいもの神さまが、山の下にともるクリスマスの灯りを見守ります。</p><small>3:20</small><div class="buttons"><button type="button" data-play aria-label="湯尾峠のクリスマスを再生" hidden>▶ 再生</button><a class="download" href="audio/46.mp3" download="湯尾峠のクリスマス.mp3" aria-label="湯尾峠のクリスマスのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="湯尾峠のクリスマスをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="湯尾峠のクリスマスの歌詞">峠の道に　雪が積もって
+今年も誰も　登ってこない
+石の地蔵に　雪帽子
+わしの頭にも　雪が積もる
+
+昔は旅人　行き交う道で
+願いも悩みも　聞いてきた
+今じゃ聞こえる　風の音だけ
+たまにカラスが　笑ってく
+
+麓の家には　灯りがともり
+今夜はどうやら　クリスマス
+赤い服着た　じいさんよりも
+わしの方が　年上じゃ
+
+メリークリスマス　湯尾峠
+誰も来なくても　雪は降る
+願いをひとつ　叶えるならば
+誰かの足音　聞きたいな
+
+メリークリスマス　湯尾峠
+星も見えない　冬の空
+わしはここから　動けぬけれど
+今夜も湯尾を　見守ろう
+
+昔は芋を　食べたくて
+腹を空かせた　旅人が
+わしに願いを　かけたもの
+今では芋も　冷めるだけ
+
+麓の町には　車が走り
+峠を越える　人も減り
+道は変わって　時代も変わり
+わしだけここに　残された
+
+遠くに聞こえる　鐘の音
+教会なんぞ　なかったが
+西から来たという　この祭り
+わしも祝って　よかろうか
+
+メリークリスマス　湯尾峠
+誰も来なくても　夜は更ける
+願いをひとつ　叶えるならば
+湯尾の笑い声　聞きたいな
+
+メリークリスマス　湯尾峠
+雪の向こうの　小さな町
+わしの名前を　忘れてもいい
+幸せであれ　湯尾の人
+
+もしもサンタが　迷うなら
+この峠まで　来ておくれ
+贈り物など　いらぬから
+少し話を　しておくれ
+
+……いや、やっぱり芋がいい
+焼きたて一本　持ってこい
+
+メリークリスマス　湯尾峠
+今夜も静かに　雪が降る
+誰かがいつか　登ってきたら
+昔の話を　してやろう
+
+メリークリスマス　湯尾峠
+遠くの灯りが　またひとつ
+消えても明日が　やってくる
+湯尾よ　いつまでも　あたたかく
+
+雪はしんしん　降り積もる
+いもの神さま　ひとり言
+
+「……サンタも来んのか」
+
+メリークリスマス。</div></details></div></article><article data-track="47" data-themes="home seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/47.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>遊</h3><p>日野川の石投げや藤倉山の木陰を通して、子どもと遊んだ今庄の自然を、次の世代へ手渡す気持ちを歌います。</p><small>2:58</small><div class="buttons"><button type="button" data-play aria-label="遊を再生" hidden>▶ 再生</button><a class="download" href="audio/47.mp3" download="遊.mp3" aria-label="遊のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="遊をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="遊の歌詞">靴を並べて　裾をまくれば
+日野川の水が　足首をつつむ
+「つめたいな」って　声が重なり
+大人も子どもも　同じ顔
+
+平たい石を　選ぶ目だけは
+さっきよりずっと　真剣になる
+一つ　二つで　沈んだ石に
+もう一回って　手が伸びる
+
+もう一回　もう一回
+水の輪っかに　笑い声
+大きくなっても　覚えていて
+この冷たさと　土の匂い
+
+もう一回　もう一回
+今度は君が　投げる番
+いつか小さな　手を引く君に
+遊べるままで　渡したい
+
+藤倉山の　ブナの木陰で
+名前も知らない　鳥の声を聞く
+見つけた花には　顔を近づけ
+摘まずにそっと　立ち上がる
+
+雪が降ったら　そりを引っぱり
+頬を真っ赤に　坂をのぼる
+昔の僕と　そっくりな顔で
+君がせがむよ　「もう一回」
+
+もう一回　もう一回
+水の輪っかに　笑い声
+大きくなっても　覚えていて
+この冷たさと　土の匂い
+
+もう一回　もう一回
+今度は君が　投げる番
+いつか小さな　手を引く君に
+遊べるままで　渡したい
+
+帰りの袋に　空き缶ひとつ
+小さな君が　先に見つけた
+教えてばかりの　つもりでいたら
+僕のほうこそ　教わっていた
+
+もう一回　もう一回
+山にひびいた　笑い声
+大きくなっても　忘れないで
+この冷たさと　土の匂い
+
+もう一回　もう一回
+次の誰かが　遊ぶ番
+僕らを夢中に　させる今庄
+遊べるままで　渡していこう</div></details></div></article><article data-track="48" data-themes="home tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/48.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>誰かの今日</h3><p>白黒写真の見知らぬ人を見つめながら、その人が過ごした一日と、今の今庄を歩く自分の日々を重ねます。</p><small>3:30</small><div class="buttons"><button type="button" data-play aria-label="誰かの今日を再生" hidden>▶ 再生</button><a class="download" href="audio/48.mp3" download="誰かの今日.mp3" aria-label="誰かの今日のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="誰かの今日をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="誰かの今日の歌詞">白黒写真の　道の真ん中
+こちらを見ている　人がいる
+名前も声も　知らないけれど
+なぜか目をそらす　気になれない
+
+肩にかけてる　荷物の重さ
+このあと会いに　行く人も
+写っていない　暮らしのつづき
+一枚の中に　隠れてる
+
+頬に色が　差してくる
+風が袖を　揺らしてく
+止まっていたのは　写真のほうで
+その日も町は　動いてた
+
+僕の知らない　僕の町
+あなたにとっては　今日だった
+明日のことを　気にしながら
+笑って　悩んで　いたんだろう
+
+僕の知らない　僕の町
+遠いあなたが　近くなる
+写真の外へ　踏み出す足が
+今の今庄へ　続いてる
+
+
+写真のすみで　動き出す手が
+誰かを呼んでる　ように見えた
+思わず返事を　しそうになって
+画面の前で　ひとり笑う
+
+見覚えのある　屋根のかたち
+見覚えのない　人の列
+いつもの道で　知らない昨日が
+今日の僕らと　すれ違う
+
+
+僕の知らない　僕の町
+あなたにとっては　今日だった
+明日のことを　気にしながら
+笑って　悩んで　いたんだろう
+
+僕の知らない　僕の町
+遠いあなたが　近くなる
+写真の外へ　踏み出す足が
+今の今庄へ　続いてる
+
+
+あなたの名前を　知らない僕が
+あなたの暮らした　町にいる
+いつか僕らの　何でもない日も
+誰かが見つける　昔になる
+
+
+僕の知らない　僕の町
+あなたにとっては　今日だった
+明日のことを　気にしながら
+僕らも今日を　暮らしてる
+
+僕の知らない　僕の町
+少しだけいま　知った気がした
+あなたが歩いた　道のつづきを
+今日も今庄で　歩いてる</div></details></div></article><article data-track="49" data-themes="roads"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/49.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>曲がり角の向こう側</h3><p>今庄の細い路地で道に迷うたび、昭和会館やうだつのある町並みが、いつもとは違って見えてきます。</p><small>3:30</small><div class="buttons"><button type="button" data-play aria-label="曲がり角の向こう側を再生" hidden>▶ 再生</button><a class="download" href="audio/49.mp3" download="曲がり角の向こう側.mp3" aria-label="曲がり角の向こう側のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="曲がり角の向こう側をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="曲がり角の向こう側の歌詞">ねえ、ちょっと待って！
+こっち？　あっち？　どっちだっけ？
+まあいいや！　行ってみよう！
+
+駅前で描いた　完璧なルート
+三つ目の角で　もう忘れた
+右か左か　それともまっすぐ？
+まっすぐの道が　見当たらない！
+
+表札じゃなくて　屋号で呼ぶから
+誰のことだか　わからない
+細い路地には　細い路地なりの
+ちょっと複雑な　事情がある
+
+近道のはずが　遠回り
+知らない景色に　出くわした
+昨日の地図には　載ってない
+今日の答えを　探してる
+
+くるり　くるり　曲がって
+あっちもこっちも　違う顔
+迷って　戻って　また進んで
+知らない町が　増えてゆく
+
+くるり　くるり　今庄
+小さな角で　世界が変わる
+予定通りに　いかない今日も
+悪くないでしょ？　そうでしょ！
+
+右！　左！　もう一回！
+待って！　さっきも　ここにいた！
+右！　左！　もう一回！
+それでも　なんだか　楽しいな！
+
+北国街道　歩いてみたら
+昔と今が　隣り合わせ
+昭和会館　横目に見ながら
+見慣れた景色も　違って見えた
+
+うだつの上には　今日の青空
+軒の向こうには　いつもの山
+百年前にも　きっと誰かが
+同じところで　空を見た
+
+名前も知らない　旅人たちが
+ここを通って　何を見た？
+答え合わせは　できないけれど
+少しだけなら　わかる気がした
+
+くるり　くるり　曲がって
+昔と今が　入れ替わる
+知らない誰かの　足音さえも
+この町の中に　残ってる
+
+くるり　くるり　今庄
+小さな角で　時代を越える
+通り過ぎれば　それだけなのに
+もう少しだけ　歩きたい！
+
+いつか　この道も
+違う景色に　なるのかな
+名前を呼んでた　あの声も
+風の向こうに　消えるのかな
+
+でもね　それでも
+今日ここにいる　私がいる
+何度も曲がった　この道を
+今度は誰かに　教えたい
+
+右へ　左へ　振り返って
+昨日と今日が　重なって
+過去から未来へ　飛び越えて
+まだまだ　まだまだ　終わらない！
+
+くるり　くるり　曲がって
+あっちもこっちも　違う顔
+迷って　戻って　また進んで
+知らない町が　増えてゆく！
+
+くるり　くるり　今庄
+小さな角で　世界が変わる
+昨日の道も　明日の道も
+私の足で　見つけたい！
+
+右！　左！　もう一回！
+今度はちゃんと　覚えてる！
+右！　左！　もう一回！
+あれれ？　やっぱり　間違えた！
+
+……まあ、いっか！</div></details></div></article><article data-track="50" data-themes="local christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/50.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>サンタは今庄に迷い込む</h3><p>吹雪で今庄に迷い込んだサンタが、おろしそばに驚き、田んぼにはまったソリを軽トラで引いてもらう大騒ぎ。</p><small>3:51</small><div class="buttons"><button type="button" data-play aria-label="サンタは今庄に迷い込むを再生" hidden>▶ 再生</button><a class="download" href="audio/50.mp3" download="サンタは今庄に迷い込む.mp3" aria-label="サンタは今庄に迷い込むのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="サンタは今庄に迷い込むをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="サンタは今庄に迷い込むの歌詞">十二月の　真夜中に
+赤い帽子が　空を飛ぶ
+世界の子供に　プレゼント
+今年も仕事は　山積みだ
+
+ところがどっこい　吹雪の中
+トナカイ一頭　くしゃみした
+ソリがぐるりと　急旋回
+気がつきゃ山の　ど真ん中
+
+「ここはどこだ！」と　地図を出す
+スマホの電波も　怪しくて
+木ノ芽峠の　雪の上
+サンタがひとりで　立ち往生
+
+ヘイ！ヘイ！　メリークリスマス！
+サンタが今庄に　やってきた
+煙突探して　屋根を見りゃ
+雪の高さに　たまげたぞ！
+
+ヘイ！ヘイ！　メリークリスマス！
+予定にない町　今庄宿
+道に迷った　その先で
+とんでもない夜が　始まった！
+
+ようやく町へと　たどり着き
+明かりのついた　家を見つけ
+「煙突はどこじゃ？」と　尋ねたら
+「そんなもんないわ」と　笑われた
+
+「そばでも食べて　温まれ」
+出てきたものは　おろしそば
+「おいおい冷たい　そばじゃないか！」
+食べてみたなら　うまかった
+
+「急いでおるんじゃ　次の町！」
+「ほんなら雪道　気いつけね」
+言われたそばから　滑り出し
+ソリは田んぼに　突っ込んだ！
+
+ヘイ！ヘイ！　メリークリスマス！
+サンタが今庄に　迷い込む
+トナカイたちは　雪まみれ
+赤い帽子も　真っ白け！
+
+ヘイ！ヘイ！　メリークリスマス！
+今夜はどうにも　帰れない
+世界の子供が　待ってるぞ
+どうするサンタ　大ピンチ！
+
+「誰か助けてくれんかのう！」
+
+「なんや、サンタさんか」
+
+「ソリが動かんのじゃ！」
+
+「ほんなら、みんな呼んでくるわ」
+
+軽トラ何台　集まって
+ロープを掛けて　引っ張った
+近所のじいちゃん　声を出す
+「せーの！」でソリが　飛び出した
+
+「礼をしたいが　何がいい？」
+「ほんなら雪を　どけてくれ」
+サンタは空から　見下ろして
+「それはわしにも　無理じゃわい！」
+
+ヘイ！ヘイ！　メリークリスマス！
+サンタが今庄に　やってきた
+道に迷った　そのおかげ
+知らない人と　笑い合う
+
+ヘイ！ヘイ！　メリークリスマス！
+今夜は今庄　大騒ぎ
+忘れられない　冬の夜
+サンタも笑って　空を飛ぶ！
+
+「さて、次はどこじゃったかの？」
+
+「ハックション！」
+
+「おい！またかーっ！」</div></details></div></article><article data-track="51" data-themes="seasons christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/51.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄 WHITE BEAT</h3><p>ケーキを手に出かけたイブの夜、雪かきに付き合ううちにシャベルの音まで今庄のクリスマスのリズムになります。</p><small>4:07</small><div class="buttons"><button type="button" data-play aria-label="今庄 WHITE BEATを再生" hidden>▶ 再生</button><a class="download" href="audio/51.mp3" download="今庄 WHITE BEAT.mp3" aria-label="今庄 WHITE BEATのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄 WHITE BEATをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="今庄 WHITE BEATの歌詞">「12月24日、今庄」
+
+「ケーキ持ったか？」
+「持った！」
+
+「スコップ持ったか？」
+「……え？」
+
+駅のドア出りゃ　冷気が歓迎
+真っ白な景色　街灯が反射
+都会のネオンは　ちょいと少なめ
+だけど足元　ビートは太め
+
+踏みしめる雪　キュッと鳴るスネア
+吐く息真っ白　天然のスモーク
+ポケット震える　仲間の着信
+「雪がえらいぞ！　気ぃつけて来い！」
+
+今日はイブだぜ　パーティーナイト
+ケーキを片手に　気分は最高
+ところが曲がった　路地の向こう
+じいちゃん一人で　雪かき中
+
+「ちょっと手伝え！」　「マジかよ今日？」
+「クリスマスでも　雪は降るぞ！」
+ケーキを置いて　スコップ握る
+予定変更　始まるセッション
+
+ジングルベルより　シャベルの音
+右から左へ　雪を飛ばせ
+パーティー開始は　遅れるけれど
+今夜のビートは　ここからだ！
+
+WHITE BEAT！　今庄クリスマス
+雪が降るほど　リズムが弾む
+派手なイルミは　少なめだけど
+笑い声なら　負けちゃいない
+
+WHITE BEAT！　今庄クリスマス
+凍える指先　ポケットに入れて
+メリークリスマス　雪の町
+今夜は俺らが　盛り上げる！
+
+ようやく到着　すでに八時
+六時の集合　大幅遅刻
+「何しとったんや！」　「雪かきやって！」
+言い訳ひとつで　笑いが起きる
+
+箱を開けたら　ケーキが斜め
+イチゴが隅っこ　大移動
+「誰が食うんや？」　「そりゃお前やろ！」
+そんなやり取り　いつもの調子
+
+窓の外では　また雪が降る
+さっき空けた道　もう白くなる
+天気予報じゃ　明日も大雪
+「明日も雪かき？」　「聞きたくねぇ！」
+
+それでもグラスを　高く掲げ
+乾杯するには　理由は十分
+特別なものは　何もないけど
+集まるだけで　特別な夜
+
+WHITE BEAT！　今庄クリスマス
+雪が降るほど　リズムが弾む
+豪華なディナーは　なくてもいいさ
+笑い転げりゃ　腹も減る
+
+WHITE BEAT！　今庄クリスマス
+今夜の主役は　ここにいる
+メリークリスマス　雪の町
+小さな部屋から　響かせろ！
+
+昔はもっと　集まったっけ
+そんな話も　少し出た
+町を離れた　あいつの写真
+画面の向こうで　笑ってる
+
+「来年こそは　帰ってこいよ」
+「雪かきだけは　勘弁してくれ！」
+電話の向こうも　大笑い
+離れた距離も　ちょっと縮まる
+
+午前零時だ　聖なる夜だ
+降り積もる雪は　容赦がないな
+都会のパーティー　派手なショータイム
+こっちは明日も　除雪がスタンバイ
+
+手袋　長靴　スノーダンプ
+これが今庄　冬の三種の神器
+凍結注意　情熱重視
+雪には負けても　笑いは無敵
+
+クリスマスツリーに　リボンを飾る
+俺らは玄関　スコップを飾る
+ロマンチックとは　ちょっと違うが
+こんなクリスマス　嫌いじゃないぜ！
+
+WHITE BEAT！　今庄クリスマス
+雪が降るほど　リズムが弾む
+遠くの誰かも　近くの誰かも
+同じ夜空で　メリークリスマス！
+
+WHITE BEAT！　今庄クリスマス
+静かな町にも　ビートは響く
+何にも変わらぬ　冬の夜でも
+今日だけ特別　クリスマス！
+
+「ほんなら、また明日な！」
+
+「おう、メリクリ！」
+
+「……明日、何時から雪かきする？」
+
+「今それ言うなや！！」</div></details></div></article><article data-track="52" data-themes="christmas tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/52.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>へらないおもちゃ</h3><p>久しぶりの今庄に贈り物を山ほど積んできたサンタが、配達を終えても減らない袋から、町の変化に気づきます。</p><small>4:15</small><div class="buttons"><button type="button" data-play aria-label="へらないおもちゃを再生" hidden>▶ 再生</button><a class="download" href="audio/52.mp3" download="へらないおもちゃ.mp3" aria-label="へらないおもちゃのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="へらないおもちゃをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="へらないおもちゃの歌詞">「さてさて、今年の担当地区は……」
+
+「おおっ！ 今庄じゃないか！」
+
+サンタの仕事は　持ち回り
+毎年違う　町へ行く
+今年の名簿を　開いたら
+懐かしい名前が　飛び込んだ
+
+前に来たのは　いつだったか
+子供がいっぱい　いた町じゃ
+袋をいくつも　空にして
+あの夜はほんとに　忙しかった
+
+今年は多めに　積んでいこう
+おもちゃに絵本に　ぬいぐるみ
+トナカイたちにも　気合いを入れて
+いざ行け今庄　クリスマス！
+
+メリークリスマス　今庄の空
+今年もたっぷり　持ってきた
+あの子もこの子も　待ってるぞ
+プレゼントなら　山ほどある
+
+メリークリスマス　雪を越えて
+久しぶりだな　今庄宿
+今夜は朝まで　大忙し
+張り切るサンタの　クリスマス！
+
+昔の通りを　飛んでみりゃ
+あれれおかしい　灯りが少ない
+あの家この家　覚えとる
+確か子供が　三人いた
+
+あの子は今では　父親で
+隣の姉妹は　町を出て
+新しい名簿を　見直せば
+知らない名前も　少しだけ
+
+[Pre-Chorus]
+一軒配って　また一軒
+そろそろ次へと　思ったら
+トナカイ一頭　振り向いて
+「サンタさん、もう終わりです」
+
+「……え？」
+
+メリークリスマス　今庄の夜
+へらないおもちゃが　揺れている
+昔は足りずに　困ったのに
+白い袋は　膨らんだまま
+
+メリークリスマス　雪の町
+今年の配達　もう終わり
+あんなに賑やかだったのに
+こんなに静かな　クリスマス
+
+あの頃小さな　子供たち
+今では大きく　なったんじゃろう
+どこかの町で　親になり
+サンタを待つ子が　いるんじゃろう
+
+それならそれで　よいことじゃ
+元気に暮らして　いるのなら
+だけど今庄の　この夜は
+ちょいと静かに　なりすぎた
+
+雪の屋根を　見下ろして
+古い名簿を　しまい込む
+何度も確かめた　プレゼント
+間違いじゃない　町が変わった
+
+あれほど重いと　思ったソリが
+帰りも重いと　誰が思う
+白い袋を　抱えたままで
+サンタはしばらく　黙ってた
+
+メリークリスマス　今庄の空
+へらないおもちゃと　帰り道
+少なくなった　子供たちに
+幸せいっぱい　届けたよ
+
+メリークリスマス　今庄の町
+次は何年先だろう
+あの頃みたいに　忙しい夜を
+もう一度見たい　もんじゃのう
+
+メリークリスマス　またいつか
+今夜も綺麗な　雪が降る
+ソリはちっとも　軽くないけど
+この町のことは　忘れんぞ
+
+「……来年は、どこの担当じゃったかの」
+
+「今庄には……また来られるかのう」</div></details></div></article><article data-track="53" data-themes="christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/53.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>最終列車のサンタクロース</h3><p>最終列車で今庄駅に着いたサンタは、プレゼントを忘れて大慌てですが、待合室で出会った子に手を引かれます。</p><small>3:14</small><div class="buttons"><button type="button" data-play aria-label="最終列車のサンタクロースを再生" hidden>▶ 再生</button><a class="download" href="audio/53.mp3" download="最終列車のサンタクロース.mp3" aria-label="最終列車のサンタクロースのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="最終列車のサンタクロースをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="最終列車のサンタクロースの歌詞">雪のホームに　降り立った
+赤いコートの　おじいさん
+大きな袋を　引きずって
+駅の中へと　歩いてく
+
+観光協会の　おばちゃんが
+「どちらから来たの？」と　声かける
+「北の果てから　来たんじゃが」
+「ほんなら寒いの　慣れとるね！」
+
+トナカイたちは　休暇中
+ソリも車検で　預けたまま
+仕方がないから　鉄道で
+やってきました　クリスマス
+
+シュビドゥバ　メリークリスマス
+今庄駅に　ベルが鳴る
+赤い帽子が　踊り出す
+雪のホームで　ワン・ツー・スリー！
+
+シュビドゥバ　メリークリスマス
+今夜の主役は　誰だろう
+最終列車の　サンタクロース
+小さな町に　やってきた
+
+大きな袋を　開けてみりゃ
+出てきたものは　靴下一つ
+手紙の山と　古い地図
+肝心の箱が　見当たらない
+
+「あれれおかしい　忘れたか？」
+慌ててポケット　探しても
+切符と飴玉　出るばかり
+おばちゃんまでも　首かしげ
+
+もうすぐ列車は　折り返す
+町まで行くには　時間がない
+困ったサンタは　ベンチに座り
+雪の向こうを　眺めてた
+
+シュビドゥバ　メリークリスマス
+今庄駅に　ベルが鳴る
+プレゼントなら　忘れたが
+笑顔はちゃんと　持ってきた
+
+シュビドゥバ　メリークリスマス
+雪降る町の　クリスマス
+最終列車の　サンタクロース
+帰りの切符を　握りしめ
+
+待合室の　小さな子
+「サンタさんだ！」と　駆け寄った
+「プレゼントは？」と　聞かれたら
+サンタは少し　困り顔
+
+「今日は忘れてしまったよ」
+そう言うサンタの　手を握り
+「じゃあ一緒に　帰ろうよ」
+小さな声が　笑ってた
+
+シュビドゥバ　メリークリスマス
+今庄駅に　ベルが鳴る
+何も持たない　サンタでも
+誰かの笑顔は　届けられる
+
+シュビドゥバ　メリークリスマス
+今夜は少し　遠回り
+最終列車の　サンタクロース
+町の灯りに　消えてった
+
+「ところで、帰りの電車は何時だい？」
+
+「もうないざ」
+
+「えええっ！？」
+
+「ほやで、泊まってきねの！」</div></details></div></article><article data-track="54" data-themes="home christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/54.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>最後のクリスマス</h3><p>かつてケーキが並んだ店に明かりが灯らないクリスマスの夜、今庄を離れる人が、雪の町を列車の窓から見送ります。</p><small>4:43</small><div class="buttons"><button type="button" data-play aria-label="最後のクリスマスを再生" hidden>▶ 再生</button><a class="download" href="audio/54.mp3" download="最後のクリスマス.mp3" aria-label="最後のクリスマスのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="最後のクリスマスをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="最後のクリスマスの歌詞">十二月の　夕暮れに
+駅前通りを　歩いてた
+去年も閉まっていた店に
+今年も明かりは　灯らない
+
+昔はここに　ケーキが並び
+赤いリボンが　揺れていた
+ガラスに映る　サンタの帽子
+欲しくて母を　困らせた
+
+雪が降るたび　思い出す
+あの頃聞こえた　笑い声
+同じ季節が　来たはずなのに
+違う町に　立っている
+
+シャンシャンシャン　鈴が鳴る
+誰もいない　クリスマス
+窓の向こうに　灯りを探す
+この町は少し　静かすぎる
+
+シャンシャンシャン　雪が降る
+いつもの道に　音もなく
+メリークリスマス　言ってみたけど
+返事は風に　消えてった
+
+小さな頃は　この道で
+友達みんなと　走ってた
+サンタが本当に　来るのかと
+夜空を何度も　見上げてた
+
+あいつは都会で　家庭を持って
+あの子は遠くへ　嫁いだと
+いつもの顔も　見なくなった
+名前を呼ぶ人も　いなくなった
+
+新しい家は　建たないまま
+古い家から　人が消え
+雪かきの音が　聞こえない朝
+静けさだけが　積もってく
+
+シャンシャンシャン　鈴が鳴る
+誰もいない　クリスマス
+昔は嫌いな　狭い町でも
+今は広すぎる　気がしてる
+
+シャンシャンシャン　雪が降る
+あの日と同じ　白い道
+メリークリスマス　言ってみたけど
+返事をする人は　もういない
+
+駅のホームに　ひとり立つ
+片手に小さな　旅行鞄
+仕事も暮らしも　この先は
+ここでは続けられなくて
+
+残っていたいと　思いながら
+残る理由を　探してた
+誰かが帰ってくる町を
+誰かが守ると　思ってた
+
+シャンシャンシャン　鈴が鳴る
+最後の町の　クリスマス
+見慣れた屋根も　白い山も
+今日で見納めに　なるのかな
+
+シャンシャンシャン　雪が降る
+列車の窓に　流れてく
+メリークリスマス　僕の町
+僕もここから　いなくなる
+
+いつか帰ると　言えなかった
+誰も見送りに　来なかった
+
+雪の今庄に　夜が来る
+またひとつ　灯りが消える</div></details></div></article><article data-track="55" data-themes="seasons christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/55.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>なんで今日なの！？</h3><p>大雪と帰りの電車を気にしながら、去年の大雪の日に今庄駅で出会った君に、今年のイブも会いたいと願う歌。</p><small>3:34</small><div class="buttons"><button type="button" data-play aria-label="なんで今日なの！？を再生" hidden>▶ 再生</button><a class="download" href="audio/55.mp3" download="なんで今日なの！？.mp3" aria-label="なんで今日なの！？のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="なんで今日なの！？をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="なんで今日なの！？の歌詞">十二月二十四日
+天気予報は　大雪です
+
+……はぁ！？　マジで！？
+
+昨日買った　新しいマフラー
+鏡の前で　もう三回目
+いつもよりちょっと　頑張ったメイク
+君は気づいて　くれるかな
+
+スマホに届いた　雪の予報
+夕方からは　警報級
+行きの電車は　動くらしい
+問題なのは　帰りの方
+
+「八時までには帰りなさい」
+ママの言葉は　絶対で
+行ったら最後　帰れないかも
+ああもう！　どうすりゃいいの！
+
+全部　雪のせいだ！　今庄のせいだ！
+クリスマスくらい　空気読めよ！
+会いたい　会いたい　ただそれだけが
+こんなに難しい　町なんて！
+
+ああもう！　このくそ田舎！
+電車も門限も　大嫌い！
+都会の恋なら　簡単なのに
+なんで私は　ここにいる！
+
+去年の冬の　今庄駅で
+雪で列車が　止まった日
+改札の前で　困ってた君に
+カイロひとつを　渡したんだ
+
+「この町、寒いね」「いつもだよ」
+そんな会話が　最初だった
+知らない誰かの　はずだったのに
+今じゃ一番　会いたい人
+
+あの日も確か　大雪で
+何時間だって　待てたっけ
+帰れないことも　忘れるくらい
+君との話が　楽しくて
+
+全部　雪のせいだ！　今庄のせいだ！
+今日も電車は　あてにならない
+会いたい　会いたい　君に会いたい
+たったそれだけの　クリスマス
+
+ああもう！　このくそ田舎！
+こんな町から　出てってやる！
+何度も何度も　思ってるのに
+君との始まりも　ここだった
+
+「今日は無理しなくていいよ」
+君から届いた　短い言葉
+そういうとこが　好きなんだけど
+今日くらい　わがまま言ってよ
+
+窓の向こうは　真っ白で
+ホームの灯りも　ぼやけてる
+あの日の雪が　降らなければ
+君の名前も　知らなかった
+
+嫌いな雪が　好きになった
+好きだった雪が　嫌いになった
+ねえ　どっちなのよ
+もう　わかんないよ！
+
+全部　雪のせいだ！　今庄のせいだ！
+最高で最低の　クリスマス！
+会いたい　会いたい　今すぐ会いたい
+だけど今夜は　帰れない
+
+ああもう！　このくそ田舎！
+何にもないって　思ってた
+だけど君との　出会いがあった
+それだけは　嘘じゃない
+
+全部　雪のせいだ！　今庄のせいだ！
+去年の奇跡も　今年の不運も
+大嫌いだよ　この町なんて
+……でもちょっとだけ　ありがとう
+
+スマホの画面に　君の顔
+「メリークリスマス」って　笑ってる
+
+「ねえ、来年は絶対会おうね」
+
+……来年も大雪だったら
+どうしてくれんのよ！</div></details></div></article><article data-track="56" data-themes="home seasons tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/56.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>昨日の続き</h3><p>雪が足跡を隠す今庄で、柿を燻した匂いや消えていく家の灯りを思いながら、明日の新しい足跡を待ちます。</p><small>4:05</small><div class="buttons"><button type="button" data-play aria-label="昨日の続きを再生" hidden>▶ 再生</button><a class="download" href="audio/56.mp3" download="昨日の続き.mp3" aria-label="昨日の続きのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="昨日の続きをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="昨日の続きの歌詞">今庄駅の　静かなホームに  
+今年も冬が　舞い降りてきた  
+誰かの足跡　消してゆく雪  
+昨日の続きが　見えなくなった
+
+柿を燻した　あの日の匂い  
+灯りのともった　小さな家  
+ひとつふたつと　消えてく灯り  
+それでも雪は　降り続く
+
+誰かが去って  
+誰かが残って  
+この町の冬だけは  
+何も言わずにいる
+
+消さないで　消さないで  
+あの日の足跡　消さないで  
+帰りたい　帰りたい  
+あの日の僕が　まだここにいる
+
+しんしんと　しんしんと  
+音もなく　時が積もる  
+忘れないで　忘れないで  
+ここに誰かが　生きていたこと
+
+かねおりの　曲がり角には  
+昔のままの　風が吹いてる  
+閉じた戸の向こう　笑い声がした  
+そんな気がして　振り返った
+
+だけどそこには　誰もいなくて  
+雪の落ちる音が　しただけだった  
+あの日の声を　探してみても  
+返事のかわりに　雪が降る
+
+静かなままで　いてほしいけど  
+静かすぎるのは　寂しくて  
+雪に埋もれる　この町だけは  
+思い出だけに　したくない
+
+このままで　このままで  
+そう願うのは　わがままかな  
+変わらないで　変わらないで  
+でも消えてゆくのは　違うだろう
+
+しんしんと　しんしんと  
+思い出だけが　降り積もる  
+変わらないで　変わらないで  
+消えてほしいわけじゃない
+
+賑やかな町に　ならなくていい  
+昔のままで　なくたっていい  
+ただ誰かの　「ただいま」が  
+これからも聞こえる　町であれ
+
+雪がやんだら  
+何が見えるだろう  
+消えた足跡  
+戻らない人
+
+それでも明日は  
+誰かが歩く  
+真っ白な道に  
+新しい跡を
+
+消さないで　消さないで  
+あの日の足跡　消さないで  
+このままで　このままで  
+そう願うのは　わがままかな
+
+しんしんと　しんしんと  
+今年も冬が　町を包む  
+変わらないで　変わらないで  
+消えてほしいわけじゃない
+
+雪が降る　雪が降る  
+昨日の足跡を　隠すように
+
+それでも明日  
+誰かが歩く</div></details></div></article><article data-track="57" data-themes="local tomorrow"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/57.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>今庄インフラ撤退戦</h3><p>古い水道管や橋の修繕が重なる一方、予算も担い手も足りない町で、暮らしをどう守るかをユーモアまじりに問います。</p><small>3:50</small><div class="buttons"><button type="button" data-play aria-label="今庄インフラ撤退戦を再生" hidden>▶ 再生</button><a class="download" href="audio/57.mp3" download="今庄インフラ撤退戦.mp3" aria-label="今庄インフラ撤退戦のMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="今庄インフラ撤退戦をマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="今庄インフラ撤退戦の歌詞">どうする？　どうする？  
+さてさて　どうする？  
+直すか？　やめるか？  
+さあさあ　どうする！
+
+昭和に埋めた　水道管が  
+そろそろ限界　迎えてる  
+掘っては埋めて　また掘り返す  
+次はどこから　水が出る
+
+施設の機械も　年を取り  
+部品はとっくに　生産終了  
+直せる人まで　年を取り  
+図面の場所さえ　わからない
+
+あれも寿命で　これも寿命  
+まとめて来るなよ　更新期  
+予算をめくって　ため息ひとつ  
+桁が足りない　ゼロがない！
+
+どうする？　どうする？  
+直すも地獄　やめるも地獄  
+どうする？　どうする？  
+誰が決めるんだ　この先を
+
+残せ残せと　声はする  
+金はどこから　持ってくる  
+誰も悪者に　なりたくない  
+ああ　インフラ撤退戦！
+
+誰も通らぬ　道だけど  
+今日も除雪車　走ってく  
+轍ひとつも　つかぬまま  
+明日になれば　また積もる
+
+橋の欄干　錆びついて  
+点検結果は　要修繕  
+迂回と言われて　地図を見りゃ  
+向こうの集落　山ふたつ
+
+チャイムの消えた　中学校  
+草は刈っても　時は止まらぬ  
+壊すも金なら　残すも金だ  
+いっそ時間が　止まらんか！
+
+どうする？　どうする？  
+守るも地獄　捨てるも地獄  
+どうする？　どうする？  
+誰が決めるんだ　この先を
+
+百年もつと　思ってた  
+百年もつとは　言ってない  
+未来の誰かに　任せたら  
+その誰かとは　俺たちだ！
+
+今庄宿の　古い町並み  
+残したいものは　山ほどある  
+だけど暮らしを　守るためには  
+見えない管まで　守らなきゃ
+
+数字で見れば　赤字でも  
+そこには確かに　暮らしがある  
+一本の道が　消えるだけで  
+帰れなくなる　家がある
+
+全部は無理だと　わかってる  
+全部を捨てろと　言われても  
+残すものから　決めるのか  
+諦めるものを　決めるのか
+
+どうする？　どうする？  
+直すも地獄　やめるも地獄  
+どうする？　どうする？  
+答えのないまま　春が来る
+
+減ってく人と　増える修繕  
+減ってく税と　増える請求  
+誰も悪者じゃ　ないけれど  
+誰かが決めなきゃ　終わらない
+
+どうする？　どうする？  
+先送りなら　もう何十年  
+どうする？　どうする？  
+それでも明日は　水を出せ！
+
+「来年度の予算は？」
+
+「ありません。」
+
+「その次は？」
+
+「ありません。」</div></details></div></article><article data-track="58" data-themes="home christmas"><div class="cover" aria-hidden="true"><span>IMAJO SONGS</span><img src="cover/58.jpg" alt="" loading="lazy" decoding="async" width="500" height="500"></div><div class="info"><h3>二人だけのクリスマス</h3><p>雪の今庄で、離れて暮らす子を思いケーキの苺を端に寄せながら、夫婦が静かなクリスマスを過ごします。</p><small>3:40</small><div class="buttons"><button type="button" data-play aria-label="二人だけのクリスマスを再生" hidden>▶ 再生</button><a class="download" href="audio/58.mp3" download="二人だけのクリスマス.mp3" aria-label="二人だけのクリスマスのMP3を無料ダウンロード">↓ 無料 MP3</a><button type="button" data-add aria-label="二人だけのクリスマスをマイリストに追加" aria-pressed="false" hidden>＋ マイリスト</button></div><details class="song-lyrics"><summary><span class="lyric-show">歌詞を見る</span><span class="lyric-hide">歌詞を閉じる</span></summary><div class="lyric-text" tabindex="0" role="region" aria-label="二人だけのクリスマスの歌詞">軒下のリース　取り出して
+去年と同じ　釘に掛ける
+「誰が見るの」と　君が言う
+「俺が見るさ」と　笑ってみせる
+
+食卓の椅子を　二つ寄せ
+隅に置いたまま　あと二つ
+電話で元気と　言う子らは
+それぞれ違う　町で暮らす
+
+箱から出した　ケーキを見て
+「二人じゃ大きい」と　君が言う
+「明日の分さ」と　言いながら
+大きな皿を　探してる
+
+メリークリスマス　二人だけ
+ちょっと大きな　ケーキを切ろう
+子供が好きな　苺だけ
+端に寄せるの　癖になった
+
+メリークリスマス　二人だけ
+窓の向こうは　雪の今庄
+華やかな夜じゃ　ないけれど
+「おいしいね」が　二つある
+
+今庄駅まで　迎えに行った
+雪で列車が　遅れた夜も
+大きな荷物を　抱えたあの子らが
+「ただいま！」と　駆けてきた
+
+今夜の今庄は　雪の中
+人の足音も　聞こえない
+「明日は積もるぞ」と　僕が言う
+「去年も言ってた」と　君が笑う
+
+「昔は大変だったね」と
+片付けながら　君が言う
+あれほど騒がしかった　食卓が
+今じゃ二人に　広すぎる
+メリークリスマス　二人だけ
+小さな声で　乾杯しよう
+誰かがこぼした　ジュースの跡
+テーブルの隅に　まだ残る
+
+メリークリスマス　二人だけ
+あの日と同じ　十二月
+何にも変わらぬ　つもりでいた
+変わらぬものは　少ないね
+
+その時電話が　鳴り響く
+画面いっぱい　小さな顔
+「じいちゃん！ばあちゃん！
+メリークリスマス！」
+
+去年よりまた　背が伸びた
+覚えた歌を　聴かせてくれる
+「雪はどうなの？」「降っとるよ」
+「風邪ひかないで」「お前たちもな」
+
+いつものように　電話を切れば
+また静かな　部屋に戻る
+真っ暗になった　画面の中に
+並んだ二人が　映ってた
+
+メリークリスマス　二人だけ
+大きなケーキは　まだ残る
+「明日も食べるか」「明後日もね」
+笑って君が　皿を下げる
+
+メリークリスマス　二人だけ
+幾つの冬を　越えただろう
+賑やかな日々は　戻らなくても
+今夜も君が　ここにいる
+
+メリークリスマス　二人だけ
+今庄の町に　雪が降る
+また来年も　この食卓で
+同じ話を　繰り返そう
+
+窓の向こうは　雪明かり
+二人の夜は　まだ続く</div></details></div></article></div></section></main><footer>今庄ソング ／ 福井県 南越前町</footer>
 <div id="live-update" class="sr-only" role="status"></div>
+<script>
+'use strict';
+(() => {
+  const q = selector => document.querySelector(selector);
+  const cards = [...document.querySelectorAll('#track-list [data-track]')];
+  const tracks = new Map(cards.map(card => [card.dataset.track, {
+    card,
+    title: card.querySelector('h3').textContent,
+    audio: card.querySelector('.download').getAttribute('href'),
+    cover: card.querySelector('.cover img'),
+    play: card.querySelector('[data-play]'),
+    add: card.querySelector('[data-add]'),
+    lyrics: card.querySelector('.lyric-text')
+  }]));
+  const assetReady = img => img.classList.toggle('ready', img.complete && img.naturalWidth > 0);
+  for (const track of tracks.values()) {
+    track.cover.addEventListener('load', () => assetReady(track.cover));
+    track.cover.addEventListener('error', () => assetReady(track.cover));
+    assetReady(track.cover);
+    track.play.hidden = track.add.hidden = false;
+  }
+
+  const nav = q('.library-nav');
+  const modes = [...nav.querySelectorAll('[data-view]')];
+  const picker = q('#theme-picker');
+  const themes = [...picker.querySelectorAll('[data-theme]')];
+  let currentTheme = null;
+  function display(view, key) {
+    const themed = view === 'themes';
+    if (themed && key) currentTheme = key;
+    picker.hidden = !themed;
+    for (const button of modes) button.setAttribute('aria-pressed', String(button.dataset.view === view));
+    for (const button of themes) button.setAttribute('aria-pressed', String(themed && button.dataset.theme === currentTheme));
+    const active = themed ? currentTheme : null;
+    let count = 0;
+    for (const card of cards) {
+      card.hidden = Boolean(active && !card.dataset.themes.split(' ').includes(active));
+      if (!card.hidden) count++;
+    }
+    const selected = active && themes.find(button => button.dataset.theme === active);
+    q('#results-status').textContent = selected
+      ? selected.firstChild.textContent.trim() + '：' + count + '曲を表示'
+      : themed ? 'テーマを選ぶと曲を絞り込めます。現在は全' + count + '曲を表示。' : '全' + count + '曲を表示';
+  }
+  modes.forEach(button => button.addEventListener('click', () => display(button.dataset.view)));
+  themes.forEach(button => button.addEventListener('click', () => display('themes', button.dataset.theme)));
+  nav.hidden = false;
+  display('all');
+
+  const player = q('#player');
+  const audio = q('#audio');
+  const playerImage = q('#player-image');
+  const playerLyrics = q('#player-lyrics');
+  const playerLyricText = q('#player-lyric-text');
+  const feedback = q('#player-feedback');
+  const playerMode = q('#player-mode');
+  const items = q('#my-items');
+  const start = q('#start-list');
+  const listMessage = q('#my-message');
+  const key = 'imajo-songs:my-list:v1';
+  let playlist = [];
+  let storageUnavailable = false;
+  let current = null;
+  let mode = 'single';
+  let generation = 0;
+  // If the playing song is removed, preserve the position between list items.
+  let gap = null;
+  try {
+    const saved = JSON.parse(window.localStorage.getItem(key) || '[]');
+    if (Array.isArray(saved)) playlist = [...new Set(saved.map(String).filter(id => tracks.has(id)))];
+  } catch {
+    storageUnavailable = true;
+  }
+  function save() {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(playlist));
+      storageUnavailable = false;
+    } catch {
+      storageUnavailable = true;
+    }
+  }
+  function say(message) {
+    const region = q('#live-update');
+    region.textContent = '';
+    requestAnimationFrame(() => { region.textContent = message; });
+  }
+  function setFeedback(text = '') {
+    feedback.hidden = !text;
+    feedback.textContent = text;
+  }
+  function updatePlayerMode() {
+    if (mode !== 'list') {
+      playerMode.textContent = '1曲だけ再生';
+      return;
+    }
+    const index = playlist.indexOf(current);
+    playerMode.textContent = index >= 0 ? 'マイリスト再生 · ' + (index + 1) + ' / ' + playlist.length : 'マイリスト再生';
+  }
+  playerImage.addEventListener('load', () => { playerImage.hidden = !playerImage.naturalWidth; });
+  playerImage.addEventListener('error', () => { playerImage.hidden = true; });
+  function play(id, nextMode) {
+    const track = tracks.get(id);
+    if (!track) return;
+    const token = ++generation;
+    const changed = current !== id;
+    const lyric = track.lyrics?.textContent || '';
+    playerLyrics.hidden = !lyric.trim();
+    if (changed || playerLyricText.textContent !== lyric) {
+      playerLyricText.textContent = lyric;
+      playerLyricText.setAttribute('aria-label', track.title + 'の歌詞');
+      playerLyricText.lang = track.lyrics?.lang || 'ja';
+      playerLyricText.scrollTop = 0;
+    }
+
+    if (current) tracks.get(current).card.removeAttribute('data-current');
+    current = id;
+    mode = nextMode;
+    gap = null;
+    track.card.setAttribute('data-current', '');
+    q('#player-title').textContent = track.title;
+    playerImage.hidden = true;
+    const coverPath = track.cover.getAttribute('src');
+    if (playerImage.getAttribute('src') === coverPath && playerImage.complete) {
+      playerImage.hidden = !playerImage.naturalWidth;
+    } else {
+      playerImage.src = coverPath;
+    }
+    updatePlayerMode();
+    setFeedback();
+    player.hidden = false;
+    audio.src = track.audio;
+    audio.setAttribute('aria-label', track.title + 'の再生プレーヤー');
+    // Invoked directly inside the click so gesture-gated playback works.
+    const result = audio.play();
+    if (result) result.catch(error => {
+      if (generation !== token || error.name === 'AbortError' || audio.error) return;
+      setFeedback('再生が始まらない場合は、プレーヤーの再生ボタンを押してください。');
+    });
+    say(track.title + ' · ' + playerMode.textContent);
+  }
+  audio.addEventListener('playing', () => setFeedback());
+  audio.addEventListener('error', () => {
+    if (current && audio.error) setFeedback('音源を読み込めませんでした。通信状況を確認し、曲の再生ボタンをもう一度押してください。');
+  });
+  audio.addEventListener('ended', () => {
+    if (mode !== 'list' || !audio.ended) return;
+    const index = playlist.indexOf(current);
+    const next = playlist[index >= 0 ? index + 1 : (gap ?? playlist.length)];
+    if (next) play(next, 'list');
+    else setFeedback('マイリストの最後まで再生しました。');
+  });
+
+  function makeButton(name, label, control, disabled, action) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = name;
+    button.setAttribute('aria-label', label);
+    button.dataset.control = control;
+    button.disabled = disabled;
+    button.addEventListener('click', action);
+    return button;
+  }
+  function restoreFocus(id, control) {
+    const row = id && [...items.children].find(node => node.dataset.id === id);
+    const preferred = row?.querySelector('[data-control="' + control + '"]:not(:disabled)');
+    const fallback = row?.querySelector('button:not(:disabled)') ?? (start.disabled ? q('.top a') : start);
+    (preferred ?? fallback).focus();
+  }
+  function remove(id, fromList) {
+    const index = playlist.indexOf(id);
+    if (index < 0) return;
+    if (mode === 'list' && id === current) gap = index;
+    else if (gap !== null && index < gap) gap--;
+    playlist.splice(index, 1);
+    save();
+    renderList();
+    if (fromList) restoreFocus(playlist[Math.min(index, playlist.length - 1)], 'remove');
+    say(tracks.get(id).title + 'をマイリストから削除しました');
+  }
+  function move(id, delta) {
+    const before = playlist.indexOf(id);
+    const after = before + delta;
+    if (before < 0 || after < 0 || after >= playlist.length) return;
+    [playlist[before], playlist[after]] = [playlist[after], playlist[before]];
+    save();
+    renderList();
+    restoreFocus(id, delta < 0 ? 'up' : 'down');
+    say(tracks.get(id).title + 'を' + (after + 1) + '曲目に移動しました');
+  }
+  function renderList() {
+    const selected = new Set(playlist);
+    for (const [id, track] of tracks) {
+      const added = selected.has(id);
+      track.add.textContent = added ? '✓ マイリスト' : '＋ マイリスト';
+      track.add.setAttribute('aria-pressed', String(added));
+      track.add.setAttribute('aria-label', track.title + 'のマイリスト登録');
+    }
+    items.replaceChildren(...playlist.map((id, index) => {
+      const {title} = tracks.get(id);
+      const row = document.createElement('li');
+      row.dataset.id = id;
+      const name = document.createElement('span');
+      name.textContent = title;
+      name.className = 'list-song';
+      const buttons = document.createElement('div');
+      buttons.className = 'list-buttons';
+      buttons.append(
+        makeButton('↑', title + 'を上に移動', 'up', index === 0, () => move(id, -1)),
+        makeButton('↓', title + 'を下に移動', 'down', index === playlist.length - 1, () => move(id, 1)),
+        makeButton('削除', title + 'をマイリストから削除', 'remove', false, () => remove(id, true))
+      );
+      row.append(name, buttons);
+      return row;
+    }));
+    start.disabled = playlist.length === 0;
+    q('#my-count').textContent = playlist.length + '曲';
+    listMessage.textContent = storageUnavailable ? 'ブラウザーに保存できません。マイリストはページを閉じると消えます。'
+      : playlist.length === 0 ? '曲一覧の「＋ マイリスト」から追加できます。' : '';
+    if (current) updatePlayerMode();
+  }
+  for (const [id, track] of tracks) {
+    track.play.addEventListener('click', () => play(id, 'single'));
+    track.add.addEventListener('click', () => {
+      if (playlist.includes(id)) return remove(id, false);
+      playlist.push(id);
+      if (current === id) gap = null;
+      save();
+      renderList();
+      say(track.title + 'をマイリストに追加しました');
+    });
+  }
+  start.addEventListener('click', () => { if (playlist.length) play(playlist[0], 'list'); });
+  renderList();
+  q('#my-list').hidden = false;
+})();
+
+</script>
 </body></html>
