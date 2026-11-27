@@ -6045,9 +6045,9 @@ WHITE BEAT！　今庄クリスマス
     }
     return order;
   }
-  function startSession(ids, source, label, shuffle) {
+  function startSession(ids, source, label, shuffle, first = null) {
     if (!ids.length) return;
-    session = {source, label, shuffle, ids:[...ids], order:makeOrder(ids, shuffle, current), index:0, past:[], future:[], round:1};
+    session = {source, label, shuffle, ids:[...ids], order:first === null ? makeOrder(ids, shuffle, current) : [first, ...makeOrder(ids.filter(id => id !== first), shuffle)], index:0, past:[], future:[], round:1};
     play(session.order[0]);
     player.focus({preventScroll:true});
     if (typeof player.scrollIntoView === 'function') player.scrollIntoView({block:'nearest'});
@@ -6218,7 +6218,10 @@ WHITE BEAT！　今庄クリスマス
     if (current) updatePlayerMode();
   }
   for (const [id, track] of tracks) {
-    track.play.addEventListener('click', () => { session = null; play(id); });
+    track.play.addEventListener('click', () => {
+      if (activeTheme) playTheme(true, id);
+      else startSession([...tracks.keys()], 'all', '全曲', true, id);
+    });
     track.add.addEventListener('click', () => {
       if (playlist.includes(id)) return remove(id, false);
       playlist.push(id);
@@ -6231,12 +6234,12 @@ WHITE BEAT！　今庄クリスマス
   listRepeat.addEventListener('change', () => { if (session?.source === 'list') updatePlayerMode(); });
   shuffleAll.addEventListener('click', () => startSession([...tracks.keys()], 'all', '全曲', true));
 
-  function playTheme(shuffle) {
+  function playTheme(shuffle, first = null) {
     if (!activeTheme) return;
     const button = themes.find(button => button.dataset.theme === activeTheme);
     if (!button) return;
     const matching = cards.filter(card => card.dataset.themes.split(' ').includes(activeTheme));
-    startSession(matching.map(card => card.dataset.track), 'theme', themeLabel(button), shuffle);
+    startSession(matching.map(card => card.dataset.track), 'theme', themeLabel(button), shuffle, first);
   }
   q('#theme-sequential').addEventListener('click', () => playTheme(false));
   q('#theme-shuffle').addEventListener('click', () => playTheme(true));
