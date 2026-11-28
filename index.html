@@ -51,6 +51,7 @@
  <div class="player-heading"><div class="player-cover" aria-hidden="true"><span>♪</span><img id="player-image" alt="" hidden width="48" height="48"></div><div class="player-labels"><p id="player-mode"></p><h2 id="player-title">再生プレーヤー</h2></div></div>
  <div class="transport"><button id="previous-track" type="button" aria-label="曲頭または前の曲へ">◀◀</button><audio id="audio" controls preload="none" aria-label="再生プレーヤー"></audio><button id="next-track" type="button" aria-label="次の曲へ">▶▶</button></div>
  <details id="player-lyrics" class="song-lyrics" hidden><summary><span class="lyric-show">歌詞を表示</span><span class="lyric-hide">歌詞を非表示</span></summary><div id="player-lyric-text" class="lyric-text" tabindex="0" role="region" aria-label="再生中の曲の歌詞"></div></details>
+ <div id="wake-option" hidden><label><input type="checkbox" id="wake-toggle"> 再生中は画面を消さない</label> <small role="status" id="wake-status"></small></div>
  <p id="player-feedback" class="player-feedback" role="status" hidden></p>
 </section>
 <section class="my-list" id="my-list-intro" aria-labelledby="my-intro-heading" hidden>
@@ -6270,4 +6271,45 @@ WHITE BEAT！　今庄クリスマス
 })();
 
 </script>
-</body></html>
+<script>
+(() => {
+  if ('wakeLock' in navigator) {
+    const toggle = document.getElementById('wake-toggle');
+    const status = document.getElementById('wake-status');
+    const audio = document.getElementById('audio');
+    document.getElementById('wake-option').hidden = false;
+    let lock = null;
+    let pending = false;
+    const wanted = () => toggle.checked && !audio.paused && !audio.ended && document.visibilityState === 'visible';
+    async function syncLock() {
+      if (!wanted()) {
+        const old = lock;
+        lock = null;
+        status.textContent = '';
+        if (old) await old.release().catch(() => {});
+        return;
+      }
+      if (pending || lock) return;
+      pending = true;
+      try {
+        const next = await navigator.wakeLock.request('screen');
+        if (!wanted()) { await next.release(); return; }
+        lock = next;
+        status.textContent = '自動消灯を防いでいます';
+        next.addEventListener('release', () => {
+          if (lock !== next) return;
+          lock = null;
+          status.textContent = wanted() ? '端末が画面点灯の維持を解除しました' : '';
+        });
+      } catch {
+        if (wanted()) status.textContent = 'この端末では現在、画面点灯を維持できません';
+      } finally {
+        pending = false;
+      }
+    }
+    toggle.addEventListener('change', syncLock);
+    for (const event of ['playing', 'pause', 'ended', 'error']) audio.addEventListener(event, syncLock);
+    document.addEventListener('visibilitychange', syncLock);
+  }
+})();
+</script></body></html>
